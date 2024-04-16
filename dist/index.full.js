@@ -34366,7 +34366,7 @@
       menuVisibleOnFocus: false,
       isBeforeHide: false
     });
-    vue.ref(null);
+    const virtualRef = vue.ref(null);
     const selectRef = vue.ref(null);
     const selectionRef = vue.ref(null);
     const tooltipRef = vue.ref(null);
@@ -34951,6 +34951,7 @@
       tagStyle,
       collapseTagStyle,
       inputStyle,
+      virtualRef,
       popperRef,
       inputRef,
       tooltipRef,

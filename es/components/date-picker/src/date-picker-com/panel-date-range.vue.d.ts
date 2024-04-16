@@ -380,7 +380,7 @@ declare const _default: import("vue").DefineComponent<{
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -410,7 +410,7 @@ declare const _default: import("vue").DefineComponent<{
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
             };
-            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
             readonly loading: BooleanConstructor;
             readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
             readonly plain: BooleanConstructor;
@@ -455,7 +455,7 @@ declare const _default: import("vue").DefineComponent<{
             ariaDisabled: boolean;
             disabled: boolean;
             autofocus: boolean;
-            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
         } | {
             ariaDisabled?: undefined;
             disabled?: undefined;
@@ -545,7 +545,7 @@ declare const _default: import("vue").DefineComponent<{
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -572,7 +572,7 @@ declare const _default: import("vue").DefineComponent<{
         readonly circle: boolean;
         readonly tag: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
         readonly loading: boolean;
-        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
         readonly loadingIcon: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
         readonly autoInsertSpace: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly plain: boolean;
@@ -787,17 +787,17 @@ declare const _default: import("vue").DefineComponent<{
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onBlur?: ((evt: FocusEvent) => any) | undefined;
             onFocus?: ((evt: FocusEvent) => any) | undefined;
+            onBlur?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
         }>>;
-        emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
+        emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
         rawAttrs: {
             [x: string]: unknown;
         };
@@ -862,7 +862,7 @@ declare const _default: import("vue").DefineComponent<{
         handleFocus: (event: FocusEvent) => void;
         handleBlur: (event: FocusEvent) => void;
         needStatusIcon: import("vue").ComputedRef<boolean>;
-        validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
+        validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
         validateIcon: import("vue").ComputedRef<any>;
         passwordIcon: import("vue").ComputedRef<any>;
         containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -1052,15 +1052,15 @@ declare const _default: import("vue").DefineComponent<{
         onChange?: ((value: string) => any) | undefined;
         "onUpdate:modelValue"?: ((value: string) => any) | undefined;
         onInput?: ((value: string) => any) | undefined;
-        onBlur?: ((evt: FocusEvent) => any) | undefined;
         onFocus?: ((evt: FocusEvent) => any) | undefined;
+        onBlur?: ((evt: FocusEvent) => any) | undefined;
         onClear?: (() => any) | undefined;
-        onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+        onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
         onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
         onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-        onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
-        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+        onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
     }, {
         readonly type: string;
         readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;

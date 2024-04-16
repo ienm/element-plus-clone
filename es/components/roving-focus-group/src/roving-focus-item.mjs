@@ -2,7 +2,7 @@ import { defineComponent, inject, ref, unref, nextTick, computed, provide, resol
 import '../../../hooks/index.mjs';
 import '../../../utils/index.mjs';
 import '../../../constants/index.mjs';
-import { ElCollectionItem, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group.mjs';
+import { ElCollectionItem, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group2.mjs';
 import { ROVING_FOCUS_GROUP_INJECTION_KEY, ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY } from './tokens.mjs';
 import { getFocusIntent, reorderArray, focusFirst } from './utils.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';

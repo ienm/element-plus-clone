@@ -146,7 +146,7 @@ declare const _default: import("vue").DefineComponent<{
     showClose: import("vue").ComputedRef<boolean>;
     iconComponent: import("vue").ComputedRef<import("../../../utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown> | undefined>;
     iconReverse: import("vue").ComputedRef<string>;
-    validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
+    validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
     validateIcon: import("vue").ComputedRef<any>;
     showNewOption: import("vue").ComputedRef<boolean>;
     updateOptions: () => void;
@@ -183,6 +183,7 @@ declare const _default: import("vue").DefineComponent<{
     inputStyle: import("vue").ComputedRef<{
         width: string;
     }>;
+    virtualRef: import("vue").Ref<null>;
     popperRef: import("vue").ComputedRef<HTMLElement | undefined>;
     inputRef: import("vue").Ref<HTMLInputElement | null>;
     tooltipRef: import("vue").Ref<({
@@ -2553,7 +2554,7 @@ declare const _default: import("vue").DefineComponent<{
                     readonly popperOptions: import("../../../utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
+                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -2803,10 +2804,10 @@ declare const _default: import("vue").DefineComponent<{
                         readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onBlur?: (() => any) | undefined;
                         onFocus?: (() => any) | undefined;
-                        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onBlur?: (() => any) | undefined;
                         onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
                     focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
@@ -2875,7 +2876,7 @@ declare const _default: import("vue").DefineComponent<{
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
@@ -3150,10 +3151,10 @@ declare const _default: import("vue").DefineComponent<{
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onBlur?: (() => any) | undefined;
                     onFocus?: (() => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onBlur?: (() => any) | undefined;
                     onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                 }, {
                     readonly offset: number;
                     readonly effect: string;
@@ -5506,7 +5507,7 @@ declare const _default: import("vue").DefineComponent<{
                 readonly popperOptions: import("../../../utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                 readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }, {
-                emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
+                emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
                 props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                     readonly id: StringConstructor;
                     readonly style: {
@@ -5756,10 +5757,10 @@ declare const _default: import("vue").DefineComponent<{
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onBlur?: (() => any) | undefined;
                     onFocus?: (() => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onBlur?: (() => any) | undefined;
                     onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
                 focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                 trapped: import("vue").Ref<boolean>;
@@ -5828,7 +5829,7 @@ declare const _default: import("vue").DefineComponent<{
                     };
                 }, {
                     onKeydown: (e: KeyboardEvent) => void;
-                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                     loop: BooleanConstructor;
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
@@ -6103,10 +6104,10 @@ declare const _default: import("vue").DefineComponent<{
                 readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }>> & {
                 onClose?: (() => any) | undefined;
-                onBlur?: (() => any) | undefined;
                 onFocus?: (() => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onBlur?: (() => any) | undefined;
                 onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
             }, {
                 readonly offset: number;
                 readonly effect: string;
@@ -8781,7 +8782,7 @@ declare const _default: import("vue").DefineComponent<{
                     readonly popperOptions: import("../../../utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
+                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -9031,10 +9032,10 @@ declare const _default: import("vue").DefineComponent<{
                         readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onBlur?: (() => any) | undefined;
                         onFocus?: (() => any) | undefined;
-                        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onBlur?: (() => any) | undefined;
                         onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
                     focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
@@ -9103,7 +9104,7 @@ declare const _default: import("vue").DefineComponent<{
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
@@ -9378,10 +9379,10 @@ declare const _default: import("vue").DefineComponent<{
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onBlur?: (() => any) | undefined;
                     onFocus?: (() => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onBlur?: (() => any) | undefined;
                     onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                 }, {
                     readonly offset: number;
                     readonly effect: string;
@@ -11734,7 +11735,7 @@ declare const _default: import("vue").DefineComponent<{
                 readonly popperOptions: import("../../../utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                 readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }, {
-                emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
+                emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
                 props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                     readonly id: StringConstructor;
                     readonly style: {
@@ -11984,10 +11985,10 @@ declare const _default: import("vue").DefineComponent<{
                     readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onBlur?: (() => any) | undefined;
                     onFocus?: (() => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onBlur?: (() => any) | undefined;
                     onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
                 focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                 trapped: import("vue").Ref<boolean>;
@@ -12056,7 +12057,7 @@ declare const _default: import("vue").DefineComponent<{
                     };
                 }, {
                     onKeydown: (e: KeyboardEvent) => void;
-                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                     loop: BooleanConstructor;
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
@@ -12331,10 +12332,10 @@ declare const _default: import("vue").DefineComponent<{
                 readonly strategy: import("../../../utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }>> & {
                 onClose?: (() => any) | undefined;
-                onBlur?: (() => any) | undefined;
                 onFocus?: (() => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onBlur?: (() => any) | undefined;
                 onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
             }, {
                 readonly offset: number;
                 readonly effect: string;
@@ -12653,7 +12654,7 @@ declare const _default: import("vue").DefineComponent<{
     menuRef: import("vue").Ref<HTMLElement>;
     tagMenuRef: import("vue").Ref<HTMLElement>;
     collapseItemRef: import("vue").Ref<HTMLElement>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "change" | "blur" | "focus" | "clear" | "visible-change" | "remove-tag")[], "update:modelValue" | "change" | "blur" | "focus" | "clear" | "visible-change" | "remove-tag", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "change" | "focus" | "clear" | "visible-change" | "remove-tag" | "blur")[], "update:modelValue" | "change" | "focus" | "blur" | "clear" | "visible-change" | "remove-tag", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     emptyValues: ArrayConstructor;
     valueOnClear: import("../../../utils").EpPropFinalized<readonly [StringConstructor, NumberConstructor, BooleanConstructor, FunctionConstructor], unknown, unknown, undefined, boolean>;
     name: StringConstructor;
@@ -12726,8 +12727,8 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
-    onBlur?: ((...args: any[]) => any) | undefined;
     onFocus?: ((...args: any[]) => any) | undefined;
+    onBlur?: ((...args: any[]) => any) | undefined;
     onClear?: ((...args: any[]) => any) | undefined;
     "onVisible-change"?: ((...args: any[]) => any) | undefined;
     "onRemove-tag"?: ((...args: any[]) => any) | undefined;

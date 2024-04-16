@@ -2,7 +2,7 @@ import { watch } from 'vue';
 import { isNil } from 'lodash-unified';
 import { useVModel } from '@vueuse/core';
 import '../../../utils/index.mjs';
-import { genFileId } from './upload.mjs';
+import { genFileId } from './upload2.mjs';
 import { debugWarn, throwError } from '../../../utils/error.mjs';
 
 const SCOPE = "ElUpload";

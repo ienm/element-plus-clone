@@ -2,7 +2,7 @@ import { defineComponent, ref, computed, watch, nextTick, provide, reactive, onM
 import { useResizeObserver, useEventListener } from '@vueuse/core';
 import '../../../utils/index.mjs';
 import '../../../hooks/index.mjs';
-import Bar from './bar.mjs';
+import Bar from './bar2.mjs';
 import { scrollbarContextKey } from './constants.mjs';
 import { scrollbarProps, scrollbarEmits } from './scrollbar.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';

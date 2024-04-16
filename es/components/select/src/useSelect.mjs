@@ -629,6 +629,7 @@ const useSelect = (props, emit) => {
     tagStyle,
     collapseTagStyle,
     inputStyle,
+    virtualRef,
     popperRef,
     inputRef,
     tooltipRef,

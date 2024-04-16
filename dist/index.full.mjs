@@ -34362,7 +34362,7 @@ const useSelect$3 = (props, emit) => {
     menuVisibleOnFocus: false,
     isBeforeHide: false
   });
-  ref(null);
+  const virtualRef = ref(null);
   const selectRef = ref(null);
   const selectionRef = ref(null);
   const tooltipRef = ref(null);
@@ -34947,6 +34947,7 @@ const useSelect$3 = (props, emit) => {
     tagStyle,
     collapseTagStyle,
     inputStyle,
+    virtualRef,
     popperRef,
     inputRef,
     tooltipRef,

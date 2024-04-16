@@ -1,6 +1,6 @@
 import { NOOP } from '@vue/shared';
 import '../../../utils/index.mjs';
-import { uploadBaseProps } from './upload.mjs';
+import { uploadBaseProps } from './upload2.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 
 const uploadContentProps = buildProps({

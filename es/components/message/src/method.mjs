@@ -1,8 +1,8 @@
 import { isVNode, render, createVNode } from 'vue';
 import '../../../utils/index.mjs';
 import '../../config-provider/index.mjs';
-import MessageConstructor from './message.mjs';
-import { messageDefaults, messageTypes } from './message2.mjs';
+import MessageConstructor from './message2.mjs';
+import { messageDefaults, messageTypes } from './message.mjs';
 import { instances } from './instance.mjs';
 import { isString, isFunction } from '@vue/shared';
 import { isElement, isNumber } from '../../../utils/types.mjs';

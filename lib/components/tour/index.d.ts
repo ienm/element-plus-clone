@@ -267,7 +267,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
             };
         }, {
             onKeydown: (e: KeyboardEvent) => void;
-        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
             loop: BooleanConstructor;
             trapped: BooleanConstructor;
             focusTrapEl: import("vue").PropType<HTMLElement>;
@@ -542,7 +542,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
             };
-            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
             readonly loading: BooleanConstructor;
             readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
             readonly plain: BooleanConstructor;
@@ -572,7 +572,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
                 };
-                readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+                readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
                 readonly loading: BooleanConstructor;
                 readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
                 readonly plain: BooleanConstructor;
@@ -617,7 +617,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
                 ariaDisabled: boolean;
                 disabled: boolean;
                 autofocus: boolean;
-                type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+                type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
             } | {
                 ariaDisabled?: undefined;
                 disabled?: undefined;
@@ -707,7 +707,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
             };
-            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
             readonly loading: BooleanConstructor;
             readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
             readonly plain: BooleanConstructor;
@@ -734,7 +734,7 @@ export declare const ElTour: import("element-plus/es/utils").SFCWithInstall<impo
             readonly circle: boolean;
             readonly tag: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
             readonly loading: boolean;
-            readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+            readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
             readonly loadingIcon: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
             readonly autoInsertSpace: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly plain: boolean;
@@ -1062,7 +1062,7 @@ export declare const ElTourStep: import("element-plus/es/utils").SFCWithInstall<
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -1092,7 +1092,7 @@ export declare const ElTourStep: import("element-plus/es/utils").SFCWithInstall<
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
             };
-            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
             readonly loading: BooleanConstructor;
             readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
             readonly plain: BooleanConstructor;
@@ -1137,7 +1137,7 @@ export declare const ElTourStep: import("element-plus/es/utils").SFCWithInstall<
             ariaDisabled: boolean;
             disabled: boolean;
             autofocus: boolean;
-            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
         } | {
             ariaDisabled?: undefined;
             disabled?: undefined;
@@ -1227,7 +1227,7 @@ export declare const ElTourStep: import("element-plus/es/utils").SFCWithInstall<
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -1254,7 +1254,7 @@ export declare const ElTourStep: import("element-plus/es/utils").SFCWithInstall<
         readonly circle: boolean;
         readonly tag: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
         readonly loading: boolean;
-        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
+        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
         readonly loadingIcon: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
         readonly autoInsertSpace: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly plain: boolean;

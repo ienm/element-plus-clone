@@ -224,13 +224,14 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly style?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null) | ((new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null))[], unknown, unknown> | undefined;
         readonly ariaLabel?: string | undefined;
         readonly teleported?: boolean | undefined;
-        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly onFocus?: ((e: Event) => boolean | void) | undefined;
+        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly open?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly showArrow?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly contentClass?: string | undefined;
         readonly to?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined) | ((new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined))[], unknown, unknown>;
         readonly alwaysOn?: boolean | undefined;
+        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly delayDuration?: number | undefined;
         readonly onOpenChange?: ((state: boolean) => void) | undefined;
         readonly "onUpdate:open"?: ((state: boolean) => void) | undefined;
@@ -239,7 +240,6 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly onMouseEnter?: ((e: Event) => boolean | void) | undefined;
         readonly onMouseLeave?: ((e: Event) => boolean | void) | undefined;
         readonly arrowPadding?: number | undefined;
-        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly transitionProps?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null) | ((new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null))[], unknown, unknown> | undefined;
         readonly fullTransition?: boolean | undefined;
     };
@@ -255,13 +255,14 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly style?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null) | ((new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null))[], unknown, unknown> | undefined;
         readonly ariaLabel?: string | undefined;
         readonly teleported?: boolean | undefined;
-        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly onFocus?: ((e: Event) => boolean | void) | undefined;
+        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly open?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly showArrow?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly contentClass?: string | undefined;
         readonly to?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined) | ((new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined))[], unknown, unknown>;
         readonly alwaysOn?: boolean | undefined;
+        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly delayDuration?: number | undefined;
         readonly onOpenChange?: ((state: boolean) => void) | undefined;
         readonly "onUpdate:open"?: ((state: boolean) => void) | undefined;
@@ -270,7 +271,6 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly onMouseEnter?: ((e: Event) => boolean | void) | undefined;
         readonly onMouseLeave?: ((e: Event) => boolean | void) | undefined;
         readonly arrowPadding?: number | undefined;
-        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly transitionProps?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null) | ((new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null))[], unknown, unknown> | undefined;
         readonly fullTransition?: boolean | undefined;
     };
@@ -286,13 +286,14 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly style?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null) | ((new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null))[], unknown, unknown> | undefined;
         readonly ariaLabel?: string | undefined;
         readonly teleported?: boolean | undefined;
-        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly onFocus?: ((e: Event) => boolean | void) | undefined;
+        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly open?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly showArrow?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly contentClass?: string | undefined;
         readonly to?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined) | ((new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined))[], unknown, unknown>;
         readonly alwaysOn?: boolean | undefined;
+        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly delayDuration?: number | undefined;
         readonly onOpenChange?: ((state: boolean) => void) | undefined;
         readonly "onUpdate:open"?: ((state: boolean) => void) | undefined;
@@ -301,7 +302,6 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly onMouseEnter?: ((e: Event) => boolean | void) | undefined;
         readonly onMouseLeave?: ((e: Event) => boolean | void) | undefined;
         readonly arrowPadding?: number | undefined;
-        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly transitionProps?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null) | ((new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null))[], unknown, unknown> | undefined;
         readonly fullTransition?: boolean | undefined;
     };
@@ -317,13 +317,14 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly style?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null) | ((new (...args: any[]) => import("vue").CSSProperties) | (() => import("vue").CSSProperties | null))[], unknown, unknown> | undefined;
         readonly ariaLabel?: string | undefined;
         readonly teleported?: boolean | undefined;
-        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly onFocus?: ((e: Event) => boolean | void) | undefined;
+        readonly onBlur?: ((e: Event) => boolean | void) | undefined;
         readonly open?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly showArrow?: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown> | undefined;
         readonly contentClass?: string | undefined;
         readonly to?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined) | ((new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined))[], unknown, unknown>;
         readonly alwaysOn?: boolean | undefined;
+        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly delayDuration?: number | undefined;
         readonly onOpenChange?: ((state: boolean) => void) | undefined;
         readonly "onUpdate:open"?: ((state: boolean) => void) | undefined;
@@ -332,7 +333,6 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         readonly onMouseEnter?: ((e: Event) => boolean | void) | undefined;
         readonly onMouseLeave?: ((e: Event) => boolean | void) | undefined;
         readonly arrowPadding?: number | undefined;
-        readonly reference?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown> | undefined;
         readonly transitionProps?: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null) | ((new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null))[], unknown, unknown> | undefined;
         readonly fullTransition?: boolean | undefined;
     };
@@ -619,8 +619,8 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
         strategy: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("@floating-ui/core").Strategy & {}) | (() => import("@floating-ui/core").Strategy) | ((new (...args: any[]) => import("@floating-ui/core").Strategy & {}) | (() => import("@floating-ui/core").Strategy))[], "fixed" | "absolute", unknown>;
         nowrap: boolean;
         showArrow: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
-        arrowPadding: number;
         reference: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown>;
+        arrowPadding: number;
     }>;
     TooltipV2Trigger: import("vue").DefineComponent<{
         onBlur: {
@@ -867,10 +867,10 @@ export declare const ElTooltipV2: import("element-plus/es/utils").SFCWithInstall
     readonly showArrow: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly to: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined) | ((new (...args: any[]) => (string | import("vue").RendererElement | null | undefined) & {}) | (() => string | import("vue").RendererElement | null | undefined))[], unknown, unknown>;
     readonly alwaysOn: boolean;
+    readonly reference: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown>;
     readonly delayDuration: number;
     readonly defaultOpen: boolean;
     readonly arrowPadding: number;
-    readonly reference: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null) | ((new (...args: any[]) => HTMLElement | import("@floating-ui/dom").VirtualElement) | (() => HTMLElement | import("@floating-ui/dom").VirtualElement | null))[], unknown, unknown>;
     readonly transitionProps: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null) | ((new (...args: any[]) => import("vue").TransitionProps) | (() => import("vue").TransitionProps | null))[], unknown, unknown>;
     readonly fullTransition: boolean;
 }>> & Record<string, any>;

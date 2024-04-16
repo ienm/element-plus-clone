@@ -4,7 +4,7 @@ import localeData from 'dayjs/plugin/localeData.js';
 import '../../../hooks/index.mjs';
 import '../../time-picker/index.mjs';
 import '../../../constants/index.mjs';
-import { getPrevMonthLastDays, getMonthDays, toNestedArr } from './date-table2.mjs';
+import { getPrevMonthLastDays, getMonthDays, toNestedArr } from './date-table.mjs';
 import { useLocale } from '../../../hooks/use-locale/index.mjs';
 import { rangeArr } from '../../time-picker/src/utils.mjs';
 import { WEEK_DAYS } from '../../../constants/date.mjs';

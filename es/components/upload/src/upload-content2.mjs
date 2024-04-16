@@ -6,7 +6,7 @@ import '../../../utils/index.mjs';
 import '../../form/index.mjs';
 import UploadDragger from './upload-dragger.mjs';
 import { uploadContentProps } from './upload-content.mjs';
-import { genFileId } from './upload.mjs';
+import { genFileId } from './upload2.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';

@@ -50,7 +50,7 @@ export declare const messageProps: {
         readonly prototype: any;
     })[], unknown, unknown, undefined, boolean>;
     readonly showClose: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
-    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "warning" | "info", unknown, "info", boolean>;
+    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "warning" | "error" | "info", unknown, "info", boolean>;
     readonly plain: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
     readonly offset: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 16, boolean>;
     readonly zIndex: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
