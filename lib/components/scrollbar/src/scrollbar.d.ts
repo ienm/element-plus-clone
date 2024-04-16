@@ -16,7 +16,7 @@ export declare const scrollbarProps: {
     readonly role: StringConstructor;
     readonly ariaLabel: StringConstructor;
     readonly ariaOrientation: {
-        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", unknown>>;
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", unknown>>;
         readonly required: false;
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;

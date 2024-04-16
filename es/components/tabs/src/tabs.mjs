@@ -1,4 +1,4 @@
-import { defineComponent, getCurrentInstance, ref, computed, watch, nextTick, provide, createVNode, renderSlot } from 'vue';
+import { defineComponent, getCurrentInstance, ref, watch, nextTick, provide, createVNode, renderSlot } from 'vue';
 import '../../../utils/index.mjs';
 import '../../../constants/index.mjs';
 import { ElIcon } from '../../icon/index.mjs';
@@ -12,7 +12,6 @@ import { isNumber, isUndefined } from '../../../utils/types.mjs';
 import { UPDATE_MODEL_EVENT } from '../../../constants/event.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { useOrderedChildren } from '../../../hooks/use-ordered-children/index.mjs';
-import { useDeprecated } from '../../../hooks/use-deprecated/index.mjs';
 import { EVENT_CODE } from '../../../constants/aria.mjs';
 
 const tabsProps = buildProps({
@@ -20,9 +19,6 @@ const tabsProps = buildProps({
     type: String,
     values: ["card", "border-card", ""],
     default: ""
-  },
-  activeName: {
-    type: [String, Number]
   },
   closable: Boolean,
   addable: Boolean,
@@ -59,7 +55,7 @@ const Tabs = defineComponent({
     slots,
     expose
   }) {
-    var _a, _b;
+    var _a;
     const ns = useNamespace("tabs");
     const {
       children: panes,
@@ -67,9 +63,9 @@ const Tabs = defineComponent({
       removeChild: unregisterPane
     } = useOrderedChildren(getCurrentInstance(), "ElTabPane");
     const nav$ = ref();
-    const currentName = ref((_b = (_a = props.modelValue) != null ? _a : props.activeName) != null ? _b : "0");
+    const currentName = ref((_a = props.modelValue) != null ? _a : "0");
     const setCurrentName = async (value, trigger = false) => {
-      var _a2, _b2, _c;
+      var _a2, _b, _c;
       if (currentName.value === value || isUndefined(value))
         return;
       try {
@@ -80,7 +76,7 @@ const Tabs = defineComponent({
             emit(UPDATE_MODEL_EVENT, value);
             emit("tabChange", value);
           }
-          (_c = (_b2 = nav$.value) == null ? void 0 : _b2.removeFocus) == null ? void 0 : _c.call(_b2);
+          (_c = (_b = nav$.value) == null ? void 0 : _b.removeFocus) == null ? void 0 : _c.call(_b);
         }
       } catch (e) {
       }
@@ -102,15 +98,6 @@ const Tabs = defineComponent({
       emit("edit", void 0, "add");
       emit("tabAdd");
     };
-    useDeprecated({
-      from: '"activeName"',
-      replacement: '"model-value" or "v-model"',
-      scope: "ElTabs",
-      version: "2.3.0",
-      ref: "https://element-plus.org/en-US/component/tabs.html#attributes",
-      type: "Attribute"
-    }, computed(() => !!props.activeName));
-    watch(() => props.activeName, (modelValue) => setCurrentName(modelValue));
     watch(() => props.modelValue, (modelValue) => setCurrentName(modelValue));
     watch(currentName, async () => {
       var _a2;
@@ -127,7 +114,7 @@ const Tabs = defineComponent({
       currentName
     });
     return () => {
-      const addSlot = slots.addIcon;
+      const addSlot = slots["add-icon"];
       const newButton = props.editable || props.addable ? createVNode("span", {
         "class": ns.e("new-tab"),
         "tabindex": "0",
@@ -136,7 +123,7 @@ const Tabs = defineComponent({
           if (ev.code === EVENT_CODE.enter)
             handleTabAdd();
         }
-      }, [addSlot ? renderSlot(slots, "addIcon") : createVNode(ElIcon, {
+      }, [addSlot ? renderSlot(slots, "add-icon") : createVNode(ElIcon, {
         "class": ns.is("icon-plus")
       }, {
         default: () => [createVNode(Plus, null, null)]

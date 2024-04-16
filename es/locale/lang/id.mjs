@@ -1,6 +1,9 @@
 var id = {
   name: "id",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "Pilih",
       clear: "Kosongkan"
@@ -123,6 +126,11 @@ var id = {
     popconfirm: {
       confirmButtonText: "Ya",
       cancelButtonText: "Tidak"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

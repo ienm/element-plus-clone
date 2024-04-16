@@ -9,7 +9,7 @@ import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { usePopperContainerId } from '../../../hooks/use-popper-container/index.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { composeEventHandlers } from '../../../utils/dom/event.mjs';
-import ElPopperContent from '../../popper/src/content.mjs';
+import ElPopperContent from '../../popper/src/content2.mjs';
 
 const __default__ = defineComponent({
   name: "ElTooltipContent",
@@ -177,7 +177,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var ElTooltipContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tooltip\\src\\content.vue"]]);
+var ElTooltipContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "content.vue"]]);
 
 export { ElTooltipContent as default };
 //# sourceMappingURL=content2.mjs.map

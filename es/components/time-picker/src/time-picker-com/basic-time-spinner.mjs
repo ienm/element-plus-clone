@@ -303,7 +303,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var TimeSpinner = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\time-picker\\src\\time-picker-com\\basic-time-spinner.vue"]]);
+var TimeSpinner = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "basic-time-spinner.vue"]]);
 
 export { TimeSpinner as default };
 //# sourceMappingURL=basic-time-spinner.mjs.map

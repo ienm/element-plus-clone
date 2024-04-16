@@ -139,7 +139,7 @@ declare const _default: import("vue").DefineComponent<{
             startOf: (unit: import("dayjs").OpUnitType) => import("dayjs").Dayjs;
             endOf: (unit: import("dayjs").OpUnitType) => import("dayjs").Dayjs;
             format: (template?: string | undefined) => string;
-            diff: (date?: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: "year" | "month" | "date" | "dates" | "week" | "D" | "M" | "y" | "weeks" | "months" | "m" | "s" | "day" | "hour" | "minute" | "second" | "millisecond" | "hours" | "minutes" | "seconds" | "milliseconds" | "days" | "years" | "d" | "h" | "ms" | "w" | "quarter" | "quarters" | "Q" | undefined, float?: boolean | undefined) => number;
+            diff: (date?: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: "year" | "years" | "month" | "date" | "dates" | "week" | "D" | "M" | "y" | "weeks" | "months" | "m" | "s" | "day" | "hour" | "minute" | "second" | "millisecond" | "hours" | "minutes" | "seconds" | "milliseconds" | "days" | "d" | "h" | "ms" | "w" | "quarter" | "quarters" | "Q" | undefined, float?: boolean | undefined) => number;
             valueOf: () => number;
             unix: () => number;
             daysInMonth: () => number;
@@ -275,7 +275,7 @@ declare const _default: import("vue").DefineComponent<{
             startOf: (unit: import("dayjs").OpUnitType) => import("dayjs").Dayjs;
             endOf: (unit: import("dayjs").OpUnitType) => import("dayjs").Dayjs;
             format: (template?: string | undefined) => string;
-            diff: (date?: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: "year" | "month" | "date" | "dates" | "week" | "D" | "M" | "y" | "weeks" | "months" | "m" | "s" | "day" | "hour" | "minute" | "second" | "millisecond" | "hours" | "minutes" | "seconds" | "milliseconds" | "days" | "years" | "d" | "h" | "ms" | "w" | "quarter" | "quarters" | "Q" | undefined, float?: boolean | undefined) => number;
+            diff: (date?: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: "year" | "years" | "month" | "date" | "dates" | "week" | "D" | "M" | "y" | "weeks" | "months" | "m" | "s" | "day" | "hour" | "minute" | "second" | "millisecond" | "hours" | "minutes" | "seconds" | "milliseconds" | "days" | "d" | "h" | "ms" | "w" | "quarter" | "quarters" | "Q" | undefined, float?: boolean | undefined) => number;
             valueOf: () => number;
             unix: () => number;
             daysInMonth: () => number;
@@ -304,7 +304,7 @@ declare const _default: import("vue").DefineComponent<{
             isSameOrAfter: (date: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: import("dayjs").OpUnitType | undefined) => boolean;
             isSameOrBefore: (date: string | number | Date | import("dayjs").Dayjs | null | undefined, unit?: import("dayjs").OpUnitType | undefined) => boolean;
         } | undefined;
-        type?: ("week" | "normal" | "prev-month" | "next-month" | "today") | undefined;
+        type?: ("week" | "normal" | "today" | "prev-month" | "next-month") | undefined;
     }[][]>;
     tbodyRef: import("vue").Ref<HTMLElement | undefined>;
     currentCellRef: import("vue").Ref<HTMLElement | undefined>;
@@ -336,7 +336,7 @@ declare const _default: import("vue").DefineComponent<{
         };
     }, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }>[] | JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    }>, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
         readonly cell: {
             readonly type: import("vue").PropType<import("../date-picker.type").DateCell>;
             readonly required: false;

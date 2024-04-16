@@ -4,17 +4,17 @@ declare const _default: import("vue").DefineComponent<{
     trapped: BooleanConstructor;
     focusTrapEl: PropType<HTMLElement>;
     focusStartEl: {
-        type: PropType<HTMLElement | "first" | "container">;
+        type: PropType<HTMLElement | "container" | "first">;
         default: string;
     };
 }, {
     onKeydown: (e: KeyboardEvent) => void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     loop: BooleanConstructor;
     trapped: BooleanConstructor;
     focusTrapEl: PropType<HTMLElement>;
     focusStartEl: {
-        type: PropType<HTMLElement | "first" | "container">;
+        type: PropType<HTMLElement | "container" | "first">;
         default: string;
     };
 }>> & {
@@ -27,6 +27,6 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     trapped: boolean;
     loop: boolean;
-    focusStartEl: HTMLElement | "first" | "container";
+    focusStartEl: HTMLElement | "container" | "first";
 }>;
 export default _default;

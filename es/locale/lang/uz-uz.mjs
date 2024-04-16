@@ -1,6 +1,9 @@
 var uzUz = {
   name: "uz-uz",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "Qabul qilish",
       clear: "Tozalash"
@@ -122,6 +125,11 @@ var uzUz = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

@@ -9,6 +9,9 @@
   var nbNo = {
     name: "nb-no",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "T\xF8m"
@@ -129,6 +132,11 @@
       popconfirm: {
         confirmButtonText: "Ja",
         cancelButtonText: "Nei"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

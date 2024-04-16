@@ -1,11 +1,5 @@
 export declare const ElTabs: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
     readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "card" | "border-card", unknown, "", boolean>;
-    readonly activeName: {
-        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
-        readonly required: false;
-        readonly validator: ((val: unknown) => boolean) | undefined;
-        __epPropKey: true;
-    };
     readonly closable: BooleanConstructor;
     readonly addable: BooleanConstructor;
     readonly modelValue: {
@@ -15,7 +9,7 @@ export declare const ElTabs: import("element-plus/es/utils").SFCWithInstall<impo
         __epPropKey: true;
     };
     readonly editable: BooleanConstructor;
-    readonly tabPosition: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "top" | "bottom" | "right" | "left", unknown, "top", boolean>;
+    readonly tabPosition: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "top" | "bottom" | "left" | "right", unknown, "top", boolean>;
     readonly beforeLeave: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>) | (() => (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>) | {
         (): (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>;
         new (): any;
@@ -51,12 +45,6 @@ export declare const ElTabs: import("element-plus/es/utils").SFCWithInstall<impo
     tabAdd: () => boolean;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "card" | "border-card", unknown, "", boolean>;
-    readonly activeName: {
-        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
-        readonly required: false;
-        readonly validator: ((val: unknown) => boolean) | undefined;
-        __epPropKey: true;
-    };
     readonly closable: BooleanConstructor;
     readonly addable: BooleanConstructor;
     readonly modelValue: {
@@ -66,7 +54,7 @@ export declare const ElTabs: import("element-plus/es/utils").SFCWithInstall<impo
         __epPropKey: true;
     };
     readonly editable: BooleanConstructor;
-    readonly tabPosition: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "top" | "bottom" | "right" | "left", unknown, "top", boolean>;
+    readonly tabPosition: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "top" | "bottom" | "left" | "right", unknown, "top", boolean>;
     readonly beforeLeave: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>) | (() => (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>) | {
         (): (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>;
         new (): any;
@@ -106,7 +94,7 @@ export declare const ElTabs: import("element-plus/es/utils").SFCWithInstall<impo
     readonly stretch: boolean;
     readonly editable: boolean;
     readonly beforeLeave: (newName: import("./src/tabs").TabPaneName, oldName: import("./src/tabs").TabPaneName) => import("element-plus/es/utils").Awaitable<boolean | void>;
-    readonly tabPosition: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "top" | "bottom" | "right" | "left", unknown>;
+    readonly tabPosition: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "top" | "bottom" | "left" | "right", unknown>;
     readonly addable: boolean;
 }>> & {
     TabPane: import("vue").DefineComponent<{

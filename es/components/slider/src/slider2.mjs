@@ -233,7 +233,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Slider = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\slider\\src\\slider.vue"]]);
+var Slider = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "slider.vue"]]);
 
 export { Slider as default };
 //# sourceMappingURL=slider2.mjs.map

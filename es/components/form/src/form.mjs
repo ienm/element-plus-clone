@@ -35,6 +35,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }
       ];
     });
+    const getField = (prop) => {
+      return fields.find((field) => field.prop === prop);
+    };
     const addField = (field) => {
       fields.push(field);
     };
@@ -129,6 +132,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       resetFields,
       clearValidate,
       validateField,
+      getField,
       addField,
       removeField,
       ...useFormLabelWidth()
@@ -149,7 +153,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Form = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\form\\src\\form.vue"]]);
+var Form = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "form.vue"]]);
 
 export { Form as default };
 //# sourceMappingURL=form.mjs.map

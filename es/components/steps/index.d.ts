@@ -1,7 +1,7 @@
 export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
     readonly space: import("element-plus/es/utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
     readonly active: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-    readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly alignCenter: {
         readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
         readonly required: false;
@@ -14,13 +14,13 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-    readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+    readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+    readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly space: import("element-plus/es/utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
         readonly active: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-        readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+        readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
         readonly alignCenter: {
             readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
             readonly required: false;
@@ -33,8 +33,8 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-        readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+        readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+        readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
     }>> & {
         onChange?: ((newVal: number, oldVal: number) => any) | undefined;
     }>>;
@@ -65,7 +65,7 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly space: import("element-plus/es/utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
     readonly active: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-    readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly alignCenter: {
         readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
         readonly required: false;
@@ -78,16 +78,16 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-    readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+    readonly finishStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+    readonly processStatus: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
 }>> & {
     onChange?: ((newVal: number, oldVal: number) => any) | undefined;
 }, {
-    readonly space: import("element-plus/es/utils").EpPropMergeType<readonly [NumberConstructor, StringConstructor], unknown, unknown>;
+    readonly direction: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", unknown>;
     readonly active: number;
-    readonly direction: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", unknown>;
-    readonly finishStatus: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown>;
-    readonly processStatus: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown>;
+    readonly space: import("element-plus/es/utils").EpPropMergeType<readonly [NumberConstructor, StringConstructor], unknown, unknown>;
+    readonly finishStatus: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown>;
+    readonly processStatus: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown>;
 }>> & {
     Step: import("vue").DefineComponent<{
         readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
@@ -98,7 +98,7 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
             __epPropKey: true;
         };
         readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
     }, {
         props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
             readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
@@ -109,7 +109,7 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
                 __epPropKey: true;
             };
             readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-            readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+            readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | ((...args: unknown[]) => any) | undefined;
         }>>;
@@ -229,11 +229,11 @@ export declare const ElSteps: import("element-plus/es/utils").SFCWithInstall<imp
             __epPropKey: true;
         };
         readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
     }>>, {
         readonly title: string;
         readonly description: string;
-        readonly status: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown>;
+        readonly status: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown>;
     }>;
 };
 export default ElSteps;
@@ -246,7 +246,7 @@ export declare const ElStep: import("element-plus/es/utils").SFCWithInstall<impo
         __epPropKey: true;
     };
     readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+    readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
@@ -257,7 +257,7 @@ export declare const ElStep: import("element-plus/es/utils").SFCWithInstall<impo
             __epPropKey: true;
         };
         readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+        readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
     }>> & {
         [x: string & `on${string}`]: ((...args: any[]) => any) | ((...args: unknown[]) => any) | undefined;
     }>>;
@@ -377,11 +377,11 @@ export declare const ElStep: import("element-plus/es/utils").SFCWithInstall<impo
         __epPropKey: true;
     };
     readonly description: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown, "", boolean>;
+    readonly status: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown, "", boolean>;
 }>>, {
     readonly title: string;
     readonly description: string;
-    readonly status: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "success" | "error" | "wait" | "finish" | "process", unknown>;
+    readonly status: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "error" | "success" | "wait" | "finish" | "process", unknown>;
 }>>;
 export * from './src/item';
 export * from './src/steps';

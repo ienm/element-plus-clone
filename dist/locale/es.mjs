@@ -3,6 +3,9 @@
 var es = {
   name: "es",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "Confirmar",
       clear: "Despejar"
@@ -122,6 +125,11 @@ var es = {
     popconfirm: {
       confirmButtonText: "Si",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

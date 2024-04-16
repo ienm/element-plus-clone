@@ -71,7 +71,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var TabPane = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tabs\\src\\tab-pane.vue"]]);
+var TabPane = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "tab-pane.vue"]]);
 
 export { TabPane as default };
 //# sourceMappingURL=tab-pane2.mjs.map

@@ -3,12 +3,12 @@ import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue';
 import '../../../utils/index.mjs';
 import '../../../hooks/index.mjs';
 import { elPaginationKey } from './constants.mjs';
-import Prev from './components/prev.mjs';
+import Prev from './components/prev2.mjs';
 import Next from './components/next2.mjs';
 import Sizes from './components/sizes.mjs';
-import Jumper from './components/jumper2.mjs';
-import Total from './components/total2.mjs';
-import Pager from './components/pager2.mjs';
+import Jumper from './components/jumper.mjs';
+import Total from './components/total.mjs';
+import Pager from './components/pager.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 import { isNumber } from '../../../utils/types.mjs';
 import { mutable } from '../../../utils/typescript.mjs';
@@ -73,6 +73,7 @@ const paginationEmits = {
   "update:current-page": (val) => isNumber(val),
   "update:page-size": (val) => isNumber(val),
   "size-change": (val) => isNumber(val),
+  change: (currentPage, pageSize) => isNumber(currentPage) && isNumber(pageSize),
   "current-change": (val) => isNumber(val),
   "prev-click": (val) => isNumber(val),
   "next-click": (val) => isNumber(val)
@@ -157,6 +158,9 @@ var Pagination = defineComponent({
       if (currentPageBridge.value > val)
         currentPageBridge.value = val;
     });
+    watch([currentPageBridge, pageSizeBridge], (value) => {
+      emit("change", ...value);
+    }, { flush: "post" });
     function handleCurrentChange(val) {
       currentPageBridge.value = val;
     }

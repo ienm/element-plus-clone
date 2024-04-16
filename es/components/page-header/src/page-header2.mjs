@@ -102,7 +102,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var PageHeader = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\page-header\\src\\page-header.vue"]]);
+var PageHeader = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "page-header.vue"]]);
 
 export { PageHeader as default };
 //# sourceMappingURL=page-header2.mjs.map

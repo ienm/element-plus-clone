@@ -4,7 +4,15 @@ import { buildProps, definePropType } from '../../../../utils/vue/props/runtime.
 import { datePickTypes } from '../../../../constants/date.mjs';
 import { isArray } from '@vue/shared';
 
-const selectionModes = ["date", "dates", "year", "month", "week", "range"];
+const selectionModes = [
+  "date",
+  "dates",
+  "year",
+  "years",
+  "month",
+  "week",
+  "range"
+];
 const datePickerSharedProps = buildProps({
   disabledDate: {
     type: definePropType(Function)

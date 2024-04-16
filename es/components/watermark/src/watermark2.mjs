@@ -208,7 +208,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Watermark = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\watermark\\src\\watermark.vue"]]);
+var Watermark = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "watermark.vue"]]);
 
 export { Watermark as default };
 //# sourceMappingURL=watermark2.mjs.map

@@ -9,6 +9,9 @@
   var de = {
     name: "de",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "Leeren"
@@ -111,6 +114,11 @@
         clearFilter: "Alles ",
         sumText: "Summe"
       },
+      tour: {
+        next: "Weiter",
+        previous: "Zur\xFCck",
+        finish: "Fertig"
+      },
       tree: {
         emptyText: "Keine Eintr\xE4ge"
       },
@@ -131,6 +139,11 @@
       popconfirm: {
         confirmButtonText: "Ja",
         cancelButtonText: "Nein"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

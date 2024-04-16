@@ -9,6 +9,9 @@
   var az = {
     name: "az",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "T\u0259sdiql\u0259",
         clear: "T\u0259mizl\u0259"
@@ -133,6 +136,11 @@
       },
       empty: {
         description: "M\u0259lumat yoxdur"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

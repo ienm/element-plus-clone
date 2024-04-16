@@ -9,6 +9,9 @@
   var et = {
     name: "et",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "T\xFChjenda"
@@ -129,6 +132,11 @@
       popconfirm: {
         confirmButtonText: "Jah",
         cancelButtonText: "Ei"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

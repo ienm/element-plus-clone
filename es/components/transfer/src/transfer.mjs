@@ -160,7 +160,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Transfer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\transfer\\src\\transfer.vue"]]);
+var Transfer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "transfer.vue"]]);
 
 export { Transfer as default };
 //# sourceMappingURL=transfer.mjs.map

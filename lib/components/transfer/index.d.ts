@@ -281,11 +281,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -326,11 +338,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -376,6 +400,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 hasOwnLabel: import("vue").ComputedRef<boolean>;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 onClickRoot: (e: MouseEvent) => Promise<void>;
                 ns: {
@@ -410,11 +435,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -449,6 +486,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -458,6 +496,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;
@@ -471,11 +511,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -516,11 +568,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                             type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                             default: undefined;
                         };
+                        value: {
+                            type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                            default: undefined;
+                        };
                         indeterminate: BooleanConstructor;
                         disabled: BooleanConstructor;
                         checked: BooleanConstructor;
                         name: {
                             type: StringConstructor;
+                            default: undefined;
+                        };
+                        trueValue: {
+                            type: (NumberConstructor | StringConstructor)[];
+                            default: undefined;
+                        };
+                        falseValue: {
+                            type: (NumberConstructor | StringConstructor)[];
                             default: undefined;
                         };
                         trueLabel: {
@@ -563,6 +627,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     isDisabled: import("vue").ComputedRef<boolean>;
                     checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                     model: import("vue").WritableComputedRef<any>;
+                    actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                     handleChange: (e: Event) => void;
                     checkboxGroup: ({
                         modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -600,11 +665,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -639,6 +716,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                     "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 }, {
+                    value: string | number | boolean | Record<string, any>;
                     modelValue: string | number | boolean;
                     label: string | number | boolean | Record<string, any>;
                     id: string;
@@ -648,6 +726,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     border: boolean;
                     indeterminate: boolean;
                     checked: boolean;
+                    trueValue: string | number;
+                    falseValue: string | number;
                     trueLabel: string | number;
                     falseLabel: string | number;
                     controls: string;
@@ -841,9 +921,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -907,9 +999,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     };
                     readonly disabled: BooleanConstructor;
                     readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                    readonly maxlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
+                    readonly minlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
                     readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                     readonly resize: {
-                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                         readonly required: false;
                         readonly validator: ((val: unknown) => boolean) | undefined;
                         __epPropKey: true;
@@ -966,17 +1070,17 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     onChange?: ((value: string) => any) | undefined;
                     "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                     onInput?: ((value: string) => any) | undefined;
-                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onBlur?: ((evt: FocusEvent) => any) | undefined;
+                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onClear?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
-                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
                 rawAttrs: {
                     [x: string]: unknown;
                 };
@@ -987,8 +1091,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 containerKls: import("vue").ComputedRef<unknown[]>;
                 wrapperKls: import("vue").ComputedRef<string[]>;
                 attrs: import("vue").ComputedRef<Record<string, unknown>>;
-                form: import("..").FormContext | undefined;
-                formItem: import("..").FormItemContext | undefined;
+                elForm: import("..").FormContext | undefined;
+                elFormItem: import("..").FormItemContext | undefined;
                 inputId: import("vue").Ref<string | undefined>;
                 inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 inputDisabled: import("vue").ComputedRef<boolean>;
@@ -1041,7 +1145,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 handleFocus: (event: FocusEvent) => void;
                 handleBlur: (event: FocusEvent) => void;
                 needStatusIcon: import("vue").ComputedRef<boolean>;
-                validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+                validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
                 validateIcon: import("vue").ComputedRef<any>;
                 passwordIcon: import("vue").ComputedRef<any>;
                 containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -1160,9 +1264,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -1219,15 +1335,15 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }, {
                 readonly type: string;
                 readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;
@@ -1401,11 +1517,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -1446,11 +1574,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -1496,6 +1636,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             hasOwnLabel: import("vue").ComputedRef<boolean>;
             model: import("vue").WritableComputedRef<any>;
+            actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
             handleChange: (e: Event) => void;
             onClickRoot: (e: MouseEvent) => Promise<void>;
             ns: {
@@ -1530,11 +1671,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -1569,6 +1722,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
             "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
         }, {
+            value: string | number | boolean | Record<string, any>;
             modelValue: string | number | boolean;
             label: string | number | boolean | Record<string, any>;
             id: string;
@@ -1578,6 +1732,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             border: boolean;
             indeterminate: boolean;
             checked: boolean;
+            trueValue: string | number;
+            falseValue: string | number;
             trueLabel: string | number;
             falseLabel: string | number;
             controls: string;
@@ -1591,11 +1747,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -1636,11 +1804,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -1683,6 +1863,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 isDisabled: import("vue").ComputedRef<boolean>;
                 checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 checkboxGroup: ({
                     modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -1720,11 +1901,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -1759,6 +1952,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -1768,6 +1962,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;
@@ -1961,9 +2157,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -2027,9 +2235,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -2086,17 +2306,17 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             rawAttrs: {
                 [x: string]: unknown;
             };
@@ -2107,8 +2327,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             containerKls: import("vue").ComputedRef<unknown[]>;
             wrapperKls: import("vue").ComputedRef<string[]>;
             attrs: import("vue").ComputedRef<Record<string, unknown>>;
-            form: import("..").FormContext | undefined;
-            formItem: import("..").FormItemContext | undefined;
+            elForm: import("..").FormContext | undefined;
+            elFormItem: import("..").FormItemContext | undefined;
             inputId: import("vue").Ref<string | undefined>;
             inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             inputDisabled: import("vue").ComputedRef<boolean>;
@@ -2161,7 +2381,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             handleFocus: (event: FocusEvent) => void;
             handleBlur: (event: FocusEvent) => void;
             needStatusIcon: import("vue").ComputedRef<boolean>;
-            validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+            validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
             validateIcon: import("vue").ComputedRef<any>;
             passwordIcon: import("vue").ComputedRef<any>;
             containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -2280,9 +2500,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -2339,15 +2571,15 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onBlur?: ((evt: FocusEvent) => any) | undefined;
+            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         }, {
             readonly type: string;
             readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;
@@ -2547,11 +2779,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -2592,11 +2836,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -2642,6 +2898,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 hasOwnLabel: import("vue").ComputedRef<boolean>;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 onClickRoot: (e: MouseEvent) => Promise<void>;
                 ns: {
@@ -2676,11 +2933,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -2715,6 +2984,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -2724,6 +2994,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;
@@ -2737,11 +3009,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -2782,11 +3066,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                             type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                             default: undefined;
                         };
+                        value: {
+                            type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                            default: undefined;
+                        };
                         indeterminate: BooleanConstructor;
                         disabled: BooleanConstructor;
                         checked: BooleanConstructor;
                         name: {
                             type: StringConstructor;
+                            default: undefined;
+                        };
+                        trueValue: {
+                            type: (NumberConstructor | StringConstructor)[];
+                            default: undefined;
+                        };
+                        falseValue: {
+                            type: (NumberConstructor | StringConstructor)[];
                             default: undefined;
                         };
                         trueLabel: {
@@ -2829,6 +3125,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     isDisabled: import("vue").ComputedRef<boolean>;
                     checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                     model: import("vue").WritableComputedRef<any>;
+                    actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                     handleChange: (e: Event) => void;
                     checkboxGroup: ({
                         modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -2866,11 +3163,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -2905,6 +3214,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                     "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 }, {
+                    value: string | number | boolean | Record<string, any>;
                     modelValue: string | number | boolean;
                     label: string | number | boolean | Record<string, any>;
                     id: string;
@@ -2914,6 +3224,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     border: boolean;
                     indeterminate: boolean;
                     checked: boolean;
+                    trueValue: string | number;
+                    falseValue: string | number;
                     trueLabel: string | number;
                     falseLabel: string | number;
                     controls: string;
@@ -3107,9 +3419,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -3173,9 +3497,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     };
                     readonly disabled: BooleanConstructor;
                     readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                    readonly maxlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
+                    readonly minlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
                     readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                     readonly resize: {
-                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                         readonly required: false;
                         readonly validator: ((val: unknown) => boolean) | undefined;
                         __epPropKey: true;
@@ -3232,17 +3568,17 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     onChange?: ((value: string) => any) | undefined;
                     "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                     onInput?: ((value: string) => any) | undefined;
-                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onBlur?: ((evt: FocusEvent) => any) | undefined;
+                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onClear?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
-                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
                 rawAttrs: {
                     [x: string]: unknown;
                 };
@@ -3253,8 +3589,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 containerKls: import("vue").ComputedRef<unknown[]>;
                 wrapperKls: import("vue").ComputedRef<string[]>;
                 attrs: import("vue").ComputedRef<Record<string, unknown>>;
-                form: import("..").FormContext | undefined;
-                formItem: import("..").FormItemContext | undefined;
+                elForm: import("..").FormContext | undefined;
+                elFormItem: import("..").FormItemContext | undefined;
                 inputId: import("vue").Ref<string | undefined>;
                 inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 inputDisabled: import("vue").ComputedRef<boolean>;
@@ -3307,7 +3643,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 handleFocus: (event: FocusEvent) => void;
                 handleBlur: (event: FocusEvent) => void;
                 needStatusIcon: import("vue").ComputedRef<boolean>;
-                validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+                validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
                 validateIcon: import("vue").ComputedRef<any>;
                 passwordIcon: import("vue").ComputedRef<any>;
                 containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -3426,9 +3762,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -3485,15 +3833,15 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }, {
                 readonly type: string;
                 readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;
@@ -3667,11 +4015,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -3712,11 +4072,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -3762,6 +4134,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             hasOwnLabel: import("vue").ComputedRef<boolean>;
             model: import("vue").WritableComputedRef<any>;
+            actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
             handleChange: (e: Event) => void;
             onClickRoot: (e: MouseEvent) => Promise<void>;
             ns: {
@@ -3796,11 +4169,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -3835,6 +4220,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
             "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
         }, {
+            value: string | number | boolean | Record<string, any>;
             modelValue: string | number | boolean;
             label: string | number | boolean | Record<string, any>;
             id: string;
@@ -3844,6 +4230,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             border: boolean;
             indeterminate: boolean;
             checked: boolean;
+            trueValue: string | number;
+            falseValue: string | number;
             trueLabel: string | number;
             falseLabel: string | number;
             controls: string;
@@ -3857,11 +4245,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -3902,11 +4302,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -3949,6 +4361,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 isDisabled: import("vue").ComputedRef<boolean>;
                 checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 checkboxGroup: ({
                     modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -3986,11 +4399,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -4025,6 +4450,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -4034,6 +4460,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;
@@ -4227,9 +4655,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -4293,9 +4733,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -4352,17 +4804,17 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             rawAttrs: {
                 [x: string]: unknown;
             };
@@ -4373,8 +4825,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             containerKls: import("vue").ComputedRef<unknown[]>;
             wrapperKls: import("vue").ComputedRef<string[]>;
             attrs: import("vue").ComputedRef<Record<string, unknown>>;
-            form: import("..").FormContext | undefined;
-            formItem: import("..").FormItemContext | undefined;
+            elForm: import("..").FormContext | undefined;
+            elFormItem: import("..").FormItemContext | undefined;
             inputId: import("vue").Ref<string | undefined>;
             inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             inputDisabled: import("vue").ComputedRef<boolean>;
@@ -4427,7 +4879,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             handleFocus: (event: FocusEvent) => void;
             handleBlur: (event: FocusEvent) => void;
             needStatusIcon: import("vue").ComputedRef<boolean>;
-            validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+            validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
             validateIcon: import("vue").ComputedRef<any>;
             passwordIcon: import("vue").ComputedRef<any>;
             containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -4546,9 +4998,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -4605,15 +5069,15 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onBlur?: ((evt: FocusEvent) => any) | undefined;
+            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         }, {
             readonly type: string;
             readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;
@@ -4661,7 +5125,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -4691,7 +5155,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
             };
-            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
+            readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
             readonly loading: BooleanConstructor;
             readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
             readonly plain: BooleanConstructor;
@@ -4736,7 +5200,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             ariaDisabled: boolean;
             disabled: boolean;
             autofocus: boolean;
-            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
+            type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
         } | {
             ariaDisabled?: undefined;
             disabled?: undefined;
@@ -4745,6 +5209,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
         }>;
         shouldAddSpace: import("vue").ComputedRef<boolean>;
         handleClick: (evt: MouseEvent) => void;
+        buttonKls: import("vue").ComputedRef<string[]>;
         ElIcon: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
             readonly size: {
                 readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number) & {}) | (() => string | number) | ((new (...args: any[]) => (string | number) & {}) | (() => string | number))[], unknown, unknown>>;
@@ -4825,7 +5290,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "button" | "reset" | "submit", unknown, "button", boolean>;
+        readonly nativeType: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "reset" | "submit" | "button", unknown, "button", boolean>;
         readonly loading: BooleanConstructor;
         readonly loadingIcon: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown, () => any, boolean>;
         readonly plain: BooleanConstructor;
@@ -4843,18 +5308,18 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
         onClick?: ((evt: MouseEvent) => any) | undefined;
     }, {
         readonly type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "default" | "success" | "warning" | "info" | "text" | "primary" | "danger", unknown>;
-        readonly dark: boolean;
         readonly link: boolean;
+        readonly dark: boolean;
         readonly disabled: boolean;
         readonly text: boolean;
         readonly autofocus: boolean;
         readonly round: boolean;
         readonly circle: boolean;
         readonly tag: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
-        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "button" | "reset" | "submit", unknown>;
+        readonly loading: boolean;
+        readonly nativeType: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "reset" | "submit" | "button", unknown>;
         readonly loadingIcon: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown>;
         readonly autoInsertSpace: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
-        readonly loading: boolean;
         readonly plain: boolean;
         readonly bg: boolean;
     }>> & {
@@ -5097,11 +5562,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -5142,11 +5619,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -5192,6 +5681,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             hasOwnLabel: import("vue").ComputedRef<boolean>;
             model: import("vue").WritableComputedRef<any>;
+            actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
             handleChange: (e: Event) => void;
             onClickRoot: (e: MouseEvent) => Promise<void>;
             ns: {
@@ -5226,11 +5716,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -5265,6 +5767,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
             "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
         }, {
+            value: string | number | boolean | Record<string, any>;
             modelValue: string | number | boolean;
             label: string | number | boolean | Record<string, any>;
             id: string;
@@ -5274,6 +5777,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             border: boolean;
             indeterminate: boolean;
             checked: boolean;
+            trueValue: string | number;
+            falseValue: string | number;
             trueLabel: string | number;
             falseLabel: string | number;
             controls: string;
@@ -5287,11 +5792,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -5332,11 +5849,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -5379,6 +5908,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 isDisabled: import("vue").ComputedRef<boolean>;
                 checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 checkboxGroup: ({
                     modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -5416,11 +5946,23 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -5455,6 +5997,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((val: import("..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -5464,6 +6007,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;
@@ -5657,9 +6202,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -5723,9 +6280,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -5782,17 +6351,17 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             rawAttrs: {
                 [x: string]: unknown;
             };
@@ -5803,8 +6372,8 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             containerKls: import("vue").ComputedRef<unknown[]>;
             wrapperKls: import("vue").ComputedRef<string[]>;
             attrs: import("vue").ComputedRef<Record<string, unknown>>;
-            form: import("..").FormContext | undefined;
-            formItem: import("..").FormItemContext | undefined;
+            elForm: import("..").FormContext | undefined;
+            elFormItem: import("..").FormItemContext | undefined;
             inputId: import("vue").Ref<string | undefined>;
             inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             inputDisabled: import("vue").ComputedRef<boolean>;
@@ -5857,7 +6426,7 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             handleFocus: (event: FocusEvent) => void;
             handleBlur: (event: FocusEvent) => void;
             needStatusIcon: import("vue").ComputedRef<boolean>;
-            validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+            validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
             validateIcon: import("vue").ComputedRef<any>;
             passwordIcon: import("vue").ComputedRef<any>;
             containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -5976,9 +6545,21 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -6035,15 +6616,15 @@ export declare const ElTransfer: import("element-plus/es/utils").SFCWithInstall<
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onBlur?: ((evt: FocusEvent) => any) | undefined;
+            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         }, {
             readonly type: string;
             readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;

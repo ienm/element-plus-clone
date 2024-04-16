@@ -8,6 +8,11 @@ const checkTagProps = buildProps({
   checked: {
     type: Boolean,
     default: false
+  },
+  type: {
+    type: String,
+    values: ["primary", "success", "info", "warning", "danger"],
+    default: "primary"
   }
 });
 const checkTagEmits = {

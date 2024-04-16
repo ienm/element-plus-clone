@@ -13,7 +13,7 @@ import { isElement } from '../../../utils/types.mjs';
 import { isString } from '@vue/shared';
 import { getScrollContainer } from '../../../utils/dom/scroll.mjs';
 
-const _hoisted_1 = ["src", "loading"];
+const _hoisted_1 = ["src", "loading", "crossorigin"];
 const _hoisted_2 = { key: 0 };
 const __default__ = defineComponent({
   name: "ElImage",
@@ -182,6 +182,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             loading: _ctx.loading,
             style: unref(imageStyle),
             class: unref(imageKls),
+            crossorigin: _ctx.crossorigin,
             onClick: clickHandler,
             onLoad: handleLoad,
             onError: handleError
@@ -225,7 +226,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Image = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\image\\src\\image.vue"]]);
+var Image = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "image.vue"]]);
 
 export { Image as default };
 //# sourceMappingURL=image2.mjs.map

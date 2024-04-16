@@ -72,10 +72,7 @@ var defaultProps = {
     type: String,
     default: "fixed"
   },
-  scrollbarAlwaysOn: {
-    type: Boolean,
-    default: false
-  },
+  scrollbarAlwaysOn: Boolean,
   flexible: Boolean,
   showOverflowTooltip: [Boolean, Object]
 };

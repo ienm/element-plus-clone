@@ -9,6 +9,9 @@
   var fr = {
     name: "fr",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "Effacer",
@@ -162,6 +165,11 @@
       popconfirm: {
         confirmButtonText: "Oui",
         cancelButtonText: "Non"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

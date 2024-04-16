@@ -93,9 +93,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             ref: messageRef,
             class: normalizeClass([
               unref(ns).b(),
-              { [unref(ns).m(_ctx.type)]: _ctx.type && !_ctx.icon },
+              { [unref(ns).m(_ctx.type)]: _ctx.type },
               unref(ns).is("center", _ctx.center),
               unref(ns).is("closable", _ctx.showClose),
+              unref(ns).is("plain", _ctx.plain),
               _ctx.customClass
             ]),
             style: normalizeStyle(unref(customStyle)),
@@ -149,7 +150,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var MessageConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\message\\src\\message.vue"]]);
+var MessageConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "message.vue"]]);
 
 export { MessageConstructor as default };
 //# sourceMappingURL=message.mjs.map

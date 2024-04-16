@@ -3,6 +3,9 @@
 var ckb = {
   name: "ckb",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "\u0628\u0627\u0634\u06D5",
       clear: "\u067E\u0627\u06A9\u06A9\u0631\u062F\u0646\u06D5\u0648\u06D5",
@@ -159,6 +162,11 @@ var ckb = {
     popconfirm: {
       confirmButtonText: "\u0628\u06D5\u06B5\u06CE",
       cancelButtonText: "\u0646\u06D5\u062E\u06CE\u0631"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

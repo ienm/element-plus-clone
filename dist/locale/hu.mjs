@@ -3,6 +3,9 @@
 var hu = {
   name: "hu",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "OK",
       clear: "T\xF6rl\xE9s"
@@ -123,6 +126,11 @@ var hu = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

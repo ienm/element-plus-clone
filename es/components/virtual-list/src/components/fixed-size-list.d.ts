@@ -32,7 +32,7 @@ declare const FixedSizeList: import("vue").DefineComponent<{
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
     readonly initScrollOffset: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, never, never, 0, false>;
     readonly total: {
         readonly type: import("vue").PropType<number>;
@@ -131,7 +131,7 @@ declare const FixedSizeList: import("vue").DefineComponent<{
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
     readonly initScrollOffset: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, never, never, 0, false>;
     readonly total: {
         readonly type: import("vue").PropType<number>;
@@ -149,9 +149,9 @@ declare const FixedSizeList: import("vue").DefineComponent<{
     onScroll?: ((...args: any[]) => any) | undefined;
     onItemRendered?: ((...args: any[]) => any) | undefined;
 }, {
-    readonly className: string;
-    readonly layout: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", never>;
     readonly direction: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "ltr" | "rtl", never>;
+    readonly className: string;
+    readonly layout: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", never>;
     readonly data: any[];
     readonly scrollbarAlwaysOn: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly containerElement: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | Element) & {}) | (() => string | Element) | ((new (...args: any[]) => (string | Element) & {}) | (() => string | Element))[], unknown, unknown>;

@@ -62,7 +62,7 @@ export declare const virtualizedListProps: {
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
     readonly initScrollOffset: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, never, never, 0, false>;
     readonly total: {
         readonly type: import("vue").PropType<number>;
@@ -165,7 +165,7 @@ export declare const virtualizedGridProps: {
 export declare const virtualizedScrollbarProps: {
     readonly alwaysOn: BooleanConstructor;
     readonly class: StringConstructor;
-    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+    readonly layout: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
     readonly total: {
         readonly type: import("vue").PropType<number>;
         readonly required: true;

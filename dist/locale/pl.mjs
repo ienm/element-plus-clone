@@ -3,6 +3,9 @@
 var pl = {
   name: "pl",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "OK",
       clear: "Wyczy\u015B\u0107"
@@ -104,6 +107,11 @@ var pl = {
       clearFilter: "Wszystko",
       sumText: "Razem"
     },
+    tour: {
+      next: "Dalej",
+      previous: "Wr\xF3\u0107",
+      finish: "Zako\u0144cz"
+    },
     tree: {
       emptyText: "Brak danych"
     },
@@ -124,6 +132,11 @@ var pl = {
     popconfirm: {
       confirmButtonText: "Tak",
       cancelButtonText: "Nie"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

@@ -5,16 +5,16 @@ import { ElIcon } from '../../icon/index.mjs';
 import '../../../hooks/index.mjs';
 import '../../../utils/index.mjs';
 import '../../../constants/index.mjs';
-import { dropdownItemProps, DROPDOWN_COLLECTION_ITEM_INJECTION_KEY as COLLECTION_ITEM_INJECTION_KEY } from './dropdown.mjs';
+import { dropdownItemProps, DROPDOWN_COLLECTION_ITEM_INJECTION_KEY as COLLECTION_ITEM_INJECTION_KEY } from './dropdown2.mjs';
 import { DROPDOWN_INJECTION_KEY } from './tokens.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
-import { ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY as COLLECTION_ITEM_INJECTION_KEY$1 } from '../../roving-focus-group/src/roving-focus-group2.mjs';
+import { ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY as COLLECTION_ITEM_INJECTION_KEY$1 } from '../../roving-focus-group/src/roving-focus-group.mjs';
 import { ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY } from '../../roving-focus-group/src/tokens.mjs';
 import { composeRefs } from '../../../utils/vue/refs.mjs';
 import { composeEventHandlers } from '../../../utils/dom/event.mjs';
 import { EVENT_CODE } from '../../../constants/aria.mjs';
-import { COLLECTION_ITEM_SIGN } from '../../collection/src/collection.mjs';
+import { COLLECTION_ITEM_SIGN } from '../../collection/src/collection2.mjs';
 
 const _sfc_main = defineComponent({
   name: "DropdownItemImpl",
@@ -98,7 +98,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ], 16, _hoisted_1)
   ], 64);
 }
-var ElDropdownItemImpl = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\dropdown\\src\\dropdown-item-impl.vue"]]);
+var ElDropdownItemImpl = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "dropdown-item-impl.vue"]]);
 
 export { ElDropdownItemImpl as default };
 //# sourceMappingURL=dropdown-item-impl.mjs.map

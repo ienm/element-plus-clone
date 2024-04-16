@@ -2,6 +2,8 @@ import type { Option, OptionType } from './select.types';
 import type { Props } from './useProps';
 import type { Options, Placement } from 'element-plus/es/components/popper';
 export declare const SelectProps: {
+    readonly emptyValues: ArrayConstructor;
+    readonly valueOnClear: import("element-plus/es/utils").EpPropFinalized<readonly [StringConstructor, NumberConstructor, BooleanConstructor, FunctionConstructor], unknown, unknown, undefined, boolean>;
     readonly allowCreate: BooleanConstructor;
     readonly autocomplete: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => ("none" | "inline" | "both" | "list") & {}) | (() => "none" | "inline" | "both" | "list") | ((new (...args: any[]) => ("none" | "inline" | "both" | "list") & {}) | (() => "none" | "inline" | "both" | "list"))[], unknown, unknown, "none", boolean>;
     readonly automaticDropdown: BooleanConstructor;
@@ -14,19 +16,18 @@ export declare const SelectProps: {
     };
     readonly effect: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => string & {}) | (() => string) | ((new (...args: any[]) => string & {}) | (() => string))[], unknown, unknown, "light", boolean>;
     readonly collapseTags: BooleanConstructor;
-    readonly collapseTagsTooltip: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
+    readonly collapseTagsTooltip: BooleanConstructor;
     readonly maxCollapseTags: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 1, boolean>;
     readonly defaultFirstOption: BooleanConstructor;
     readonly disabled: BooleanConstructor;
     readonly estimatedOptionHeight: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, undefined, boolean>;
     readonly filterable: BooleanConstructor;
     readonly filterMethod: FunctionConstructor;
-    readonly height: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 170, boolean>;
+    readonly height: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 274, boolean>;
     readonly itemHeight: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 34, boolean>;
     readonly id: StringConstructor;
     readonly loading: BooleanConstructor;
     readonly loadingText: StringConstructor;
-    readonly label: StringConstructor;
     readonly modelValue: {
         readonly type: import("vue").PropType<any>;
         readonly required: false;
@@ -65,9 +66,18 @@ export declare const SelectProps: {
     };
     readonly props: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Props) | (() => Props) | ((new (...args: any[]) => Props) | (() => Props))[], unknown, unknown, () => Required<Props>, boolean>;
     readonly valueKey: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "value", boolean>;
-    readonly scrollbarAlwaysOn: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
+    readonly scrollbarAlwaysOn: BooleanConstructor;
     readonly validateEvent: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
     readonly placement: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Placement & {}) | (() => Placement) | ((new (...args: any[]) => Placement & {}) | (() => Placement))[], Placement, unknown, "bottom-start", boolean>;
+    readonly fallbackPlacements: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Placement[]) | (() => Placement[]) | ((new (...args: any[]) => Placement[]) | (() => Placement[]))[], unknown, unknown, readonly ["bottom-start", "top-start", "right", "left"], boolean>;
+    readonly tagType: {
+        readonly default: "info";
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        readonly __epPropKey: true;
+    };
+    readonly ariaLabel: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, undefined, boolean>;
 };
 export declare const OptionProps: {
     readonly data: ArrayConstructor;

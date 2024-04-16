@@ -3,6 +3,9 @@
 var sr = {
   name: "sr",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "OK",
       clear: "\u041F\u043E\u043D\u0438\u0448\u0442\u0438"
@@ -124,6 +127,11 @@ var sr = {
     popconfirm: {
       confirmButtonText: "\u0414\u0430",
       cancelButtonText: "\u041D\u0435"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

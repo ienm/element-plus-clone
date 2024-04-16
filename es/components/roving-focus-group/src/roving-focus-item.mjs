@@ -2,7 +2,7 @@ import { defineComponent, inject, ref, unref, nextTick, computed, provide, resol
 import '../../../hooks/index.mjs';
 import '../../../utils/index.mjs';
 import '../../../constants/index.mjs';
-import { ElCollectionItem, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group2.mjs';
+import { ElCollectionItem, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group.mjs';
 import { ROVING_FOCUS_GROUP_INJECTION_KEY, ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY } from './tokens.mjs';
 import { getFocusIntent, reorderArray, focusFirst } from './utils.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
@@ -111,7 +111,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   }, 8, ["id", "focusable", "active"]);
 }
-var ElRovingFocusItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\roving-focus-group\\src\\roving-focus-item.vue"]]);
+var ElRovingFocusItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "roving-focus-item.vue"]]);
 
 export { ElRovingFocusItem as default };
 //# sourceMappingURL=roving-focus-item.mjs.map

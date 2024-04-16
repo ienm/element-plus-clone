@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Popper = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\popper\\src\\popper.vue"]]);
+var Popper = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "popper.vue"]]);
 
 export { Popper as default };
 //# sourceMappingURL=popper2.mjs.map

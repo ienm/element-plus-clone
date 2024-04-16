@@ -89,6 +89,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         placeholder: _ctx.placeholder,
         "default-first-option": "",
         filterable: _ctx.editable,
+        "empty-values": _ctx.emptyValues,
+        "value-on-clear": _ctx.valueOnClear,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = (event) => _ctx.$emit("update:modelValue", event)),
         onChange: _cache[1] || (_cache[1] = (event) => _ctx.$emit("change", event)),
         onBlur: _cache[2] || (_cache[2] = (event) => _ctx.$emit("blur", event)),
@@ -116,11 +118,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }), 128))
         ]),
         _: 1
-      }, 8, ["model-value", "disabled", "clearable", "clear-icon", "size", "effect", "placeholder", "filterable"]);
+      }, 8, ["model-value", "disabled", "clearable", "clear-icon", "size", "effect", "placeholder", "filterable", "empty-values", "value-on-clear"]);
     };
   }
 });
-var TimeSelect = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\time-select\\src\\time-select.vue"]]);
+var TimeSelect = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "time-select.vue"]]);
 
 export { TimeSelect as default };
 //# sourceMappingURL=time-select.mjs.map

@@ -1,17 +1,14 @@
 import { inject, ref, h } from 'vue';
 import { debounce } from 'lodash-unified';
 import '../../../../utils/index.mjs';
-import '../../../../hooks/index.mjs';
 import { getCell, getColumnByCell, createTablePopper } from '../util.mjs';
 import { TABLE_INJECTION_KEY } from '../tokens.mjs';
-import { useZIndex } from '../../../../hooks/use-z-index/index.mjs';
-import { hasClass } from '../../../../utils/dom/style.mjs';
+import { addClass, hasClass, removeClass } from '../../../../utils/dom/style.mjs';
 
 function useEvents(props) {
   const parent = inject(TABLE_INJECTION_KEY);
   const tooltipContent = ref("");
   const tooltipTrigger = ref(h("div"));
-  const { nextZIndex } = useZIndex();
   const handleEvent = (event, row, name) => {
     var _a;
     const table = parent;
@@ -57,6 +54,16 @@ function useEvents(props) {
       bottom: paddingBottom
     };
   };
+  const toggleRowClassByCell = (rowSpan, event, toggle) => {
+    let node = event.target.parentNode;
+    while (rowSpan > 1) {
+      node = node == null ? void 0 : node.nextSibling;
+      if (!node || node.nodeName !== "TR")
+        break;
+      toggle(node, "hover-row hover-fixed-row");
+      rowSpan--;
+    }
+  };
   const handleCellMouseEnter = (event, row, tooltipOptions) => {
     var _a;
     const table = parent;
@@ -66,6 +73,9 @@ function useEvents(props) {
       const column = getColumnByCell({
         columns: props.store.states.columns.value
       }, cell, namespace);
+      if (cell.rowSpan > 1) {
+        toggleRowClassByCell(cell.rowSpan, event, addClass);
+      }
       const hoverState = table.hoverState = { cell, column, row };
       table == null ? void 0 : table.emit("cell-mouse-enter", hoverState.row, hoverState.column, hoverState.cell, event);
     }
@@ -93,13 +103,16 @@ function useEvents(props) {
     const horizontalPadding = left + right;
     const verticalPadding = top + bottom;
     if (rangeWidth + horizontalPadding > cellChild.offsetWidth || rangeHeight + verticalPadding > cellChild.offsetHeight || cellChild.scrollWidth > cellChild.offsetWidth) {
-      createTablePopper(parent == null ? void 0 : parent.refs.tableWrapper, cell, cell.innerText || cell.textContent, nextZIndex, tooltipOptions);
+      createTablePopper(tooltipOptions, cell.innerText || cell.textContent, cell, table);
     }
   };
   const handleCellMouseLeave = (event) => {
     const cell = getCell(event);
     if (!cell)
       return;
+    if (cell.rowSpan > 1) {
+      toggleRowClassByCell(cell.rowSpan, event, removeClass);
+    }
     const oldHoverState = parent == null ? void 0 : parent.hoverState;
     parent == null ? void 0 : parent.emit("cell-mouse-leave", oldHoverState == null ? void 0 : oldHoverState.row, oldHoverState == null ? void 0 : oldHoverState.column, oldHoverState == null ? void 0 : oldHoverState.cell, event);
   };

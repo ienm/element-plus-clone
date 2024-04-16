@@ -74,6 +74,7 @@ const _sfc_main = defineComponent({
     watch(() => props.node.checked, (val) => {
       handleSelectChange(val, props.node.indeterminate);
     });
+    watch(() => props.node.childNodes.length, () => props.node.reInitChecked());
     watch(() => props.node.expanded, (val) => {
       nextTick(() => expanded.value = val);
       if (val) {
@@ -308,7 +309,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     [vShow, _ctx.node.visible]
   ]);
 }
-var ElTreeNode = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tree\\src\\tree-node.vue"]]);
+var ElTreeNode = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "tree-node.vue"]]);
 
 export { ElTreeNode as default };
 //# sourceMappingURL=tree-node.mjs.map

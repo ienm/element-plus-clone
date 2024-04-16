@@ -86,7 +86,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       isChangeToNow.value = false;
       isShortcut = false;
     };
-    const handleDatePick = (value, keepOpen) => {
+    const handleDatePick = async (value, keepOpen) => {
       if (selectionMode.value === "date") {
         value = value;
         let newDate = props.parsedValue ? props.parsedValue.year(value.year()).month(value.month()).date(value.date()) : value;
@@ -96,6 +96,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         innerDate.value = newDate;
         emit(newDate, showTime.value || keepOpen);
         if (props.type === "datetime") {
+          await nextTick();
           handleFocusPicker();
         }
       } else if (selectionMode.value === "week") {
@@ -144,7 +145,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
     const selectionMode = computed(() => {
       const { type } = props;
-      if (["week", "month", "year", "dates"].includes(type))
+      if (["week", "month", "year", "years", "dates"].includes(type))
         return type;
       return "date";
     });
@@ -166,10 +167,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       }
       handlePanelChange("month");
     };
-    const handleYearPick = async (year2) => {
+    const handleYearPick = async (year2, keepOpen) => {
       if (selectionMode.value === "year") {
         innerDate.value = innerDate.value.startOf("year").year(year2);
         emit(innerDate.value, false);
+      } else if (selectionMode.value === "years") {
+        emit(year2, keepOpen != null ? keepOpen : true);
       } else {
         innerDate.value = innerDate.value.year(year2);
         currentView.value = "month";
@@ -188,7 +191,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
     const showTime = computed(() => props.type === "datetime" || props.type === "datetimerange");
     const footerVisible = computed(() => {
-      return showTime.value || selectionMode.value === "dates";
+      const showDateFooter = showTime.value || selectionMode.value === "dates";
+      const showYearFooter = selectionMode.value === "years";
+      const isDateView = currentView.value === "date";
+      const isYearView = currentView.value === "year";
+      return showDateFooter && isDateView || showYearFooter && isYearView;
     });
     const disabledConfirm = computed(() => {
       if (!disabledDate)
@@ -201,7 +208,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return disabledDate(props.parsedValue.toDate());
     });
     const onConfirm = () => {
-      if (selectionMode.value === "dates") {
+      if (selectionMode.value === "dates" || selectionMode.value === "years") {
         emit(props.parsedValue);
       } else {
         let result = props.parsedValue;
@@ -300,10 +307,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return dayjs.isDayjs(date) && date.isValid() && (disabledDate ? !disabledDate(date.toDate()) : true);
     };
     const formatToString = (value) => {
-      if (selectionMode.value === "dates") {
-        return value.map((_) => _.format(props.format));
-      }
-      return value.format(props.format);
+      return isArray(value) ? value.map((_) => _.format(props.format)) : value.format(props.format);
     };
     const parseUserInput = (value) => {
       return dayjs(value, props.format).locale(lang.value);
@@ -406,6 +410,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (["month", "year"].includes(val)) {
         currentView.value = val;
         return;
+      } else if (val === "years") {
+        currentView.value = "year";
+        return;
       }
       currentView.value = "date";
     }, { immediate: true });
@@ -419,7 +426,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     }, { immediate: true });
     watch(() => props.parsedValue, (val) => {
       if (val) {
-        if (selectionMode.value === "dates")
+        if (selectionMode.value === "dates" || selectionMode.value === "years")
           return;
         if (Array.isArray(val))
           return;
@@ -616,11 +623,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 key: 1,
                 ref_key: "currentViewRef",
                 ref: currentViewRef,
+                "selection-mode": unref(selectionMode),
                 date: innerDate.value,
                 "disabled-date": unref(disabledDate),
                 "parsed-value": _ctx.parsedValue,
                 onPick: handleYearPick
-              }, null, 8, ["date", "disabled-date", "parsed-value"])) : createCommentVNode("v-if", true),
+              }, null, 8, ["selection-mode", "date", "disabled-date", "parsed-value"])) : createCommentVNode("v-if", true),
               currentView.value === "month" ? (openBlock(), createBlock(MonthTable, {
                 key: 2,
                 ref_key: "currentViewRef",
@@ -648,7 +656,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             ]),
             _: 1
           }, 8, ["class", "disabled"]), [
-            [vShow, unref(selectionMode) !== "dates"]
+            [vShow, unref(selectionMode) !== "dates" && unref(selectionMode) !== "years"]
           ]),
           createVNode(unref(ElButton), {
             plain: "",
@@ -663,13 +671,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             _: 1
           }, 8, ["class", "disabled"])
         ], 2), [
-          [vShow, unref(footerVisible) && currentView.value === "date"]
+          [vShow, unref(footerVisible)]
         ])
       ], 2);
     };
   }
 });
-var DatePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\date-picker\\src\\date-picker-com\\panel-date-pick.vue"]]);
+var DatePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "panel-date-pick.vue"]]);
 
 export { DatePickPanel as default };
 //# sourceMappingURL=panel-date-pick.mjs.map

@@ -23,32 +23,36 @@ const _sfc_main = defineComponent({
     const containerKls = computed(() => [
       ns.be("dropdown", "item"),
       ns.is("disabled", unref(isDisabled)),
-      {
-        selected: unref(itemSelected),
-        hover: unref(hover)
-      }
+      ns.is("selected", unref(itemSelected)),
+      ns.is("hovering", unref(hover))
     ]);
     const states = reactive({
       index: -1,
       groupDisabled: false,
       visible: true,
-      hitState: false,
       hover: false
     });
-    const { currentLabel, itemSelected, isDisabled, select, hoverItem } = useOption(props, states);
+    const {
+      currentLabel,
+      itemSelected,
+      isDisabled,
+      select,
+      hoverItem,
+      updateOption
+    } = useOption(props, states);
     const { visible, hover } = toRefs(states);
     const vm = getCurrentInstance().proxy;
     select.onOptionCreate(vm);
     onBeforeUnmount(() => {
       const key = vm.value;
-      const { selected } = select;
+      const { selected } = select.states;
       const selectedOptions = select.props.multiple ? selected : [selected];
       const doesSelected = selectedOptions.some((item) => {
         return item.value === vm.value;
       });
       nextTick(() => {
-        if (select.cachedOptions.get(key) === vm && !doesSelected) {
-          select.cachedOptions.delete(key);
+        if (select.states.cachedOptions.get(key) === vm && !doesSelected) {
+          select.states.cachedOptions.delete(key);
         }
       });
       select.onOptionDestroy(key, vm);
@@ -67,6 +71,7 @@ const _sfc_main = defineComponent({
       isDisabled,
       select,
       hoverItem,
+      updateOption,
       visible,
       hover,
       selectOptionClick,
@@ -92,7 +97,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     [vShow, _ctx.visible]
   ]);
 }
-var Option = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\select\\src\\option.vue"]]);
+var Option = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "option.vue"]]);
 
 export { Option as default };
 //# sourceMappingURL=option.mjs.map

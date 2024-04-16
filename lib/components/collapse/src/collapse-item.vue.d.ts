@@ -1,17 +1,17 @@
 declare const _default: import("vue").DefineComponent<{
     readonly title: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+    readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
     readonly disabled: BooleanConstructor;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly title: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+        readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
         readonly disabled: BooleanConstructor;
     }>> & {
         [x: string & `on${string}`]: ((...args: any[]) => any) | ((...args: unknown[]) => any) | undefined;
     }>>;
     focusing: import("vue").Ref<boolean>;
-    id: import("vue").Ref<number>;
+    id: import("vue").ComputedRef<number>;
     isActive: import("vue").ComputedRef<boolean | undefined>;
     handleFocus: () => void;
     handleHeaderClick: () => void;
@@ -122,7 +122,7 @@ declare const _default: import("vue").DefineComponent<{
     ArrowRight: any;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly title: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+    readonly name: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName) | ((new (...args: any[]) => import("./collapse").CollapseActiveName & {}) | (() => import("./collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
     readonly disabled: BooleanConstructor;
 }>>, {
     readonly title: string;

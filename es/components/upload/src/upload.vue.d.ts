@@ -78,6 +78,12 @@ declare const _default: import("vue").DefineComponent<{
         new (): any;
         readonly prototype: any;
     })[], unknown, unknown, () => void, boolean>;
+    readonly crossorigin: {
+        readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly action: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "#", boolean>;
     readonly headers: {
         readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers) | ((new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers))[], unknown, unknown>>;
@@ -187,6 +193,12 @@ declare const _default: import("vue").DefineComponent<{
             new (): any;
             readonly prototype: any;
         })[], unknown, unknown, () => void, boolean>;
+        readonly crossorigin: {
+            readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
         readonly action: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "#", boolean>;
         readonly headers: {
             readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers) | ((new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers))[], unknown, unknown>>;
@@ -224,9 +236,9 @@ declare const _default: import("vue").DefineComponent<{
         $: import("vue").ComponentInternalInstance;
         $data: {};
         $props: Partial<{
+            readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly disabled: boolean;
             readonly name: string;
-            readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly multiple: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly data: import("../../../utils").EpPropMergeType<(new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | ((new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>))[], unknown, unknown>;
             readonly onError: (err: import("./ajax").UploadAjaxError, rawFile: import("./upload").UploadRawFile) => void;
@@ -338,7 +350,7 @@ declare const _default: import("vue").DefineComponent<{
             })[], unknown, unknown, import("./upload").UploadRequestHandler, boolean>;
             readonly disabled: BooleanConstructor;
             readonly limit: NumberConstructor;
-        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "disabled" | "name" | "drag" | "multiple" | "data" | "onError" | "onProgress" | "action" | "method" | "showFileList" | "accept" | "fileList" | "autoUpload" | "listType" | "httpRequest" | "withCredentials" | "beforeUpload" | "onRemove" | "onSuccess" | "onExceed" | "onStart">;
+        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "drag" | "disabled" | "name" | "multiple" | "data" | "onError" | "onProgress" | "action" | "method" | "showFileList" | "accept" | "fileList" | "autoUpload" | "listType" | "httpRequest" | "withCredentials" | "beforeUpload" | "onRemove" | "onSuccess" | "onExceed" | "onStart">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -609,9 +621,9 @@ declare const _default: import("vue").DefineComponent<{
                 readonly disabled: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             }>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, {
+            readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly disabled: boolean;
             readonly name: string;
-            readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly multiple: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly data: import("../../../utils").EpPropMergeType<(new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | ((new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>))[], unknown, unknown>;
             readonly onError: (err: import("./ajax").UploadAjaxError, rawFile: import("./upload").UploadRawFile) => void;
@@ -952,6 +964,12 @@ declare const _default: import("vue").DefineComponent<{
             readonly prototype: any;
         })[], unknown, unknown, () => void, boolean>;
         readonly listType: import("../../../utils").EpPropFinalized<StringConstructor, "text" | "picture" | "picture-card", unknown, "text", boolean>;
+        readonly crossorigin: {
+            readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
     }, {
         props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
             readonly files: import("../../../utils").EpPropFinalized<(new (...args: any[]) => import("./upload").UploadFiles) | (() => import("./upload").UploadFiles) | ((new (...args: any[]) => import("./upload").UploadFiles) | (() => import("./upload").UploadFiles))[], unknown, unknown, () => never[], boolean>;
@@ -966,6 +984,12 @@ declare const _default: import("vue").DefineComponent<{
                 readonly prototype: any;
             })[], unknown, unknown, () => void, boolean>;
             readonly listType: import("../../../utils").EpPropFinalized<StringConstructor, "text" | "picture" | "picture-card", unknown, "text", boolean>;
+            readonly crossorigin: {
+                readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
         }>> & {
             onRemove?: ((file: import("./upload").UploadFile) => any) | undefined;
         }>>;
@@ -1270,15 +1294,15 @@ declare const _default: import("vue").DefineComponent<{
             })[], unknown, unknown, (percentage: number) => string, boolean>;
         }>>, {
             readonly type: import("../../../utils").EpPropMergeType<StringConstructor, "circle" | "line" | "dashboard", unknown>;
-            readonly color: import("../../../utils").EpPropMergeType<(new (...args: any[]) => (string | import("../..").ProgressFn | import("../..").ProgressColor[]) & {}) | (() => string | import("../..").ProgressFn | import("../..").ProgressColor[]) | ((new (...args: any[]) => (string | import("../..").ProgressFn | import("../..").ProgressColor[]) & {}) | (() => string | import("../..").ProgressFn | import("../..").ProgressColor[]))[], unknown, unknown>;
             readonly width: number;
+            readonly color: import("../../../utils").EpPropMergeType<(new (...args: any[]) => (string | import("../..").ProgressFn | import("../..").ProgressColor[]) & {}) | (() => string | import("../..").ProgressFn | import("../..").ProgressColor[]) | ((new (...args: any[]) => (string | import("../..").ProgressFn | import("../..").ProgressColor[]) & {}) | (() => string | import("../..").ProgressFn | import("../..").ProgressColor[]))[], unknown, unknown>;
+            readonly duration: number;
             readonly strokeLinecap: import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("inherit" | "round" | "butt" | "square") & {}) | (() => "inherit" | "round" | "butt" | "square") | ((new (...args: any[]) => ("inherit" | "round" | "butt" | "square") & {}) | (() => "inherit" | "round" | "butt" | "square"))[], unknown, unknown>;
             readonly strokeWidth: number;
             readonly indeterminate: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly format: import("../..").ProgressFn;
             readonly percentage: number;
             readonly status: import("../../../utils").EpPropMergeType<StringConstructor, "" | "success" | "warning" | "exception", unknown>;
-            readonly duration: number;
             readonly textInside: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly showText: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
             readonly striped: boolean;
@@ -1299,6 +1323,12 @@ declare const _default: import("vue").DefineComponent<{
             readonly prototype: any;
         })[], unknown, unknown, () => void, boolean>;
         readonly listType: import("../../../utils").EpPropFinalized<StringConstructor, "text" | "picture" | "picture-card", unknown, "text", boolean>;
+        readonly crossorigin: {
+            readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
     }>> & {
         onRemove?: ((file: import("./upload").UploadFile) => any) | undefined;
     }, {
@@ -1657,9 +1687,9 @@ declare const _default: import("vue").DefineComponent<{
         readonly disabled: BooleanConstructor;
         readonly limit: NumberConstructor;
     }>>, {
+        readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly disabled: boolean;
         readonly name: string;
-        readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly multiple: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly data: import("../../../utils").EpPropMergeType<(new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | ((new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>))[], unknown, unknown>;
         readonly onError: (err: import("./ajax").UploadAjaxError, rawFile: import("./upload").UploadRawFile) => void;
@@ -1758,6 +1788,12 @@ declare const _default: import("vue").DefineComponent<{
         new (): any;
         readonly prototype: any;
     })[], unknown, unknown, () => void, boolean>;
+    readonly crossorigin: {
+        readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly action: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "#", boolean>;
     readonly headers: {
         readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<(new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers) | ((new (...args: any[]) => Record<string, any> | Headers) | (() => Record<string, any> | Headers))[], unknown, unknown>>;
@@ -1788,10 +1824,10 @@ declare const _default: import("vue").DefineComponent<{
     readonly disabled: BooleanConstructor;
     readonly limit: NumberConstructor;
 }>>, {
+    readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly onChange: (uploadFile: import("./upload").UploadFile, uploadFiles: import("./upload").UploadFiles) => void;
     readonly disabled: boolean;
     readonly name: string;
-    readonly drag: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly multiple: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly data: import("../../../utils").EpPropMergeType<(new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | ((new (...args: any[]) => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Mutable<Record<string, any>> | Promise<import("../../../utils").Mutable<Record<string, any>>>) | (() => ((rawFile: import("./upload").UploadRawFile) => import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>) | import("../../../utils").Awaitable<import("../../../utils").Mutable<Record<string, any>>>))[], unknown, unknown>;
     readonly onError: (error: Error, uploadFile: import("./upload").UploadFile, uploadFiles: import("./upload").UploadFiles) => void;

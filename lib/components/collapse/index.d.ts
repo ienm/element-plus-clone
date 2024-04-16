@@ -14,8 +14,8 @@ export declare const ElCollapse: import("element-plus/es/utils").SFCWithInstall<
     setActiveNames: (_activeNames: import("./src/collapse").CollapseActiveName[]) => void;
     rootKls: import("vue").ComputedRef<string>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    "update:modelValue": (value: import("./src/collapse").CollapseModelValue) => "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";
-    change: (value: import("./src/collapse").CollapseModelValue) => "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";
+    "update:modelValue": (value: import("./src/collapse").CollapseModelValue) => boolean;
+    change: (value: import("./src/collapse").CollapseModelValue) => boolean;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly accordion: BooleanConstructor;
     readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseModelValue & {}) | (() => import("./src/collapse").CollapseModelValue) | ((new (...args: any[]) => import("./src/collapse").CollapseModelValue & {}) | (() => import("./src/collapse").CollapseModelValue))[], unknown, unknown, () => [], boolean>;
@@ -28,18 +28,18 @@ export declare const ElCollapse: import("element-plus/es/utils").SFCWithInstall<
 }>> & {
     CollapseItem: import("vue").DefineComponent<{
         readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
         readonly disabled: BooleanConstructor;
     }, {
         props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
             readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-            readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+            readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
             readonly disabled: BooleanConstructor;
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | ((...args: unknown[]) => any) | undefined;
         }>>;
         focusing: import("vue").Ref<boolean>;
-        id: import("vue").Ref<number>;
+        id: import("vue").ComputedRef<number>;
         isActive: import("vue").ComputedRef<boolean | undefined>;
         handleFocus: () => void;
         handleHeaderClick: () => void;
@@ -150,7 +150,7 @@ export declare const ElCollapse: import("element-plus/es/utils").SFCWithInstall<
         ArrowRight: any;
     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
         readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
         readonly disabled: BooleanConstructor;
     }>>, {
         readonly title: string;
@@ -161,18 +161,18 @@ export declare const ElCollapse: import("element-plus/es/utils").SFCWithInstall<
 export default ElCollapse;
 export declare const ElCollapseItem: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
     readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+    readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
     readonly disabled: BooleanConstructor;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+        readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
         readonly disabled: BooleanConstructor;
     }>> & {
         [x: string & `on${string}`]: ((...args: any[]) => any) | ((...args: unknown[]) => any) | undefined;
     }>>;
     focusing: import("vue").Ref<boolean>;
-    id: import("vue").Ref<number>;
+    id: import("vue").ComputedRef<number>;
     isActive: import("vue").ComputedRef<boolean | undefined>;
     handleFocus: () => void;
     handleHeaderClick: () => void;
@@ -283,7 +283,7 @@ export declare const ElCollapseItem: import("element-plus/es/utils").SFCWithInst
     ArrowRight: any;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly title: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, () => number, boolean>;
+    readonly name: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName) | ((new (...args: any[]) => import("./src/collapse").CollapseActiveName & {}) | (() => import("./src/collapse").CollapseActiveName))[], unknown, unknown, undefined, boolean>;
     readonly disabled: BooleanConstructor;
 }>>, {
     readonly title: string;

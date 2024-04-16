@@ -3,6 +3,9 @@
 var mg = {
   name: "mg",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "ENY",
       clear: "Fafana"
@@ -125,6 +128,11 @@ var mg = {
     popconfirm: {
       confirmButtonText: "Eny",
       cancelButtonText: "Tsy"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

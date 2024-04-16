@@ -8,7 +8,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return renderSlot(_ctx.$slots, "default");
 }
-var CollectionItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\collection\\src\\collection-item.vue"]]);
+var CollectionItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "collection-item.vue"]]);
 
 export { CollectionItem as default };
 //# sourceMappingURL=collection-item.mjs.map

@@ -10,9 +10,16 @@ export declare const checkboxProps: {
         default: undefined;
     };
     /**
-     * @description value of the Checkbox when used inside a `checkbox-group`
+     * @description label of the Checkbox when used inside a `checkbox-group`
      */
     label: {
+        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+        default: undefined;
+    };
+    /**
+     * @description value of the Checkbox when used inside a `checkbox-group`
+     */
+    value: {
         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
         default: undefined;
     };
@@ -38,11 +45,27 @@ export declare const checkboxProps: {
     /**
      * @description value of the Checkbox if it's checked
      */
+    trueValue: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: undefined;
+    };
+    /**
+     * @description value of the Checkbox if it's not checked
+     */
+    falseValue: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: undefined;
+    };
+    /**
+     * @deprecated use `trueValue` instead
+     * @description value of the Checkbox if it's checked
+     */
     trueLabel: {
         type: (NumberConstructor | StringConstructor)[];
         default: undefined;
     };
     /**
+     * @deprecated use `falseValue` instead
      * @description value of the Checkbox if it's not checked
      */
     falseLabel: {

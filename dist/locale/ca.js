@@ -9,6 +9,9 @@
   var ca = {
     name: "ca",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "Confirmar",
         clear: "Netejar"
@@ -128,6 +131,11 @@
       popconfirm: {
         confirmButtonText: "S\xED",
         cancelButtonText: "No"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

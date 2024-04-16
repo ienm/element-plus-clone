@@ -68,7 +68,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Sizes = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\pagination\\src\\components\\sizes.vue"]]);
+var Sizes = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "sizes.vue"]]);
 
 export { Sizes as default };
 //# sourceMappingURL=sizes.mjs.map

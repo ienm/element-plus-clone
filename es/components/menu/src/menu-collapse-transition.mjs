@@ -57,7 +57,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   }, 16);
 }
-var ElMenuCollapseTransition = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\menu\\src\\menu-collapse-transition.vue"]]);
+var ElMenuCollapseTransition = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "menu-collapse-transition.vue"]]);
 
 export { ElMenuCollapseTransition as default };
 //# sourceMappingURL=menu-collapse-transition.mjs.map

@@ -353,7 +353,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ], 46, _hoisted_1);
 }
-var Table = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\table\\src\\table.vue"]]);
+var Table = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "table.vue"]]);
 
 export { Table as default };
 //# sourceMappingURL=table.mjs.map

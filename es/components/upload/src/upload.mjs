@@ -100,6 +100,9 @@ const uploadProps = buildProps({
   onExceed: {
     type: definePropType(Function),
     default: NOOP
+  },
+  crossorigin: {
+    type: definePropType(String)
   }
 });
 

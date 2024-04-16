@@ -2,7 +2,7 @@ import { defineComponent, useSlots, provide, computed, openBlock, createElementB
 import '../../../utils/index.mjs';
 import '../../../hooks/index.mjs';
 import '../../form/index.mjs';
-import ElDescriptionsRow from './descriptions-row2.mjs';
+import ElDescriptionsRow from './descriptions-row.mjs';
 import { descriptionsKey } from './token.mjs';
 import { descriptionProps } from './description2.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
@@ -113,7 +113,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Descriptions = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\descriptions\\src\\description.vue"]]);
+var Descriptions = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "description.vue"]]);
 
 export { Descriptions as default };
 //# sourceMappingURL=description.mjs.map

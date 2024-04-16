@@ -60,18 +60,6 @@ const switchProps = buildProps({
     type: [Boolean, String, Number],
     default: false
   },
-  activeColor: {
-    type: String,
-    default: ""
-  },
-  inactiveColor: {
-    type: String,
-    default: ""
-  },
-  borderColor: {
-    type: String,
-    default: ""
-  },
   name: {
     type: String,
     default: ""
@@ -86,10 +74,6 @@ const switchProps = buildProps({
   id: String,
   tabindex: {
     type: [String, Number]
-  },
-  value: {
-    type: [Boolean, String, Number],
-    default: false
   },
   label: {
     type: String,

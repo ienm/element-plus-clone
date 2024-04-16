@@ -317,6 +317,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         unlinkPanels: props.unlinkPanels
       })[0];
       rightDate.value = leftDate.value.add(1, "month");
+      maxDate.value = void 0;
+      minDate.value = void 0;
       emit("pick", null);
     };
     const formatToString = (value) => {
@@ -670,7 +672,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var DateRangePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\date-picker\\src\\date-picker-com\\panel-date-range.vue"]]);
+var DateRangePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "panel-date-range.vue"]]);
 
 export { DateRangePickPanel as default };
 //# sourceMappingURL=panel-date-range.mjs.map

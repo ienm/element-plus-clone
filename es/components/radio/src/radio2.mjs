@@ -16,7 +16,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   setup(__props, { emit }) {
     const props = __props;
     const ns = useNamespace("radio");
-    const { radioRef, radioGroup, focus, size, disabled, modelValue } = useRadio(props, emit);
+    const { radioRef, radioGroup, focus, size, disabled, modelValue, actualValue } = useRadio(props, emit);
     function handleChange() {
       nextTick(() => emit("change", modelValue.value));
     }
@@ -28,7 +28,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           unref(ns).is("disabled", unref(disabled)),
           unref(ns).is("focus", unref(focus)),
           unref(ns).is("bordered", _ctx.border),
-          unref(ns).is("checked", unref(modelValue) === _ctx.label),
+          unref(ns).is("checked", unref(modelValue) === unref(actualValue)),
           unref(ns).m(unref(size))
         ])
       }, [
@@ -36,7 +36,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           class: normalizeClass([
             unref(ns).e("input"),
             unref(ns).is("disabled", unref(disabled)),
-            unref(ns).is("checked", unref(modelValue) === _ctx.label)
+            unref(ns).is("checked", unref(modelValue) === unref(actualValue))
           ])
         }, [
           withDirectives(createElementVNode("input", {
@@ -44,7 +44,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             ref: radioRef,
             "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(modelValue) ? modelValue.value = $event : null),
             class: normalizeClass(unref(ns).e("original")),
-            value: _ctx.label,
+            value: unref(actualValue),
             name: _ctx.name || ((_a = unref(radioGroup)) == null ? void 0 : _a.name),
             disabled: unref(disabled),
             type: "radio",
@@ -73,7 +73,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Radio = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\radio\\src\\radio.vue"]]);
+var Radio = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "radio.vue"]]);
 
 export { Radio as default };
 //# sourceMappingURL=radio2.mjs.map

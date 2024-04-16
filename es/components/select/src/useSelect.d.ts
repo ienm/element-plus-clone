@@ -1,59 +1,94 @@
 import { nextTick } from 'vue';
-import type { ComponentPublicInstance } from 'vue';
-import type { QueryChangeCtx, SelectOptionProxy } from './token';
-export declare function useSelectStates(props: any): {
-    options: Map<any, any>;
-    cachedOptions: Map<any, any>;
-    disabledOptions: Map<any, any>;
-    createdLabel: null;
-    createdSelected: boolean;
-    selected: any;
-    inputLength: number;
-    inputWidth: number;
-    optionsCount: number;
-    filteredOptionsCount: number;
-    visible: boolean;
-    selectedLabel: string;
-    hoverIndex: number;
-    query: string;
-    previousQuery: null;
-    inputHovering: boolean;
-    cachedPlaceHolder: string;
-    currentPlaceholder: string | (() => string);
-    menuVisibleOnFocus: boolean;
-    isOnComposition: boolean;
-    prefixWidth: number;
-    mouseEnter: boolean;
-    focused: boolean;
-};
-declare type States = ReturnType<typeof useSelectStates>;
-export declare const useSelect: (props: any, states: States, ctx: any) => {
-    optionList: import("vue").Ref<string[]>;
+import type { ISelectProps, SelectOptionProxy } from './token';
+export declare const useSelect: (props: ISelectProps, emit: any) => {
+    inputId: import("vue").Ref<string | undefined>;
+    contentId: import("vue").Ref<string>;
+    nsSelect: {
+        namespace: import("vue").ComputedRef<string>;
+        b: (blockSuffix?: string) => string;
+        e: (element?: string | undefined) => string;
+        m: (modifier?: string | undefined) => string;
+        be: (blockSuffix?: string | undefined, element?: string | undefined) => string;
+        em: (element?: string | undefined, modifier?: string | undefined) => string;
+        bm: (blockSuffix?: string | undefined, modifier?: string | undefined) => string;
+        bem: (blockSuffix?: string | undefined, element?: string | undefined, modifier?: string | undefined) => string;
+        is: {
+            (name: string, state: boolean | undefined): string;
+            (name: string): string;
+        };
+        cssVar: (object: Record<string, string>) => Record<string, string>;
+        cssVarName: (name: string) => string;
+        cssVarBlock: (object: Record<string, string>) => Record<string, string>;
+        cssVarBlockName: (name: string) => string;
+    };
+    nsInput: {
+        namespace: import("vue").ComputedRef<string>;
+        b: (blockSuffix?: string) => string;
+        e: (element?: string | undefined) => string;
+        m: (modifier?: string | undefined) => string;
+        be: (blockSuffix?: string | undefined, element?: string | undefined) => string;
+        em: (element?: string | undefined, modifier?: string | undefined) => string;
+        bm: (blockSuffix?: string | undefined, modifier?: string | undefined) => string;
+        bem: (blockSuffix?: string | undefined, element?: string | undefined, modifier?: string | undefined) => string;
+        is: {
+            (name: string, state: boolean | undefined): string;
+            (name: string): string;
+        };
+        cssVar: (object: Record<string, string>) => Record<string, string>;
+        cssVarName: (name: string) => string;
+        cssVarBlock: (object: Record<string, string>) => Record<string, string>;
+        cssVarBlockName: (name: string) => string;
+    };
+    states: {
+        inputValue: string;
+        options: Map<any, any>;
+        cachedOptions: Map<any, any>;
+        disabledOptions: Map<any, any>;
+        optionValues: any[];
+        selected: any;
+        selectionWidth: number;
+        calculatorWidth: number;
+        collapseItemWidth: number;
+        selectedLabel: string;
+        hoveringIndex: number;
+        previousQuery: null;
+        inputHovering: boolean;
+        menuVisibleOnFocus: boolean;
+        isBeforeHide: boolean;
+    };
+    isFocused: import("vue").Ref<boolean>;
+    expanded: import("vue").Ref<boolean>;
     optionsArray: import("vue").ComputedRef<any[]>;
     hoverOption: import("vue").Ref<any>;
     selectSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
-    handleResize: () => void;
+    filteredOptionsCount: import("vue").ComputedRef<number>;
+    resetCalculatorWidth: () => void;
+    updateTooltip: () => void;
+    updateTagTooltip: () => void;
     debouncedOnInputChange: import("lodash").DebouncedFunc<() => void>;
-    debouncedQueryChange: import("lodash").DebouncedFunc<(e: any) => void>;
+    onInput: (event: any) => void;
     deletePrevTag: (e: any) => void;
     deleteTag: (event: any, tag: any) => void;
     deleteSelected: (event: any) => void;
     handleOptionSelect: (option: any) => void;
     scrollToOption: (option: any) => void;
-    readonly: import("vue").ComputedRef<any>;
-    resetInputHeight: () => void;
-    showClose: import("vue").ComputedRef<any>;
-    iconComponent: import("vue").ComputedRef<any>;
+    hasModelValue: import("vue").ComputedRef<boolean>;
+    shouldShowPlaceholder: import("vue").ComputedRef<boolean>;
+    currentPlaceholder: import("vue").ComputedRef<string>;
+    showClose: import("vue").ComputedRef<boolean>;
+    iconComponent: import("vue").ComputedRef<import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) | ((new (...args: any[]) => (string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>) & {}) | (() => string | import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>))[], unknown, unknown> | undefined>;
     iconReverse: import("vue").ComputedRef<string>;
-    showNewOption: import("vue").ComputedRef<any>;
+    validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
+    validateIcon: import("vue").ComputedRef<any>;
+    showNewOption: import("vue").ComputedRef<boolean>;
+    updateOptions: () => void;
     collapseTagSize: import("vue").ComputedRef<"default" | "small">;
     setSelected: () => void;
-    managePlaceholder: () => void;
-    selectDisabled: import("vue").ComputedRef<any>;
-    emptyText: import("vue").ComputedRef<any>;
-    toggleLastOptionHitState: (hit?: boolean | undefined) => any;
-    resetInputState: (e: KeyboardEvent) => void;
-    handleComposition: (event: any) => void;
+    selectDisabled: import("vue").ComputedRef<boolean | undefined>;
+    emptyText: import("vue").ComputedRef<string | false | null>;
+    handleCompositionStart: () => void;
+    handleCompositionUpdate: (event: any) => void;
+    handleCompositionEnd: (event: any) => void;
     onOptionCreate: (vm: SelectOptionProxy) => void;
     onOptionDestroy: (key: any, vm: SelectOptionProxy) => void;
     handleMenuEnter: () => void;
@@ -62,39 +97,32 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
     blur: () => void;
     handleBlur: (event: FocusEvent) => void;
     handleClearClick: (event: Event) => void;
-    handleClose: () => void;
-    handleKeydownEscape: (event: KeyboardEvent) => void;
-    toggleMenu: (e?: PointerEvent | undefined) => void;
+    handleClickOutside: (event: Event) => void;
+    handleEsc: () => void;
+    toggleMenu: () => void;
     selectOption: () => void;
     getValueKey: (item: any) => any;
     navigateOptions: (direction: any) => void;
-    handleDeleteTooltipTag: (event: any, tag: any) => void;
-    dropMenuVisible: import("vue").WritableComputedRef<boolean>;
-    queryChange: import("vue").ShallowRef<QueryChangeCtx>;
-    groupQueryChange: import("vue").ShallowRef<string>;
+    dropdownMenuVisible: import("vue").WritableComputedRef<boolean>;
     showTagList: import("vue").ComputedRef<any>;
     collapseTagList: import("vue").ComputedRef<any>;
-    selectTagsStyle: import("vue").ComputedRef<{
+    tagStyle: import("vue").ComputedRef<{
         maxWidth: string;
+    }>;
+    collapseTagStyle: import("vue").ComputedRef<{
+        maxWidth: string;
+    }>;
+    inputStyle: import("vue").ComputedRef<{
         width: string;
     }>;
-    reference: import("vue").Ref<ComponentPublicInstance<{
-        focus: () => void;
-        blur: () => void;
-        input: HTMLInputElement;
-    }, {}, {}, {}, {}, {}, {
-        focus: () => void;
-        blur: () => void;
-        input: HTMLInputElement;
-    }, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null>;
-    input: import("vue").Ref<HTMLInputElement | null>;
-    iOSInput: import("vue").Ref<HTMLInputElement | null>;
+    popperRef: import("vue").ComputedRef<HTMLElement | undefined>;
+    inputRef: import("vue").Ref<HTMLInputElement | null>;
     tooltipRef: import("vue").Ref<({
         $: import("vue").ComponentInternalInstance;
         $data: {};
         $props: Partial<{
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -446,7 +474,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             role: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "group" | "listbox" | "grid" | "menu" | "tooltip" | "dialog" | "navigation" | "tree", unknown, "tooltip", boolean>;
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
-        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "effect" | "offset" | "placement" | "showAfter" | "hideAfter" | "autoClose" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "strategy" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "visible" | "pure" | "virtualTriggering" | "content" | "rawContent" | "teleported" | "persistent" | "disabled" | "open" | "role" | "trigger" | "triggerKeys" | "arrowOffset" | "showArrow">;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "offset" | "effect" | "placement" | "showAfter" | "hideAfter" | "autoClose" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "strategy" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "visible" | "pure" | "virtualTriggering" | "content" | "rawContent" | "teleported" | "persistent" | "disabled" | "open" | "role" | "trigger" | "triggerKeys" | "arrowOffset" | "showArrow">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -456,8 +484,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
         $slots: Readonly<{
             [name: string]: import("vue").Slot | undefined;
         }>;
-        $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-        $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+        $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+        $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
         $emit: (event: string, ...args: any[]) => void;
         $el: any;
         $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -1129,8 +1157,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 $slots: Readonly<{
                     [name: string]: import("vue").Slot | undefined;
                 }>;
-                $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-                $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+                $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+                $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
                 $emit: (event: string, ...args: any[]) => void;
                 $el: any;
                 $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -1164,7 +1192,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     unmounted?: ((() => void) | (() => void)[]) | undefined;
                     renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
                     renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-                    errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+                    errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
                 };
                 $forceUpdate: () => void;
                 $nextTick: typeof nextTick;
@@ -2457,7 +2485,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -2707,12 +2735,12 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
-                    focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                    focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
                     onFocusAfterReleased: (event: CustomEvent<any>) => void;
                     onFocusAfterTrapped: () => void;
@@ -2774,17 +2802,17 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }>> & {
@@ -2797,7 +2825,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     }, {
                         trapped: boolean;
                         loop: boolean;
-                        focusStartEl: HTMLElement | "first" | "container";
+                        focusStartEl: HTMLElement | "container" | "first";
                     }>;
                 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                     mouseenter: (evt: MouseEvent) => boolean;
@@ -3054,13 +3082,13 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly boundariesPadding: number;
                     readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -3339,8 +3367,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                 readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             }>>, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly showAfter: number;
                 readonly hideAfter: number;
@@ -3364,8 +3392,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly disabled: boolean;
             }>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, {
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -3408,7 +3436,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             unmounted?: ((() => void) | (() => void)[]) | undefined;
             renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
             renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-            errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+            errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
         };
         $forceUpdate: () => void;
         $nextTick: typeof nextTick;
@@ -4082,8 +4110,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             $slots: Readonly<{
                 [name: string]: import("vue").Slot | undefined;
             }>;
-            $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-            $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+            $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+            $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
             $emit: (event: string, ...args: any[]) => void;
             $el: any;
             $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -4117,7 +4145,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 unmounted?: ((() => void) | (() => void)[]) | undefined;
                 renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
                 renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-                errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+                errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
             };
             $forceUpdate: () => void;
             $nextTick: typeof nextTick;
@@ -5410,7 +5438,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                 readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }, {
-                emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                 props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                     readonly id: StringConstructor;
                     readonly style: {
@@ -5660,12 +5688,12 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
-                focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                 trapped: import("vue").Ref<boolean>;
                 onFocusAfterReleased: (event: CustomEvent<any>) => void;
                 onFocusAfterTrapped: () => void;
@@ -5727,17 +5755,17 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
                     focusStartEl: {
-                        type: import("vue").PropType<HTMLElement | "first" | "container">;
+                        type: import("vue").PropType<HTMLElement | "container" | "first">;
                         default: string;
                     };
                 }, {
                     onKeydown: (e: KeyboardEvent) => void;
-                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                     loop: BooleanConstructor;
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
                     focusStartEl: {
-                        type: import("vue").PropType<HTMLElement | "first" | "container">;
+                        type: import("vue").PropType<HTMLElement | "container" | "first">;
                         default: string;
                     };
                 }>> & {
@@ -5750,7 +5778,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 }, {
                     trapped: boolean;
                     loop: boolean;
-                    focusStartEl: HTMLElement | "first" | "container";
+                    focusStartEl: HTMLElement | "container" | "first";
                 }>;
             }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                 mouseenter: (evt: MouseEvent) => boolean;
@@ -6007,13 +6035,13 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }>> & {
                 onClose?: (() => any) | undefined;
-                onFocus?: (() => any) | undefined;
                 onBlur?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                onFocus?: (() => any) | undefined;
                 onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly boundariesPadding: number;
                 readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -6292,8 +6320,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
             readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
         }>>, {
-            readonly effect: string;
             readonly offset: number;
+            readonly effect: string;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             readonly showAfter: number;
             readonly hideAfter: number;
@@ -6321,8 +6349,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
         $: import("vue").ComponentInternalInstance;
         $data: {};
         $props: Partial<{
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -6674,7 +6702,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             role: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "group" | "listbox" | "grid" | "menu" | "tooltip" | "dialog" | "navigation" | "tree", unknown, "tooltip", boolean>;
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
-        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "effect" | "offset" | "placement" | "showAfter" | "hideAfter" | "autoClose" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "strategy" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "visible" | "pure" | "virtualTriggering" | "content" | "rawContent" | "teleported" | "persistent" | "disabled" | "open" | "role" | "trigger" | "triggerKeys" | "arrowOffset" | "showArrow">;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "offset" | "effect" | "placement" | "showAfter" | "hideAfter" | "autoClose" | "boundariesPadding" | "fallbackPlacements" | "gpuAcceleration" | "popperOptions" | "strategy" | "enterable" | "focusOnShow" | "trapping" | "stopPopperMouseEvent" | "visible" | "pure" | "virtualTriggering" | "content" | "rawContent" | "teleported" | "persistent" | "disabled" | "open" | "role" | "trigger" | "triggerKeys" | "arrowOffset" | "showArrow">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -6684,8 +6712,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
         $slots: Readonly<{
             [name: string]: import("vue").Slot | undefined;
         }>;
-        $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-        $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+        $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+        $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
         $emit: (event: string, ...args: any[]) => void;
         $el: any;
         $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -7357,8 +7385,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 $slots: Readonly<{
                     [name: string]: import("vue").Slot | undefined;
                 }>;
-                $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-                $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+                $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+                $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
                 $emit: (event: string, ...args: any[]) => void;
                 $el: any;
                 $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -7392,7 +7420,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     unmounted?: ((() => void) | (() => void)[]) | undefined;
                     renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
                     renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-                    errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+                    errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
                 };
                 $forceUpdate: () => void;
                 $nextTick: typeof nextTick;
@@ -8685,7 +8713,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -8935,12 +8963,12 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
-                    focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                    focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
                     onFocusAfterReleased: (event: CustomEvent<any>) => void;
                     onFocusAfterTrapped: () => void;
@@ -9002,17 +9030,17 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }>> & {
@@ -9025,7 +9053,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     }, {
                         trapped: boolean;
                         loop: boolean;
-                        focusStartEl: HTMLElement | "first" | "container";
+                        focusStartEl: HTMLElement | "container" | "first";
                     }>;
                 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                     mouseenter: (evt: MouseEvent) => boolean;
@@ -9282,13 +9310,13 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly boundariesPadding: number;
                     readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -9567,8 +9595,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                 readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             }>>, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly showAfter: number;
                 readonly hideAfter: number;
@@ -9592,8 +9620,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly disabled: boolean;
             }>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, {
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -9636,7 +9664,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             unmounted?: ((() => void) | (() => void)[]) | undefined;
             renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
             renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-            errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+            errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
         };
         $forceUpdate: () => void;
         $nextTick: typeof nextTick;
@@ -10310,8 +10338,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             $slots: Readonly<{
                 [name: string]: import("vue").Slot | undefined;
             }>;
-            $root: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-            $parent: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+            $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
+            $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
             $emit: (event: string, ...args: any[]) => void;
             $el: any;
             $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
@@ -10345,7 +10373,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 unmounted?: ((() => void) | (() => void)[]) | undefined;
                 renderTracked?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
                 renderTriggered?: (((e: import("vue").DebuggerEvent) => void) | ((e: import("vue").DebuggerEvent) => void)[]) | undefined;
-                errorCaptured?: (((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
+                errorCaptured?: (((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void) | ((err: unknown, instance: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null, info: string) => boolean | void)[]) | undefined;
             };
             $forceUpdate: () => void;
             $nextTick: typeof nextTick;
@@ -11638,7 +11666,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                 readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }, {
-                emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                 props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                     readonly id: StringConstructor;
                     readonly style: {
@@ -11888,12 +11916,12 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
-                focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                 trapped: import("vue").Ref<boolean>;
                 onFocusAfterReleased: (event: CustomEvent<any>) => void;
                 onFocusAfterTrapped: () => void;
@@ -11955,17 +11983,17 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
                     focusStartEl: {
-                        type: import("vue").PropType<HTMLElement | "first" | "container">;
+                        type: import("vue").PropType<HTMLElement | "container" | "first">;
                         default: string;
                     };
                 }, {
                     onKeydown: (e: KeyboardEvent) => void;
-                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                     loop: BooleanConstructor;
                     trapped: BooleanConstructor;
                     focusTrapEl: import("vue").PropType<HTMLElement>;
                     focusStartEl: {
-                        type: import("vue").PropType<HTMLElement | "first" | "container">;
+                        type: import("vue").PropType<HTMLElement | "container" | "first">;
                         default: string;
                     };
                 }>> & {
@@ -11978,7 +12006,7 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 }, {
                     trapped: boolean;
                     loop: boolean;
-                    focusStartEl: HTMLElement | "first" | "container";
+                    focusStartEl: HTMLElement | "container" | "first";
                 }>;
             }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                 mouseenter: (evt: MouseEvent) => boolean;
@@ -12235,13 +12263,13 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
                 readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }>> & {
                 onClose?: (() => any) | undefined;
-                onFocus?: (() => any) | undefined;
                 onBlur?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                onFocus?: (() => any) | undefined;
                 onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly boundariesPadding: number;
                 readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -12520,8 +12548,8 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
             readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
         }>>, {
-            readonly effect: string;
             readonly offset: number;
+            readonly effect: string;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             readonly showAfter: number;
             readonly hideAfter: number;
@@ -12545,12 +12573,16 @@ export declare const useSelect: (props: any, states: States, ctx: any) => {
             readonly disabled: boolean;
         }>;
     }> & {} & import("vue").ComponentCustomProperties) | null>;
-    tags: import("vue").Ref<HTMLElement | null>;
-    selectWrapper: import("vue").Ref<HTMLElement | null>;
-    scrollbar: import("vue").Ref<{
+    calculatorRef: import("vue").Ref<HTMLElement>;
+    prefixRef: import("vue").Ref<HTMLElement>;
+    suffixRef: import("vue").Ref<HTMLElement>;
+    selectRef: import("vue").Ref<HTMLElement>;
+    wrapperRef: import("vue").ShallowRef<HTMLElement | undefined>;
+    selectionRef: import("vue").Ref<HTMLElement>;
+    scrollbarRef: import("vue").Ref<{
         handleScroll: () => void;
     } | null>;
-    handleMouseEnter: () => void;
-    handleMouseLeave: () => void;
+    menuRef: import("vue").Ref<HTMLElement>;
+    tagMenuRef: import("vue").Ref<HTMLElement>;
+    collapseItemRef: import("vue").Ref<HTMLElement>;
 };
-export {};

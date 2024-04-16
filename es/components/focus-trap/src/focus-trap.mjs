@@ -249,7 +249,7 @@ const _sfc_main = defineComponent({
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return renderSlot(_ctx.$slots, "default", { handleKeydown: _ctx.onKeydown });
 }
-var ElFocusTrap = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\focus-trap\\src\\focus-trap.vue"]]);
+var ElFocusTrap = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "focus-trap.vue"]]);
 
 export { ElFocusTrap as default };
 //# sourceMappingURL=focus-trap.mjs.map

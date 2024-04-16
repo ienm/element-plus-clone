@@ -53,6 +53,7 @@ export declare type RangePickerEmits = {
 };
 export declare type DatePickerEmits = Dayjs;
 export declare type DatesPickerEmits = Dayjs[];
+export declare type YearsPickerEmits = Dayjs[];
 export declare type WeekPickerEmits = {
     year: number;
     week: number;

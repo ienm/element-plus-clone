@@ -49,10 +49,10 @@ export declare const usePopperContent: (props: PopperContentProps) => {
                 auto?: import("@popperjs/core").Offsets | undefined;
                 top?: import("@popperjs/core").Offsets | undefined;
                 bottom?: import("@popperjs/core").Offsets | undefined;
+                left?: import("@popperjs/core").Offsets | undefined;
                 "auto-start"?: import("@popperjs/core").Offsets | undefined;
                 "auto-end"?: import("@popperjs/core").Offsets | undefined;
                 right?: import("@popperjs/core").Offsets | undefined;
-                left?: import("@popperjs/core").Offsets | undefined;
                 "top-start"?: import("@popperjs/core").Offsets | undefined;
                 "top-end"?: import("@popperjs/core").Offsets | undefined;
                 "bottom-start"?: import("@popperjs/core").Offsets | undefined;

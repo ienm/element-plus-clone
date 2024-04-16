@@ -181,7 +181,7 @@ declare const _default: import("vue").DefineComponent<{
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly layout: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+        readonly layout: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
         readonly initScrollOffset: import("../../../utils").EpPropFinalized<NumberConstructor, never, never, 0, false>;
         readonly total: {
             readonly type: import("vue").PropType<number>;
@@ -280,7 +280,7 @@ declare const _default: import("vue").DefineComponent<{
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly layout: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", never, "vertical", false>;
+        readonly layout: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", never, "vertical", false>;
         readonly initScrollOffset: import("../../../utils").EpPropFinalized<NumberConstructor, never, never, 0, false>;
         readonly total: {
             readonly type: import("vue").PropType<number>;
@@ -298,9 +298,9 @@ declare const _default: import("vue").DefineComponent<{
         onScroll?: ((...args: any[]) => any) | undefined;
         onItemRendered?: ((...args: any[]) => any) | undefined;
     }, {
-        readonly className: string;
-        readonly layout: import("../../../utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", never>;
         readonly direction: import("../../../utils").EpPropMergeType<StringConstructor, "ltr" | "rtl", never>;
+        readonly className: string;
+        readonly layout: import("../../../utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", never>;
         readonly data: any[];
         readonly scrollbarAlwaysOn: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly containerElement: import("../../../utils").EpPropMergeType<(new (...args: any[]) => (string | Element) & {}) | (() => string | Element) | ((new (...args: any[]) => (string | Element) & {}) | (() => string | Element))[], unknown, unknown>;
@@ -344,7 +344,7 @@ declare const _default: import("vue").DefineComponent<{
             onToggle?: ((node: import("./types").TreeNode) => any) | undefined;
             onCheck?: ((node: import("./types").TreeNode, checked: import("../..").CheckboxValueType) => any) | undefined;
         }>>;
-        emit: ((event: "click", node: import("./types").TreeNode, e: MouseEvent) => void) & ((event: "check", node: import("./types").TreeNode, checked: import("../..").CheckboxValueType) => void) & ((event: "toggle", node: import("./types").TreeNode) => void);
+        emit: ((event: "click", node: import("./types").TreeNode, e: MouseEvent) => void) & ((event: "toggle", node: import("./types").TreeNode) => void) & ((event: "check", node: import("./types").TreeNode, checked: import("../..").CheckboxValueType) => void);
         tree: import("./types").TreeContext | undefined;
         ns: {
             namespace: import("vue").ComputedRef<string>;
@@ -442,11 +442,23 @@ declare const _default: import("vue").DefineComponent<{
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -487,11 +499,23 @@ declare const _default: import("vue").DefineComponent<{
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -537,6 +561,7 @@ declare const _default: import("vue").DefineComponent<{
             checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             hasOwnLabel: import("vue").ComputedRef<boolean>;
             model: import("vue").WritableComputedRef<any>;
+            actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
             handleChange: (e: Event) => void;
             onClickRoot: (e: MouseEvent) => Promise<void>;
             ns: {
@@ -571,11 +596,23 @@ declare const _default: import("vue").DefineComponent<{
                 type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                 default: undefined;
             };
+            value: {
+                type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                default: undefined;
+            };
             indeterminate: BooleanConstructor;
             disabled: BooleanConstructor;
             checked: BooleanConstructor;
             name: {
                 type: StringConstructor;
+                default: undefined;
+            };
+            trueValue: {
+                type: (NumberConstructor | StringConstructor)[];
+                default: undefined;
+            };
+            falseValue: {
+                type: (NumberConstructor | StringConstructor)[];
                 default: undefined;
             };
             trueLabel: {
@@ -610,6 +647,7 @@ declare const _default: import("vue").DefineComponent<{
             onChange?: ((val: import("../..").CheckboxValueType) => any) | undefined;
             "onUpdate:modelValue"?: ((val: import("../..").CheckboxValueType) => any) | undefined;
         }, {
+            value: string | number | boolean | Record<string, any>;
             modelValue: string | number | boolean;
             label: string | number | boolean | Record<string, any>;
             id: string;
@@ -619,6 +657,8 @@ declare const _default: import("vue").DefineComponent<{
             border: boolean;
             indeterminate: boolean;
             checked: boolean;
+            trueValue: string | number;
+            falseValue: string | number;
             trueLabel: string | number;
             falseLabel: string | number;
             controls: string;
@@ -632,11 +672,23 @@ declare const _default: import("vue").DefineComponent<{
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -677,11 +729,23 @@ declare const _default: import("vue").DefineComponent<{
                         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                         default: undefined;
                     };
+                    value: {
+                        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
                     indeterminate: BooleanConstructor;
                     disabled: BooleanConstructor;
                     checked: BooleanConstructor;
                     name: {
                         type: StringConstructor;
+                        default: undefined;
+                    };
+                    trueValue: {
+                        type: (NumberConstructor | StringConstructor)[];
+                        default: undefined;
+                    };
+                    falseValue: {
+                        type: (NumberConstructor | StringConstructor)[];
                         default: undefined;
                     };
                     trueLabel: {
@@ -724,6 +788,7 @@ declare const _default: import("vue").DefineComponent<{
                 isDisabled: import("vue").ComputedRef<boolean>;
                 checkboxButtonSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 model: import("vue").WritableComputedRef<any>;
+                actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
                 handleChange: (e: Event) => void;
                 checkboxGroup: ({
                     modelValue?: import("vue").WritableComputedRef<any> | undefined;
@@ -761,11 +826,23 @@ declare const _default: import("vue").DefineComponent<{
                     type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
                     default: undefined;
                 };
+                value: {
+                    type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+                    default: undefined;
+                };
                 indeterminate: BooleanConstructor;
                 disabled: BooleanConstructor;
                 checked: BooleanConstructor;
                 name: {
                     type: StringConstructor;
+                    default: undefined;
+                };
+                trueValue: {
+                    type: (NumberConstructor | StringConstructor)[];
+                    default: undefined;
+                };
+                falseValue: {
+                    type: (NumberConstructor | StringConstructor)[];
                     default: undefined;
                 };
                 trueLabel: {
@@ -800,6 +877,7 @@ declare const _default: import("vue").DefineComponent<{
                 onChange?: ((val: import("../..").CheckboxValueType) => any) | undefined;
                 "onUpdate:modelValue"?: ((val: import("../..").CheckboxValueType) => any) | undefined;
             }, {
+                value: string | number | boolean | Record<string, any>;
                 modelValue: string | number | boolean;
                 label: string | number | boolean | Record<string, any>;
                 id: string;
@@ -809,6 +887,8 @@ declare const _default: import("vue").DefineComponent<{
                 border: boolean;
                 indeterminate: boolean;
                 checked: boolean;
+                trueValue: string | number;
+                falseValue: string | number;
                 trueLabel: string | number;
                 falseLabel: string | number;
                 controls: string;

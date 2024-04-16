@@ -126,7 +126,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 6)
   ], 2);
 }
-var HueSlider = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\color-picker\\src\\components\\hue-slider.vue"]]);
+var HueSlider = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "hue-slider.vue"]]);
 
 export { HueSlider as default };
 //# sourceMappingURL=hue-slider.mjs.map

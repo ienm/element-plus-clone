@@ -179,9 +179,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         $: import("vue").ComponentInternalInstance;
         $data: {};
         $props: Partial<{
+            readonly vertical: boolean;
             readonly modelValue: number;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
-            readonly vertical: boolean;
         }> & Omit<Readonly<import("vue").ExtractPropTypes<{
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             readonly vertical: BooleanConstructor;
@@ -189,7 +189,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             readonly placement: import("element-plus/es/utils").EpPropFinalized<StringConstructor, import("@popperjs/core").Placement, unknown, "top", boolean>;
         }>> & {
             "onUpdate:modelValue"?: ((value: number) => any) | undefined;
-        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "modelValue" | "placement" | "vertical">;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "vertical" | "modelValue" | "placement">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -2259,7 +2259,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }, {
-                        emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                        emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                         props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                             readonly id: StringConstructor;
                             readonly style: {
@@ -2509,12 +2509,12 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                             readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                         }>> & {
                             onClose?: (() => any) | undefined;
-                            onFocus?: (() => any) | undefined;
                             onBlur?: (() => any) | undefined;
-                            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                            onFocus?: (() => any) | undefined;
                             onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                         }>>;
-                        focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                        focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                         trapped: import("vue").Ref<boolean>;
                         onFocusAfterReleased: (event: CustomEvent<any>) => void;
                         onFocusAfterTrapped: () => void;
@@ -2576,17 +2576,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                             trapped: BooleanConstructor;
                             focusTrapEl: import("vue").PropType<HTMLElement>;
                             focusStartEl: {
-                                type: import("vue").PropType<HTMLElement | "first" | "container">;
+                                type: import("vue").PropType<HTMLElement | "container" | "first">;
                                 default: string;
                             };
                         }, {
                             onKeydown: (e: KeyboardEvent) => void;
-                        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                             loop: BooleanConstructor;
                             trapped: BooleanConstructor;
                             focusTrapEl: import("vue").PropType<HTMLElement>;
                             focusStartEl: {
-                                type: import("vue").PropType<HTMLElement | "first" | "container">;
+                                type: import("vue").PropType<HTMLElement | "container" | "first">;
                                 default: string;
                             };
                         }>> & {
@@ -2599,7 +2599,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         }, {
                             trapped: boolean;
                             loop: boolean;
-                            focusStartEl: HTMLElement | "first" | "container";
+                            focusStartEl: HTMLElement | "container" | "first";
                         }>;
                     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                         mouseenter: (evt: MouseEvent) => boolean;
@@ -2856,13 +2856,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }, {
-                        readonly effect: string;
                         readonly offset: number;
+                        readonly effect: string;
                         readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                         readonly boundariesPadding: number;
                         readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -3141,8 +3141,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                     readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
                 }>>, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly showAfter: number;
                     readonly hideAfter: number;
@@ -3490,8 +3490,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             }>> & {
                 [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
             }, {
-                effect: string;
                 offset: number;
+                effect: string;
                 placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 showAfter: number;
                 hideAfter: number;
@@ -3523,9 +3523,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
             "update:modelValue": (value: number) => boolean;
         }, string, {
+            readonly vertical: boolean;
             readonly modelValue: number;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
-            readonly vertical: boolean;
         }> & {
             beforeCreate?: ((() => void) | (() => void)[]) | undefined;
             created?: ((() => void) | (() => void)[]) | undefined;
@@ -5602,7 +5602,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -5852,12 +5852,12 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
-                    focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                    focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
                     onFocusAfterReleased: (event: CustomEvent<any>) => void;
                     onFocusAfterTrapped: () => void;
@@ -5919,17 +5919,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }>> & {
@@ -5942,7 +5942,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     }, {
                         trapped: boolean;
                         loop: boolean;
-                        focusStartEl: HTMLElement | "first" | "container";
+                        focusStartEl: HTMLElement | "container" | "first";
                     }>;
                 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                     mouseenter: (evt: MouseEvent) => boolean;
@@ -6199,13 +6199,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly boundariesPadding: number;
                     readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -6484,8 +6484,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                 readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             }>>, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly showAfter: number;
                 readonly hideAfter: number;
@@ -6833,8 +6833,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
         }, {
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -6868,9 +6868,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         $: import("vue").ComponentInternalInstance;
         $data: {};
         $props: Partial<{
+            readonly vertical: boolean;
             readonly modelValue: number;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
-            readonly vertical: boolean;
         }> & Omit<Readonly<import("vue").ExtractPropTypes<{
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             readonly vertical: BooleanConstructor;
@@ -6878,7 +6878,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             readonly placement: import("element-plus/es/utils").EpPropFinalized<StringConstructor, import("@popperjs/core").Placement, unknown, "top", boolean>;
         }>> & {
             "onUpdate:modelValue"?: ((value: number) => any) | undefined;
-        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "modelValue" | "placement" | "vertical">;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "vertical" | "modelValue" | "placement">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -8948,7 +8948,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }, {
-                        emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                        emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                         props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                             readonly id: StringConstructor;
                             readonly style: {
@@ -9198,12 +9198,12 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                             readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                         }>> & {
                             onClose?: (() => any) | undefined;
-                            onFocus?: (() => any) | undefined;
                             onBlur?: (() => any) | undefined;
-                            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                            onFocus?: (() => any) | undefined;
                             onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                         }>>;
-                        focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                        focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                         trapped: import("vue").Ref<boolean>;
                         onFocusAfterReleased: (event: CustomEvent<any>) => void;
                         onFocusAfterTrapped: () => void;
@@ -9265,17 +9265,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                             trapped: BooleanConstructor;
                             focusTrapEl: import("vue").PropType<HTMLElement>;
                             focusStartEl: {
-                                type: import("vue").PropType<HTMLElement | "first" | "container">;
+                                type: import("vue").PropType<HTMLElement | "container" | "first">;
                                 default: string;
                             };
                         }, {
                             onKeydown: (e: KeyboardEvent) => void;
-                        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                        }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                             loop: BooleanConstructor;
                             trapped: BooleanConstructor;
                             focusTrapEl: import("vue").PropType<HTMLElement>;
                             focusStartEl: {
-                                type: import("vue").PropType<HTMLElement | "first" | "container">;
+                                type: import("vue").PropType<HTMLElement | "container" | "first">;
                                 default: string;
                             };
                         }>> & {
@@ -9288,7 +9288,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         }, {
                             trapped: boolean;
                             loop: boolean;
-                            focusStartEl: HTMLElement | "first" | "container";
+                            focusStartEl: HTMLElement | "container" | "first";
                         }>;
                     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                         mouseenter: (evt: MouseEvent) => boolean;
@@ -9545,13 +9545,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }, {
-                        readonly effect: string;
                         readonly offset: number;
+                        readonly effect: string;
                         readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                         readonly boundariesPadding: number;
                         readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -9830,8 +9830,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                     readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
                 }>>, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly showAfter: number;
                     readonly hideAfter: number;
@@ -10179,8 +10179,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             }>> & {
                 [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
             }, {
-                effect: string;
                 offset: number;
+                effect: string;
                 placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 showAfter: number;
                 hideAfter: number;
@@ -10212,9 +10212,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
             "update:modelValue": (value: number) => boolean;
         }, string, {
+            readonly vertical: boolean;
             readonly modelValue: number;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
-            readonly vertical: boolean;
         }> & {
             beforeCreate?: ((() => void) | (() => void)[]) | undefined;
             created?: ((() => void) | (() => void)[]) | undefined;
@@ -12291,7 +12291,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -12541,12 +12541,12 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
-                    focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                    focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
                     onFocusAfterReleased: (event: CustomEvent<any>) => void;
                     onFocusAfterTrapped: () => void;
@@ -12608,17 +12608,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }>> & {
@@ -12631,7 +12631,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     }, {
                         trapped: boolean;
                         loop: boolean;
-                        focusStartEl: HTMLElement | "first" | "container";
+                        focusStartEl: HTMLElement | "container" | "first";
                     }>;
                 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                     mouseenter: (evt: MouseEvent) => boolean;
@@ -12888,13 +12888,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly boundariesPadding: number;
                     readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -13173,8 +13173,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                 readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             }>>, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly showAfter: number;
                 readonly hideAfter: number;
@@ -13522,8 +13522,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
         }, {
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -13647,10 +13647,10 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             onChange?: ((cur: number | undefined, prev: number | undefined) => any) | undefined;
             "onUpdate:modelValue"?: ((val: number | undefined) => any) | undefined;
             onInput?: ((val: number | null | undefined) => any) | undefined;
-            onFocus?: ((e: FocusEvent) => any) | undefined;
             onBlur?: ((e: FocusEvent) => any) | undefined;
+            onFocus?: ((e: FocusEvent) => any) | undefined;
         }>>;
-        emit: ((event: "update:modelValue", val: number | undefined) => void) & ((event: "change", cur: number | undefined, prev: number | undefined) => void) & ((event: "input", val: number | null | undefined) => void) & ((event: "focus", e: FocusEvent) => void) & ((event: "blur", e: FocusEvent) => void);
+        emit: ((event: "update:modelValue", val: number | undefined) => void) & ((event: "change", cur: number | undefined, prev: number | undefined) => void) & ((event: "input", val: number | null | undefined) => void) & ((event: "blur", e: FocusEvent) => void) & ((event: "focus", e: FocusEvent) => void);
         t: import("../..").Translator;
         ns: {
             namespace: import("vue").ComputedRef<string>;
@@ -13700,9 +13700,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -13759,15 +13771,15 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "type" | "modelValue" | "label" | "id" | "disabled" | "clearable" | "autosize" | "autocomplete" | "readonly" | "showPassword" | "showWordLimit" | "containerRole" | "tabindex" | "validateEvent" | "inputStyle" | "autofocus">;
             $attrs: {
                 [x: string]: unknown;
@@ -13780,7 +13792,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             }>;
             $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
             $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-            $emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            $emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             $el: any;
             $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
                 readonly id: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, undefined, boolean>;
@@ -13792,9 +13804,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -13851,15 +13875,15 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }, {
                 props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                     readonly id: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, undefined, boolean>;
@@ -13871,9 +13895,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     };
                     readonly disabled: BooleanConstructor;
                     readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                    readonly maxlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
+                    readonly minlength: {
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                        readonly required: false;
+                        readonly validator: ((val: unknown) => boolean) | undefined;
+                        __epPropKey: true;
+                    };
                     readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                     readonly resize: {
-                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                         readonly required: false;
                         readonly validator: ((val: unknown) => boolean) | undefined;
                         __epPropKey: true;
@@ -13930,17 +13966,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     onChange?: ((value: string) => any) | undefined;
                     "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                     onInput?: ((value: string) => any) | undefined;
-                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onBlur?: ((evt: FocusEvent) => any) | undefined;
+                    onFocus?: ((evt: FocusEvent) => any) | undefined;
                     onClear?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                     onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                    onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                    onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                    onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }>>;
-                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+                emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
                 rawAttrs: {
                     [x: string]: unknown;
                 };
@@ -13951,8 +13987,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 containerKls: import("vue").ComputedRef<unknown[]>;
                 wrapperKls: import("vue").ComputedRef<string[]>;
                 attrs: import("vue").ComputedRef<Record<string, unknown>>;
-                form: import("..").FormContext | undefined;
-                formItem: import("..").FormItemContext | undefined;
+                elForm: import("..").FormContext | undefined;
+                elFormItem: import("..").FormItemContext | undefined;
                 inputId: import("vue").Ref<string | undefined>;
                 inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
                 inputDisabled: import("vue").ComputedRef<boolean>;
@@ -14005,7 +14041,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 handleFocus: (event: FocusEvent) => void;
                 handleBlur: (event: FocusEvent) => void;
                 needStatusIcon: import("vue").ComputedRef<boolean>;
-                validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+                validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
                 validateIcon: import("vue").ComputedRef<any>;
                 passwordIcon: import("vue").ComputedRef<any>;
                 containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -14161,9 +14197,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -14220,15 +14268,15 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onBlur?: ((evt: FocusEvent) => any) | undefined;
+            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         } & import("vue").ShallowUnwrapRef<{
             props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                 readonly id: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, undefined, boolean>;
@@ -14240,9 +14288,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -14299,17 +14359,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             rawAttrs: {
                 [x: string]: unknown;
             };
@@ -14320,8 +14380,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             containerKls: import("vue").ComputedRef<unknown[]>;
             wrapperKls: import("vue").ComputedRef<string[]>;
             attrs: import("vue").ComputedRef<Record<string, unknown>>;
-            form: import("..").FormContext | undefined;
-            formItem: import("..").FormItemContext | undefined;
+            elForm: import("..").FormContext | undefined;
+            elFormItem: import("..").FormItemContext | undefined;
             inputId: import("vue").Ref<string | undefined>;
             inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             inputDisabled: import("vue").ComputedRef<boolean>;
@@ -14374,7 +14434,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             handleFocus: (event: FocusEvent) => void;
             handleBlur: (event: FocusEvent) => void;
             needStatusIcon: import("vue").ComputedRef<boolean>;
-            validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+            validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
             validateIcon: import("vue").ComputedRef<any>;
             passwordIcon: import("vue").ComputedRef<any>;
             containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -14496,6 +14556,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         blur: () => void;
         handleFocus: (event: MouseEvent | FocusEvent) => void;
         handleBlur: (event: MouseEvent | FocusEvent) => void;
+        setCurrentValueToModelValue: () => void;
+        handleWheel: (e: MouseEvent) => void;
         ElInput: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
             readonly id: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, undefined, boolean>;
             readonly size: {
@@ -14506,9 +14568,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -14572,9 +14646,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 };
                 readonly disabled: BooleanConstructor;
                 readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+                readonly maxlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
+                readonly minlength: {
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                    readonly required: false;
+                    readonly validator: ((val: unknown) => boolean) | undefined;
+                    __epPropKey: true;
+                };
                 readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
                 readonly resize: {
-                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                    readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                     readonly required: false;
                     readonly validator: ((val: unknown) => boolean) | undefined;
                     __epPropKey: true;
@@ -14631,17 +14717,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 onChange?: ((value: string) => any) | undefined;
                 "onUpdate:modelValue"?: ((value: string) => any) | undefined;
                 onInput?: ((value: string) => any) | undefined;
-                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onBlur?: ((evt: FocusEvent) => any) | undefined;
+                onFocus?: ((evt: FocusEvent) => any) | undefined;
                 onClear?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
                 onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-                onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+                onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+                onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "clear") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void);
+            emit: ((event: "update:modelValue", value: string) => void) & ((event: "change", value: string) => void) & ((event: "input", value: string) => void) & ((event: "blur", evt: FocusEvent) => void) & ((event: "compositionend", evt: CompositionEvent) => void) & ((event: "compositionstart", evt: CompositionEvent) => void) & ((event: "compositionupdate", evt: CompositionEvent) => void) & ((event: "focus", evt: FocusEvent) => void) & ((event: "keydown", evt: Event | KeyboardEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "clear") => void);
             rawAttrs: {
                 [x: string]: unknown;
             };
@@ -14652,8 +14738,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             containerKls: import("vue").ComputedRef<unknown[]>;
             wrapperKls: import("vue").ComputedRef<string[]>;
             attrs: import("vue").ComputedRef<Record<string, unknown>>;
-            form: import("..").FormContext | undefined;
-            formItem: import("..").FormItemContext | undefined;
+            elForm: import("..").FormContext | undefined;
+            elFormItem: import("..").FormItemContext | undefined;
             inputId: import("vue").Ref<string | undefined>;
             inputSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
             inputDisabled: import("vue").ComputedRef<boolean>;
@@ -14706,7 +14792,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             handleFocus: (event: FocusEvent) => void;
             handleBlur: (event: FocusEvent) => void;
             needStatusIcon: import("vue").ComputedRef<boolean>;
-            validateState: import("vue").ComputedRef<"" | "success" | "error" | "validating">;
+            validateState: import("vue").ComputedRef<"" | "error" | "success" | "validating">;
             validateIcon: import("vue").ComputedRef<any>;
             passwordIcon: import("vue").ComputedRef<any>;
             containerStyle: import("vue").ComputedRef<import("vue").StyleValue>;
@@ -14825,9 +14911,21 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             };
             readonly disabled: BooleanConstructor;
             readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown, "", boolean>;
+            readonly maxlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
+            readonly minlength: {
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<readonly [StringConstructor, NumberConstructor], unknown, unknown>>;
+                readonly required: false;
+                readonly validator: ((val: unknown) => boolean) | undefined;
+                __epPropKey: true;
+            };
             readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "text", boolean>;
             readonly resize: {
-                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "both" | "horizontal" | "vertical", unknown>>;
+                readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "none" | "vertical" | "horizontal" | "both", unknown>>;
                 readonly required: false;
                 readonly validator: ((val: unknown) => boolean) | undefined;
                 __epPropKey: true;
@@ -14884,15 +14982,15 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
             onChange?: ((value: string) => any) | undefined;
             "onUpdate:modelValue"?: ((value: string) => any) | undefined;
             onInput?: ((value: string) => any) | undefined;
-            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onBlur?: ((evt: FocusEvent) => any) | undefined;
+            onFocus?: ((evt: FocusEvent) => any) | undefined;
             onClear?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
-            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
-            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionstart?: ((evt: CompositionEvent) => any) | undefined;
             onCompositionupdate?: ((evt: CompositionEvent) => any) | undefined;
-            onCompositionend?: ((evt: CompositionEvent) => any) | undefined;
+            onKeydown?: ((evt: Event | KeyboardEvent) => any) | undefined;
+            onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         }, {
             readonly type: string;
             readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined) | ((new (...args: any[]) => (string | number | null | undefined) & {}) | (() => string | number | null | undefined))[], unknown, unknown>;
@@ -15017,8 +15115,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         onChange?: ((cur: number | undefined, prev: number | undefined) => any) | undefined;
         "onUpdate:modelValue"?: ((val: number | undefined) => any) | undefined;
         onInput?: ((val: number | null | undefined) => any) | undefined;
-        onFocus?: ((e: FocusEvent) => any) | undefined;
         onBlur?: ((e: FocusEvent) => any) | undefined;
+        onFocus?: ((e: FocusEvent) => any) | undefined;
     }, {
         readonly id: string;
         readonly disabled: boolean;
@@ -15027,9 +15125,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         readonly max: number;
         readonly controls: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
         readonly min: number;
+        readonly valueOnClear: any;
         readonly step: number;
         readonly controlsPosition: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "right", unknown>;
-        readonly valueOnClear: any;
         readonly stepStrictly: boolean;
     }>> & Record<string, any>;
     SliderButton: import("vue").DefineComponent<{
@@ -17086,7 +17184,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }, {
-                    emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+                    emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
                     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                         readonly id: StringConstructor;
                         readonly style: {
@@ -17336,12 +17434,12 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                     }>> & {
                         onClose?: (() => any) | undefined;
-                        onFocus?: (() => any) | undefined;
                         onBlur?: (() => any) | undefined;
-                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                        onFocus?: (() => any) | undefined;
                         onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                        onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                     }>>;
-                    focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+                    focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
                     trapped: import("vue").Ref<boolean>;
                     onFocusAfterReleased: (event: CustomEvent<any>) => void;
                     onFocusAfterTrapped: () => void;
@@ -17403,17 +17501,17 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }, {
                         onKeydown: (e: KeyboardEvent) => void;
-                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+                    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                         loop: BooleanConstructor;
                         trapped: BooleanConstructor;
                         focusTrapEl: import("vue").PropType<HTMLElement>;
                         focusStartEl: {
-                            type: import("vue").PropType<HTMLElement | "first" | "container">;
+                            type: import("vue").PropType<HTMLElement | "container" | "first">;
                             default: string;
                         };
                     }>> & {
@@ -17426,7 +17524,7 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     }, {
                         trapped: boolean;
                         loop: boolean;
-                        focusStartEl: HTMLElement | "first" | "container";
+                        focusStartEl: HTMLElement | "container" | "first";
                     }>;
                 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
                     mouseenter: (evt: MouseEvent) => boolean;
@@ -17683,13 +17781,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                     readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
                 }>> & {
                     onClose?: (() => any) | undefined;
-                    onFocus?: (() => any) | undefined;
                     onBlur?: (() => any) | undefined;
-                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                    onFocus?: (() => any) | undefined;
                     onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                    onMouseleave?: ((evt: MouseEvent) => any) | undefined;
                 }, {
-                    readonly effect: string;
                     readonly offset: number;
+                    readonly effect: string;
                     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                     readonly boundariesPadding: number;
                     readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -17968,8 +18066,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
                 readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
                 readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
             }>>, {
-                readonly effect: string;
                 readonly offset: number;
+                readonly effect: string;
                 readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
                 readonly showAfter: number;
                 readonly hideAfter: number;
@@ -18317,8 +18415,8 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
         }>> & {
             [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
         }, {
-            effect: string;
             offset: number;
+            effect: string;
             placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             showAfter: number;
             hideAfter: number;
@@ -18357,9 +18455,9 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
     }>> & {
         "onUpdate:modelValue"?: ((value: number) => any) | undefined;
     }, {
+        readonly vertical: boolean;
         readonly modelValue: number;
         readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
-        readonly vertical: boolean;
     }>;
     SliderMarker: import("vue").DefineComponent<{
         readonly mark: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => (string | {
@@ -18486,13 +18584,13 @@ export declare const ElSlider: import("element-plus/es/utils").SFCWithInstall<im
     "onUpdate:modelValue"?: ((value: import("element-plus/es/utils").Arrayable<number>) => any) | undefined;
     onInput?: ((value: import("element-plus/es/utils").Arrayable<number>) => any) | undefined;
 }, {
+    readonly vertical: boolean;
     readonly modelValue: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => import("element-plus/es/utils").Arrayable<number> & {}) | (() => import("element-plus/es/utils").Arrayable<number>) | ((new (...args: any[]) => import("element-plus/es/utils").Arrayable<number> & {}) | (() => import("element-plus/es/utils").Arrayable<number>))[], unknown, unknown>;
     readonly debounce: number;
     readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
     readonly label: string;
     readonly id: string;
     readonly disabled: boolean;
-    readonly vertical: boolean;
     readonly validateEvent: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly range: boolean;
     readonly max: number;

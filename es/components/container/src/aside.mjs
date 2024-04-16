@@ -28,7 +28,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Aside = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\container\\src\\aside.vue"]]);
+var Aside = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "aside.vue"]]);
 
 export { Aside as default };
 //# sourceMappingURL=aside.mjs.map

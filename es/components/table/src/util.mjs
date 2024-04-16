@@ -1,12 +1,10 @@
-import { createPopper } from '@popperjs/core';
-import { get, merge, flatMap } from 'lodash-unified';
-import escapeHtml from 'escape-html';
+import { createVNode, render } from 'vue';
+import { get, flatMap } from 'lodash-unified';
 import '../../../utils/index.mjs';
-import '../../../hooks/index.mjs';
+import { ElTooltip } from '../../tooltip/index.mjs';
 import { isObject, hasOwn, isArray } from '@vue/shared';
 import { throwError } from '../../../utils/error.mjs';
 import { isBoolean } from '../../../utils/types.mjs';
-import { useDelayedToggle } from '../../../hooks/use-delayed-toggle/index.mjs';
 
 const getCell = function(event) {
   var _a;
@@ -235,93 +233,45 @@ function walkTreeNode(root, cb, childrenKey = "children", lazyKey = "hasChildren
     }
   });
 }
-let removePopper;
-function createTablePopper(parentNode, trigger, popperContent, nextZIndex, tooltipOptions) {
-  tooltipOptions = merge({
-    enterable: true,
-    showArrow: true
-  }, tooltipOptions);
-  const ns = parentNode == null ? void 0 : parentNode.dataset.prefix;
-  const scrollContainer = parentNode == null ? void 0 : parentNode.querySelector(`.${ns}-scrollbar__wrap`);
-  function renderContent() {
-    const isLight = tooltipOptions.effect === "light";
-    const content2 = document.createElement("div");
-    content2.className = [
-      `${ns}-popper`,
-      isLight ? "is-light" : "is-dark",
-      tooltipOptions.popperClass || ""
-    ].join(" ");
-    popperContent = escapeHtml(popperContent);
-    content2.innerHTML = popperContent;
-    content2.style.zIndex = String(nextZIndex());
-    parentNode == null ? void 0 : parentNode.appendChild(content2);
-    return content2;
-  }
-  function renderArrow() {
-    const arrow = document.createElement("div");
-    arrow.className = `${ns}-popper__arrow`;
-    return arrow;
-  }
-  function showPopper() {
-    popperInstance && popperInstance.update();
+let removePopper = null;
+function createTablePopper(props, popperContent, trigger, table) {
+  if ((removePopper == null ? void 0 : removePopper.trigger) === trigger) {
+    return;
   }
   removePopper == null ? void 0 : removePopper();
-  removePopper = () => {
-    try {
-      popperInstance && popperInstance.destroy();
-      content && (parentNode == null ? void 0 : parentNode.removeChild(content));
-      trigger.removeEventListener("mouseenter", onOpen);
-      trigger.removeEventListener("mouseleave", onClose);
-      scrollContainer == null ? void 0 : scrollContainer.removeEventListener("scroll", removePopper);
-      removePopper = void 0;
-    } catch (e) {
-    }
-  };
-  let popperInstance = null;
-  let onOpen = showPopper;
-  let onClose = removePopper;
-  if (tooltipOptions.enterable) {
-    ;
-    ({ onOpen, onClose } = useDelayedToggle({
-      showAfter: tooltipOptions.showAfter,
-      hideAfter: tooltipOptions.hideAfter,
-      open: showPopper,
-      close: removePopper
-    }));
-  }
-  const content = renderContent();
-  content.onmouseenter = onOpen;
-  content.onmouseleave = onClose;
-  const modifiers = [];
-  if (tooltipOptions.offset) {
-    modifiers.push({
-      name: "offset",
-      options: {
-        offset: [0, tooltipOptions.offset]
-      }
-    });
-  }
-  if (tooltipOptions.showArrow) {
-    const arrow = content.appendChild(renderArrow());
-    modifiers.push({
-      name: "arrow",
-      options: {
-        element: arrow,
-        padding: 10
-      }
-    });
-  }
-  const popperOptions = tooltipOptions.popperOptions || {};
-  popperInstance = createPopper(trigger, content, {
-    placement: tooltipOptions.placement || "top",
+  const parentNode = table == null ? void 0 : table.refs.tableWrapper;
+  const ns = parentNode == null ? void 0 : parentNode.dataset.prefix;
+  const popperOptions = {
     strategy: "fixed",
-    ...popperOptions,
-    modifiers: popperOptions.modifiers ? modifiers.concat(popperOptions.modifiers) : modifiers
+    ...props.popperOptions
+  };
+  const vm = createVNode(ElTooltip, {
+    content: popperContent,
+    virtualTriggering: true,
+    virtualRef: trigger,
+    appendTo: parentNode,
+    placement: "top",
+    transition: "none",
+    offset: 0,
+    hideAfter: 0,
+    ...props,
+    popperOptions,
+    onHide: () => {
+      removePopper == null ? void 0 : removePopper();
+    }
   });
-  trigger.addEventListener("mouseenter", onOpen);
-  trigger.addEventListener("mouseleave", onClose);
+  vm.appContext = { ...table.appContext, ...table };
+  const container = document.createElement("div");
+  render(vm, container);
+  vm.component.exposed.onOpen();
+  const scrollContainer = parentNode == null ? void 0 : parentNode.querySelector(`.${ns}-scrollbar__wrap`);
+  removePopper = () => {
+    render(null, container);
+    scrollContainer == null ? void 0 : scrollContainer.removeEventListener("scroll", removePopper);
+    removePopper = null;
+  };
+  removePopper.trigger = trigger;
   scrollContainer == null ? void 0 : scrollContainer.addEventListener("scroll", removePopper);
-  return popperInstance;
 }
 function getCurrentColumns(column) {
   if (column.children) {

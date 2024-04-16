@@ -9,6 +9,9 @@
   var hr = {
     name: "hr",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "O\u010Disti"
@@ -130,6 +133,11 @@
       popconfirm: {
         confirmButtonText: "Yes",
         cancelButtonText: "No"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

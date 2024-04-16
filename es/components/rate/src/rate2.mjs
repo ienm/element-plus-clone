@@ -262,7 +262,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Rate = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\rate\\src\\rate.vue"]]);
+var Rate = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "rate.vue"]]);
 
 export { Rate as default };
 //# sourceMappingURL=rate2.mjs.map

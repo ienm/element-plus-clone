@@ -1,6 +1,9 @@
 var tr = {
   name: "tr",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "Onayla",
       clear: "Temizle"
@@ -121,6 +124,11 @@ var tr = {
     popconfirm: {
       confirmButtonText: "Evet",
       cancelButtonText: "Hay\u0131r"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

@@ -1,29 +1,31 @@
 declare const _default: import("vue").DefineComponent<{
     readonly initialIndex: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
     readonly height: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "hover" | "click", unknown, "hover", boolean>;
+    readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "click" | "hover", unknown, "hover", boolean>;
     readonly autoplay: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
     readonly interval: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 3000, boolean>;
     readonly indicatorPosition: import("../../../utils").EpPropFinalized<StringConstructor, "" | "none" | "outside", unknown, "", boolean>;
     readonly arrow: import("../../../utils").EpPropFinalized<StringConstructor, "always" | "never" | "hover", unknown, "hover", boolean>;
     readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "card", unknown, "", boolean>;
     readonly loop: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
-    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly pauseOnHover: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
+    readonly motionBlur: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
 }, {
     COMPONENT_NAME: string;
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly initialIndex: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
         readonly height: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "hover" | "click", unknown, "hover", boolean>;
+        readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "click" | "hover", unknown, "hover", boolean>;
         readonly autoplay: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
         readonly interval: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 3000, boolean>;
         readonly indicatorPosition: import("../../../utils").EpPropFinalized<StringConstructor, "" | "none" | "outside", unknown, "", boolean>;
         readonly arrow: import("../../../utils").EpPropFinalized<StringConstructor, "always" | "never" | "hover", unknown, "hover", boolean>;
         readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "card", unknown, "", boolean>;
         readonly loop: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
-        readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+        readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
         readonly pauseOnHover: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
+        readonly motionBlur: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
     }>> & {
         onChange?: ((current: number, prev: number) => any) | undefined;
     }>>;
@@ -43,11 +45,13 @@ declare const _default: import("vue").DefineComponent<{
         height: string;
         overflow: string;
     }>;
-    handleButtonEnter: (arrow: "right" | "left") => void;
+    handleButtonEnter: (arrow: "left" | "right") => void;
     handleButtonLeave: () => void;
+    isTransitioning: import("vue").Ref<boolean>;
     handleIndicatorClick: (index: number) => void;
     handleMouseEnter: () => void;
     handleMouseLeave: () => void;
+    handleTransitionEnd: () => void;
     setActiveItem: (index: string | number) => void;
     prev: () => void;
     next: () => void;
@@ -76,7 +80,9 @@ declare const _default: import("vue").DefineComponent<{
         cssVarBlock: (object: Record<string, string>) => Record<string, string>;
         cssVarBlockName: (name: string) => string;
     };
+    t: import("element-plus/es/hooks").Translator;
     carouselClasses: import("vue").ComputedRef<string[]>;
+    carouselContainer: import("vue").ComputedRef<string[]>;
     indicatorsClasses: import("vue").ComputedRef<string[]>;
     ElIcon: import("../../../utils").SFCWithInstall<import("vue").DefineComponent<{
         readonly size: {
@@ -148,28 +154,30 @@ declare const _default: import("vue").DefineComponent<{
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly initialIndex: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
     readonly height: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "hover" | "click", unknown, "hover", boolean>;
+    readonly trigger: import("../../../utils").EpPropFinalized<StringConstructor, "click" | "hover", unknown, "hover", boolean>;
     readonly autoplay: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
     readonly interval: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 3000, boolean>;
     readonly indicatorPosition: import("../../../utils").EpPropFinalized<StringConstructor, "" | "none" | "outside", unknown, "", boolean>;
     readonly arrow: import("../../../utils").EpPropFinalized<StringConstructor, "always" | "never" | "hover", unknown, "hover", boolean>;
     readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "card", unknown, "", boolean>;
     readonly loop: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
-    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly pauseOnHover: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
+    readonly motionBlur: import("../../../utils").EpPropFinalized<BooleanConstructor, unknown, unknown, false, boolean>;
 }>> & {
     onChange?: ((current: number, prev: number) => any) | undefined;
 }, {
+    readonly interval: number;
     readonly type: import("../../../utils").EpPropMergeType<StringConstructor, "" | "card", unknown>;
     readonly height: string;
-    readonly direction: import("../../../utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", unknown>;
-    readonly trigger: import("../../../utils").EpPropMergeType<StringConstructor, "hover" | "click", unknown>;
+    readonly direction: import("../../../utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", unknown>;
+    readonly trigger: import("../../../utils").EpPropMergeType<StringConstructor, "click" | "hover", unknown>;
     readonly arrow: import("../../../utils").EpPropMergeType<StringConstructor, "always" | "never" | "hover", unknown>;
     readonly loop: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly initialIndex: number;
     readonly autoplay: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
-    readonly interval: number;
     readonly indicatorPosition: import("../../../utils").EpPropMergeType<StringConstructor, "" | "none" | "outside", unknown>;
     readonly pauseOnHover: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
+    readonly motionBlur: import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
 }>;
 export default _default;

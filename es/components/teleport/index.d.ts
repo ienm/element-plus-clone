@@ -54,8 +54,8 @@ export declare const ElTeleport: import("element-plus/es/utils").SFCWithInstall<
     readonly zIndex: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "2000", boolean>;
 }>>, {
     readonly zIndex: string;
-    readonly disabled: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly container: string;
+    readonly disabled: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
 }>> & Record<string, any>;
 export default ElTeleport;
 export * from './src/teleport';

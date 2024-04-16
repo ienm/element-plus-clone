@@ -48,7 +48,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Skeleton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\skeleton\\src\\skeleton.vue"]]);
+var Skeleton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "skeleton.vue"]]);
 
 export { Skeleton as default };
 //# sourceMappingURL=skeleton.mjs.map

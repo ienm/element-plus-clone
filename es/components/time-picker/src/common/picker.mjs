@@ -15,6 +15,7 @@ import _export_sfc from '../../../../_virtual/plugin-vue_export-helper.mjs';
 import { useLocale } from '../../../../hooks/use-locale/index.mjs';
 import { useNamespace } from '../../../../hooks/use-namespace/index.mjs';
 import { useFormItem } from '../../../form/src/hooks/use-form-item.mjs';
+import { useEmptyValues } from '../../../../hooks/use-empty-values/index.mjs';
 import { debugWarn } from '../../../../utils/error.mjs';
 import { isArray } from '@vue/shared';
 import { EVENT_CODE } from '../../../../constants/aria.mjs';
@@ -47,6 +48,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const nsRange = useNamespace("range");
     const { form, formItem } = useFormItem();
     const elPopperOptions = inject("ElPopperOptions", {});
+    const { valueOnClear } = useEmptyValues(props, null);
     const refPopper = ref();
     const inputRef = ref();
     const pickerVisible = ref(false);
@@ -249,13 +251,14 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (!pickerVisible.value && valueIsEmpty.value)
         return "";
       if (formattedValue) {
-        return isDatesPicker.value ? formattedValue.join(", ") : formattedValue;
+        return isDatesPicker.value || isYearsPicker.value ? formattedValue.join(", ") : formattedValue;
       }
       return "";
     });
     const isTimeLikePicker = computed(() => props.type.includes("time"));
     const isTimePicker = computed(() => props.type.startsWith("time"));
     const isDatesPicker = computed(() => props.type === "dates");
+    const isYearsPicker = computed(() => props.type === "years");
     const triggerIcon = computed(() => props.prefixIcon || (isTimeLikePicker.value ? Clock : Calendar));
     const showClose = ref(false);
     const onClearIconClick = (event) => {
@@ -264,8 +267,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (showClose.value) {
         event.stopPropagation();
         focusOnInputBox();
-        emitInput(null);
-        emitChange(null, true);
+        emitInput(valueOnClear.value);
+        emitChange(valueOnClear.value, true);
         showClose.value = false;
         pickerVisible.value = false;
         pickerOptions.value.handleClear && pickerOptions.value.handleClear();
@@ -335,8 +338,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }
       }
       if (userInput.value === "") {
-        emitInput(null);
-        emitChange(null);
+        emitInput(valueOnClear.value);
+        emitChange(valueOnClear.value);
         userInput.value = null;
       }
     };
@@ -515,7 +518,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             placeholder: _ctx.placeholder,
             class: normalizeClass([unref(nsDate).b("editor"), unref(nsDate).bm("editor", _ctx.type), _ctx.$attrs.class]),
             style: normalizeStyle(_ctx.$attrs.style),
-            readonly: !_ctx.editable || _ctx.readonly || unref(isDatesPicker) || _ctx.type === "week",
+            readonly: !_ctx.editable || _ctx.readonly || unref(isDatesPicker) || unref(isYearsPicker) || _ctx.type === "week",
             label: _ctx.label,
             tabindex: _ctx.tabindex,
             "validate-event": false,
@@ -653,7 +656,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var CommonPicker = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\time-picker\\src\\common\\picker.vue"]]);
+var CommonPicker = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "picker.vue"]]);
 
 export { CommonPicker as default };
 //# sourceMappingURL=picker.mjs.map

@@ -129,7 +129,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Thumb = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\scrollbar\\src\\thumb.vue"]]);
+var Thumb = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "thumb.vue"]]);
 
 export { Thumb as default };
 //# sourceMappingURL=thumb2.mjs.map

@@ -1,6 +1,9 @@
 var uk = {
   name: "uk",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "OK",
       clear: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u0438"
@@ -102,6 +105,11 @@ var uk = {
       clearFilter: "\u0412\u0441\u0435",
       sumText: "\u0421\u0443\u043C\u0430"
     },
+    tour: {
+      next: "\u0414\u0430\u043B\u0456",
+      previous: "\u041D\u0430\u0437\u0430\u0434",
+      finish: "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u0438"
+    },
     tree: {
       emptyText: "\u041D\u0435\u043C\u0430\u0454 \u0434\u0430\u043D\u0438\u0445"
     },
@@ -122,6 +130,11 @@ var uk = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

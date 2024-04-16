@@ -3,6 +3,9 @@
 var ar = {
   name: "ar",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "\u0645\u0648\u0627\u0641\u0642",
       clear: "\u0625\u0632\u0627\u0644\u0629",
@@ -143,6 +146,11 @@ var ar = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

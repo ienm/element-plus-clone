@@ -3,6 +3,9 @@
 var zhCn = {
   name: "zh-cn",
   el: {
+    breadcrumb: {
+      label: "\u9762\u5305\u5C51"
+    },
     colorpicker: {
       confirm: "\u786E\u5B9A",
       clear: "\u6E05\u7A7A"
@@ -104,6 +107,11 @@ var zhCn = {
       clearFilter: "\u5168\u90E8",
       sumText: "\u5408\u8BA1"
     },
+    tour: {
+      next: "\u4E0B\u4E00\u6B65",
+      previous: "\u4E0A\u4E00\u6B65",
+      finish: "\u7ED3\u675F\u5BFC\u89C8"
+    },
     tree: {
       emptyText: "\u6682\u65E0\u6570\u636E"
     },
@@ -124,6 +132,11 @@ var zhCn = {
     popconfirm: {
       confirmButtonText: "\u786E\u5B9A",
       cancelButtonText: "\u53D6\u6D88"
+    },
+    carousel: {
+      leftArrow: "\u4E0A\u4E00\u5F20\u5E7B\u706F\u7247",
+      rightArrow: "\u4E0B\u4E00\u5F20\u5E7B\u706F\u7247",
+      indicator: "\u5E7B\u706F\u7247\u5207\u6362\u81F3\u7D22\u5F15 {index}"
     }
   }
 };

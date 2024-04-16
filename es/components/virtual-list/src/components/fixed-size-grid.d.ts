@@ -172,8 +172,8 @@ declare const FixedSizeGrid: import("vue").DefineComponent<{
     onScroll?: ((...args: any[]) => any) | undefined;
     onItemRendered?: ((...args: any[]) => any) | undefined;
 }, {
-    readonly className: string;
     readonly direction: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "ltr" | "rtl", never>;
+    readonly className: string;
     readonly data: any[];
     readonly scrollbarAlwaysOn: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly itemKey: import("../types").GridItemKeyGetter;

@@ -170,15 +170,15 @@ export declare const ElProgress: import("element-plus/es/utils").SFCWithInstall<
     })[], unknown, unknown, (percentage: number) => string, boolean>;
 }>>, {
     readonly type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "circle" | "line" | "dashboard", unknown>;
-    readonly color: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) & {}) | (() => string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) | ((new (...args: any[]) => (string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) & {}) | (() => string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]))[], unknown, unknown>;
     readonly width: number;
+    readonly color: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => (string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) & {}) | (() => string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) | ((new (...args: any[]) => (string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]) & {}) | (() => string | import("./src/progress").ProgressFn | import("./src/progress").ProgressColor[]))[], unknown, unknown>;
+    readonly duration: number;
     readonly strokeLinecap: import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => ("inherit" | "round" | "butt" | "square") & {}) | (() => "inherit" | "round" | "butt" | "square") | ((new (...args: any[]) => ("inherit" | "round" | "butt" | "square") & {}) | (() => "inherit" | "round" | "butt" | "square"))[], unknown, unknown>;
     readonly strokeWidth: number;
     readonly indeterminate: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly format: import("./src/progress").ProgressFn;
     readonly percentage: number;
     readonly status: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "success" | "warning" | "exception", unknown>;
-    readonly duration: number;
     readonly textInside: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly showText: import("element-plus/es/utils").EpPropMergeType<BooleanConstructor, unknown, unknown>;
     readonly striped: boolean;

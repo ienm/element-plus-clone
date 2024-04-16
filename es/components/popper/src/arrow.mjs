@@ -36,7 +36,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var ElPopperArrow = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\popper\\src\\arrow.vue"]]);
+var ElPopperArrow = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "arrow.vue"]]);
 
 export { ElPopperArrow as default };
 //# sourceMappingURL=arrow.mjs.map

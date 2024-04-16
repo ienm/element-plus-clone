@@ -1993,7 +1993,7 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
             readonly popperOptions: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>) | ((new (...args: any[]) => Partial<import("@popperjs/core").Options>) | (() => Partial<import("@popperjs/core").Options>))[], unknown, unknown, () => {}, boolean>;
             readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
         }, {
-            emit: ((event: "close") => void) & ((event: "focus") => void) & ((event: "blur") => void) & ((event: "mouseleave", evt: MouseEvent) => void) & ((event: "mouseenter", evt: MouseEvent) => void);
+            emit: ((event: "blur") => void) & ((event: "close") => void) & ((event: "focus") => void) & ((event: "mouseenter", evt: MouseEvent) => void) & ((event: "mouseleave", evt: MouseEvent) => void);
             props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
                 readonly id: StringConstructor;
                 readonly style: {
@@ -2243,12 +2243,12 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
                 readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
             }>> & {
                 onClose?: (() => any) | undefined;
-                onFocus?: (() => any) | undefined;
                 onBlur?: (() => any) | undefined;
-                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+                onFocus?: (() => any) | undefined;
                 onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+                onMouseleave?: ((evt: MouseEvent) => any) | undefined;
             }>>;
-            focusStartRef: import("vue").Ref<HTMLElement | "first" | "container" | undefined>;
+            focusStartRef: import("vue").Ref<HTMLElement | "container" | "first" | undefined>;
             trapped: import("vue").Ref<boolean>;
             onFocusAfterReleased: (event: CustomEvent<any>) => void;
             onFocusAfterTrapped: () => void;
@@ -2310,17 +2310,17 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
                 trapped: BooleanConstructor;
                 focusTrapEl: import("vue").PropType<HTMLElement>;
                 focusStartEl: {
-                    type: import("vue").PropType<HTMLElement | "first" | "container">;
+                    type: import("vue").PropType<HTMLElement | "container" | "first">;
                     default: string;
                 };
             }, {
                 onKeydown: (e: KeyboardEvent) => void;
-            }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested")[], "focusAfterTrapped" | "focusAfterReleased" | "focusin" | "focusout" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+            }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested")[], "focusin" | "focusout" | "focusAfterTrapped" | "focusAfterReleased" | "focusout-prevented" | "release-requested", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
                 loop: BooleanConstructor;
                 trapped: BooleanConstructor;
                 focusTrapEl: import("vue").PropType<HTMLElement>;
                 focusStartEl: {
-                    type: import("vue").PropType<HTMLElement | "first" | "container">;
+                    type: import("vue").PropType<HTMLElement | "container" | "first">;
                     default: string;
                 };
             }>> & {
@@ -2333,7 +2333,7 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
             }, {
                 trapped: boolean;
                 loop: boolean;
-                focusStartEl: HTMLElement | "first" | "container";
+                focusStartEl: HTMLElement | "container" | "first";
             }>;
         }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
             mouseenter: (evt: MouseEvent) => boolean;
@@ -2590,13 +2590,13 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
             readonly strategy: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "fixed" | "absolute", unknown, "absolute", boolean>;
         }>> & {
             onClose?: (() => any) | undefined;
-            onFocus?: (() => any) | undefined;
             onBlur?: (() => any) | undefined;
-            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
+            onFocus?: (() => any) | undefined;
             onMouseenter?: ((evt: MouseEvent) => any) | undefined;
+            onMouseleave?: ((evt: MouseEvent) => any) | undefined;
         }, {
-            readonly effect: string;
             readonly offset: number;
+            readonly effect: string;
             readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
             readonly boundariesPadding: number;
             readonly fallbackPlacements: import("@popperjs/core").Placement[];
@@ -2875,8 +2875,8 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
         readonly hideAfter: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 200, boolean>;
         readonly autoClose: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
     }>>, {
-        readonly effect: string;
         readonly offset: number;
+        readonly effect: string;
         readonly placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
         readonly showAfter: number;
         readonly hideAfter: number;
@@ -3224,8 +3224,8 @@ export declare const ElTooltip: import("element-plus/es/utils").SFCWithInstall<i
 }>> & {
     [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
 }, {
-    effect: string;
     offset: number;
+    effect: string;
     placement: import("element-plus/es/utils").EpPropMergeType<StringConstructor, import("@popperjs/core").Placement, unknown>;
     showAfter: number;
     hideAfter: number;

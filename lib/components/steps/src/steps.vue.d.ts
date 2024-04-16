@@ -2,7 +2,7 @@ import type { StepItemState } from './item.vue';
 declare const _default: import("vue").DefineComponent<{
     readonly space: import("../../../utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
     readonly active: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly alignCenter: {
         readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
         readonly required: false;
@@ -15,13 +15,13 @@ declare const _default: import("vue").DefineComponent<{
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-    readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+    readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+    readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
         readonly space: import("../../../utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
         readonly active: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-        readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+        readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
         readonly alignCenter: {
             readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
             readonly required: false;
@@ -34,8 +34,8 @@ declare const _default: import("vue").DefineComponent<{
             readonly validator: ((val: unknown) => boolean) | undefined;
             __epPropKey: true;
         };
-        readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-        readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+        readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+        readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
     }>> & {
         onChange?: ((newVal: number, oldVal: number) => any) | undefined;
     }>>;
@@ -66,7 +66,7 @@ declare const _default: import("vue").DefineComponent<{
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly space: import("../../../utils").EpPropFinalized<readonly [NumberConstructor, StringConstructor], unknown, unknown, "", boolean>;
     readonly active: import("../../../utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0, boolean>;
-    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "horizontal" | "vertical", unknown, "horizontal", boolean>;
+    readonly direction: import("../../../utils").EpPropFinalized<StringConstructor, "vertical" | "horizontal", unknown, "horizontal", boolean>;
     readonly alignCenter: {
         readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<BooleanConstructor, unknown, unknown>>;
         readonly required: false;
@@ -79,15 +79,15 @@ declare const _default: import("vue").DefineComponent<{
         readonly validator: ((val: unknown) => boolean) | undefined;
         __epPropKey: true;
     };
-    readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "finish", boolean>;
-    readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown, "process", boolean>;
+    readonly finishStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "finish", boolean>;
+    readonly processStatus: import("../../../utils").EpPropFinalized<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown, "process", boolean>;
 }>> & {
     onChange?: ((newVal: number, oldVal: number) => any) | undefined;
 }, {
-    readonly space: import("../../../utils").EpPropMergeType<readonly [NumberConstructor, StringConstructor], unknown, unknown>;
+    readonly direction: import("../../../utils").EpPropMergeType<StringConstructor, "vertical" | "horizontal", unknown>;
     readonly active: number;
-    readonly direction: import("../../../utils").EpPropMergeType<StringConstructor, "horizontal" | "vertical", unknown>;
-    readonly finishStatus: import("../../../utils").EpPropMergeType<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown>;
-    readonly processStatus: import("../../../utils").EpPropMergeType<StringConstructor, "success" | "error" | "wait" | "finish" | "process", unknown>;
+    readonly space: import("../../../utils").EpPropMergeType<readonly [NumberConstructor, StringConstructor], unknown, unknown>;
+    readonly finishStatus: import("../../../utils").EpPropMergeType<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown>;
+    readonly processStatus: import("../../../utils").EpPropMergeType<StringConstructor, "error" | "success" | "wait" | "finish" | "process", unknown>;
 }>;
 export default _default;

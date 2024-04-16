@@ -3,7 +3,7 @@ import '../../roving-focus-group/index.mjs';
 import '../../../utils/index.mjs';
 import ElDropdownItemImpl from './dropdown-item-impl.mjs';
 import { useDropdown } from './useDropdown.mjs';
-import { ElCollectionItem, dropdownItemProps } from './dropdown.mjs';
+import { ElCollectionItem, dropdownItemProps } from './dropdown2.mjs';
 import { DROPDOWN_INJECTION_KEY } from './tokens.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import ElRovingFocusItem from '../../roving-focus-group/src/roving-focus-item.mjs';
@@ -111,7 +111,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   }, 8, ["disabled", "text-value"]);
 }
-var DropdownItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\dropdown\\src\\dropdown-item.vue"]]);
+var DropdownItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "dropdown-item.vue"]]);
 
 export { DropdownItem as default };
 //# sourceMappingURL=dropdown-item.mjs.map

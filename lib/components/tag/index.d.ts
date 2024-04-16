@@ -1,27 +1,37 @@
 export declare const ElTag: import("element-plus/es/utils").SFCWithInstall<import("vue").DefineComponent<{
-    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
     readonly closable: BooleanConstructor;
     readonly disableTransitions: BooleanConstructor;
     readonly hit: BooleanConstructor;
-    readonly color: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly size: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+    readonly color: StringConstructor;
+    readonly size: {
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly effect: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
     readonly round: BooleanConstructor;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
-        readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+        readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
         readonly closable: BooleanConstructor;
         readonly disableTransitions: BooleanConstructor;
         readonly hit: BooleanConstructor;
-        readonly color: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly size: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+        readonly color: StringConstructor;
+        readonly size: {
+            readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
         readonly effect: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
         readonly round: BooleanConstructor;
     }>> & {
         onClose?: ((evt: MouseEvent) => any) | undefined;
         onClick?: ((evt: MouseEvent) => any) | undefined;
     }>>;
-    emit: ((event: "close", evt: MouseEvent) => void) & ((event: "click", evt: MouseEvent) => void);
+    emit: ((event: "click", evt: MouseEvent) => void) & ((event: "close", evt: MouseEvent) => void);
     tagSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
     ns: {
         namespace: import("vue").ComputedRef<string>;
@@ -112,23 +122,26 @@ export declare const ElTag: import("element-plus/es/utils").SFCWithInstall<impor
     close: (evt: MouseEvent) => boolean;
     click: (evt: MouseEvent) => boolean;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+    readonly type: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
     readonly closable: BooleanConstructor;
     readonly disableTransitions: BooleanConstructor;
     readonly hit: BooleanConstructor;
-    readonly color: import("element-plus/es/utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly size: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+    readonly color: StringConstructor;
+    readonly size: {
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly effect: import("element-plus/es/utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
     readonly round: BooleanConstructor;
 }>> & {
     onClose?: ((evt: MouseEvent) => any) | undefined;
     onClick?: ((evt: MouseEvent) => any) | undefined;
 }, {
-    readonly type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown>;
+    readonly type: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown>;
     readonly closable: boolean;
     readonly effect: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "light" | "dark" | "plain", unknown>;
-    readonly size: import("element-plus/es/utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>;
-    readonly color: string;
     readonly round: boolean;
     readonly disableTransitions: boolean;
     readonly hit: boolean;

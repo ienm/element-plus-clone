@@ -80,7 +80,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var TooltipV2Root = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tooltip-v2\\src\\root.vue"]]);
+var TooltipV2Root = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "root.vue"]]);
 
 export { TooltipV2Root as default };
 //# sourceMappingURL=root2.mjs.map

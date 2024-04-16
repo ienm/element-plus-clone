@@ -1,6 +1,9 @@
 var ky = {
   name: "ky",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "\u041C\u0443\u0440\u0443\u043D\u043A\u0443",
       clear: "\u0430\u0447\u044B\u043A"
@@ -121,6 +124,11 @@ var ky = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

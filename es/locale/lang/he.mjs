@@ -1,6 +1,9 @@
 var he = {
   name: "he",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "\u05D0\u05D9\u05E9\u05D5\u05E8",
       clear: "\u05E0\u05E7\u05D4"
@@ -122,6 +125,11 @@ var he = {
     popconfirm: {
       confirmButtonText: "\u05DB\u05DF",
       cancelButtonText: "\u05DC\u05D0"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

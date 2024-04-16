@@ -148,7 +148,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var NotificationConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\notification\\src\\notification.vue"]]);
+var NotificationConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "notification.vue"]]);
 
 export { NotificationConstructor as default };
 //# sourceMappingURL=notification.mjs.map

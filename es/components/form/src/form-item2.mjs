@@ -237,6 +237,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       inputIds,
       isGroup,
       hasLabel,
+      fieldValue,
       addInputId,
       removeInputId,
       resetField,
@@ -317,7 +318,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var FormItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\form\\src\\form-item.vue"]]);
+var FormItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "form-item.vue"]]);
 
 export { FormItem as default };
 //# sourceMappingURL=form-item2.mjs.map

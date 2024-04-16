@@ -7,11 +7,23 @@ declare const _default: import("vue").DefineComponent<{
         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
         default: undefined;
     };
+    value: {
+        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+        default: undefined;
+    };
     indeterminate: BooleanConstructor;
     disabled: BooleanConstructor;
     checked: BooleanConstructor;
     name: {
         type: StringConstructor;
+        default: undefined;
+    };
+    trueValue: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: undefined;
+    };
+    falseValue: {
+        type: (NumberConstructor | StringConstructor)[];
         default: undefined;
     };
     trueLabel: {
@@ -52,11 +64,23 @@ declare const _default: import("vue").DefineComponent<{
             type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
             default: undefined;
         };
+        value: {
+            type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+            default: undefined;
+        };
         indeterminate: BooleanConstructor;
         disabled: BooleanConstructor;
         checked: BooleanConstructor;
         name: {
             type: StringConstructor;
+            default: undefined;
+        };
+        trueValue: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: undefined;
+        };
+        falseValue: {
+            type: (NumberConstructor | StringConstructor)[];
             default: undefined;
         };
         trueLabel: {
@@ -102,6 +126,7 @@ declare const _default: import("vue").DefineComponent<{
     checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
     hasOwnLabel: import("vue").ComputedRef<boolean>;
     model: import("vue").WritableComputedRef<any>;
+    actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
     handleChange: (e: Event) => void;
     onClickRoot: (e: MouseEvent) => Promise<void>;
     ns: {
@@ -136,11 +161,23 @@ declare const _default: import("vue").DefineComponent<{
         type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
         default: undefined;
     };
+    value: {
+        type: (ObjectConstructor | NumberConstructor | BooleanConstructor | StringConstructor)[];
+        default: undefined;
+    };
     indeterminate: BooleanConstructor;
     disabled: BooleanConstructor;
     checked: BooleanConstructor;
     name: {
         type: StringConstructor;
+        default: undefined;
+    };
+    trueValue: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: undefined;
+    };
+    falseValue: {
+        type: (NumberConstructor | StringConstructor)[];
         default: undefined;
     };
     trueLabel: {
@@ -175,6 +212,7 @@ declare const _default: import("vue").DefineComponent<{
     onChange?: ((val: import("./checkbox").CheckboxValueType) => any) | undefined;
     "onUpdate:modelValue"?: ((val: import("./checkbox").CheckboxValueType) => any) | undefined;
 }, {
+    value: string | number | boolean | Record<string, any>;
     modelValue: string | number | boolean;
     label: string | number | boolean | Record<string, any>;
     id: string;
@@ -184,6 +222,8 @@ declare const _default: import("vue").DefineComponent<{
     border: boolean;
     indeterminate: boolean;
     checked: boolean;
+    trueValue: string | number;
+    falseValue: string | number;
     trueLabel: string | number;
     falseLabel: string | number;
     controls: string;

@@ -9,6 +9,9 @@
   var sv = {
     name: "sv",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "T\xF6m"
@@ -109,6 +112,11 @@
         clearFilter: "Alla",
         sumText: "Summa"
       },
+      tour: {
+        next: "N\xE4sta",
+        previous: "F\xF6reg\xE5ende",
+        finish: "Avsluta"
+      },
       tree: {
         emptyText: "Ingen data"
       },
@@ -129,6 +137,11 @@
       popconfirm: {
         confirmButtonText: "Ja",
         cancelButtonText: "Nej"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

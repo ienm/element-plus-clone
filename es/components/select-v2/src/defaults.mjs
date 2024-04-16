@@ -3,11 +3,14 @@ import '../../../hooks/index.mjs';
 import '../../../utils/index.mjs';
 import '../../tooltip/index.mjs';
 import { CircleClose } from '@element-plus/icons-vue';
+import '../../tag/index.mjs';
 import { defaultProps } from './useProps.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 import { iconPropType } from '../../../utils/vue/icon.mjs';
 import { useTooltipContentProps } from '../../tooltip/src/content.mjs';
 import { useSizeProp } from '../../../hooks/use-size/index.mjs';
+import { tagProps } from '../../tag/src/tag2.mjs';
+import { useEmptyValuesProps } from '../../../hooks/use-empty-values/index.mjs';
 
 const SelectProps = buildProps({
   allowCreate: Boolean,
@@ -26,10 +29,7 @@ const SelectProps = buildProps({
     default: "light"
   },
   collapseTags: Boolean,
-  collapseTagsTooltip: {
-    type: Boolean,
-    default: false
-  },
+  collapseTagsTooltip: Boolean,
   maxCollapseTags: {
     type: Number,
     default: 1
@@ -44,7 +44,7 @@ const SelectProps = buildProps({
   filterMethod: Function,
   height: {
     type: Number,
-    default: 170
+    default: 274
   },
   itemHeight: {
     type: Number,
@@ -53,7 +53,6 @@ const SelectProps = buildProps({
   id: String,
   loading: Boolean,
   loadingText: String,
-  label: String,
   modelValue: {
     type: definePropType([Array, String, Number, Boolean, Object])
   },
@@ -100,10 +99,7 @@ const SelectProps = buildProps({
     type: String,
     default: "value"
   },
-  scrollbarAlwaysOn: {
-    type: Boolean,
-    default: false
-  },
+  scrollbarAlwaysOn: Boolean,
   validateEvent: {
     type: Boolean,
     default: true
@@ -112,7 +108,17 @@ const SelectProps = buildProps({
     type: definePropType(String),
     values: placements,
     default: "bottom-start"
-  }
+  },
+  fallbackPlacements: {
+    type: definePropType(Array),
+    default: ["bottom-start", "top-start", "right", "left"]
+  },
+  tagType: { ...tagProps.type, default: "info" },
+  ariaLabel: {
+    type: String,
+    default: void 0
+  },
+  ...useEmptyValuesProps
 });
 const OptionProps = buildProps({
   data: Array,

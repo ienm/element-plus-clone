@@ -9,6 +9,9 @@
   var vi = {
     name: "vi",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "X\xF3a"
@@ -109,6 +112,11 @@
         clearFilter: "X\xF3a h\u1EBFt",
         sumText: "T\u1ED5ng"
       },
+      tour: {
+        next: "Ti\u1EBFp",
+        previous: "Tr\u01B0\u1EDBc",
+        finish: "Ho\xE0n th\xE0nh"
+      },
       tree: {
         emptyText: "Kh\xF4ng c\xF3 d\u1EEF li\u1EC7u"
       },
@@ -129,6 +137,11 @@
       popconfirm: {
         confirmButtonText: "Ok",
         cancelButtonText: "Hu\u1EF7"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

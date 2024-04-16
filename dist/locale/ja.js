@@ -9,6 +9,9 @@
   var ja = {
     name: "ja",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "OK",
         clear: "\u30AF\u30EA\u30A2"
@@ -109,6 +112,11 @@
         clearFilter: "\u3059\u3079\u3066",
         sumText: "\u5408\u8A08"
       },
+      tour: {
+        next: "\u6B21\u3078",
+        previous: "\u524D\u3078",
+        finish: "\u30C4\u30A2\u30FC\u7D42\u4E86"
+      },
       tree: {
         emptyText: "\u30C7\u30FC\u30BF\u306A\u3057"
       },
@@ -129,6 +137,11 @@
       popconfirm: {
         confirmButtonText: "\u306F\u3044",
         cancelButtonText: "\u3044\u3044\u3048"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

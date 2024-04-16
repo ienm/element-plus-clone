@@ -97,7 +97,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ], 64))
   ], 2);
 }
-var MenuItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\menu\\src\\menu-item.vue"]]);
+var MenuItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "menu-item.vue"]]);
 
 export { MenuItem as default };
 //# sourceMappingURL=menu-item.mjs.map

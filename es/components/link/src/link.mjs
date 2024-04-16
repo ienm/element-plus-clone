@@ -5,7 +5,7 @@ import { linkProps, linkEmits } from './link2.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 
-const _hoisted_1 = ["href"];
+const _hoisted_1 = ["href", "target"];
 const __default__ = defineComponent({
   name: "ElLink"
 });
@@ -30,6 +30,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("a", {
         class: normalizeClass(unref(linkKls)),
         href: _ctx.disabled || !_ctx.href ? void 0 : _ctx.href,
+        target: _ctx.disabled || !_ctx.href ? void 0 : _ctx.target,
         onClick: handleClick
       }, [
         _ctx.icon ? (openBlock(), createBlock(unref(ElIcon), { key: 0 }, {
@@ -49,7 +50,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Link = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\link\\src\\link.vue"]]);
+var Link = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "link.vue"]]);
 
 export { Link as default };
 //# sourceMappingURL=link.mjs.map

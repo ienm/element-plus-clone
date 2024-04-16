@@ -1,4 +1,4 @@
-import { defineComponent, inject, computed, onMounted, watch, onBeforeUnmount, openBlock, createElementBlock, Fragment, createCommentVNode, createBlock, unref, mergeProps, withCtx, renderSlot } from 'vue';
+import { defineComponent, inject, computed, onMounted, watch, onBeforeUnmount, openBlock, createBlock, unref, mergeProps, withCtx, renderSlot, createCommentVNode } from 'vue';
 import { isNil } from 'lodash-unified';
 import { unrefElement } from '@vueuse/core';
 import '../../slot/index.mjs';
@@ -104,24 +104,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       triggerRef
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock(Fragment, null, [
-        createCommentVNode("  \u5728\u8BE5\u7EC4\u4EF6\u4E2D\u5C06provide\u4F20\u5165\u7684 triggerRef value\u8D4B\u503C\u4E3A\u9ED8\u8BA4\u7684\u63D2\u69FD  "),
-        !_ctx.virtualTriggering ? (openBlock(), createBlock(unref(OnlyChild), mergeProps({ key: 0 }, _ctx.$attrs, {
-          "aria-controls": unref(ariaControls),
-          "aria-describedby": unref(ariaDescribedby),
-          "aria-expanded": unref(ariaExpanded),
-          "aria-haspopup": unref(ariaHaspopup)
-        }), {
-          default: withCtx(() => [
-            renderSlot(_ctx.$slots, "default")
-          ]),
-          _: 3
-        }, 16, ["aria-controls", "aria-describedby", "aria-expanded", "aria-haspopup"])) : createCommentVNode("v-if", true)
-      ], 2112);
+      return !_ctx.virtualTriggering ? (openBlock(), createBlock(unref(OnlyChild), mergeProps({ key: 0 }, _ctx.$attrs, {
+        "aria-controls": unref(ariaControls),
+        "aria-describedby": unref(ariaDescribedby),
+        "aria-expanded": unref(ariaExpanded),
+        "aria-haspopup": unref(ariaHaspopup)
+      }), {
+        default: withCtx(() => [
+          renderSlot(_ctx.$slots, "default")
+        ]),
+        _: 3
+      }, 16, ["aria-controls", "aria-describedby", "aria-expanded", "aria-haspopup"])) : createCommentVNode("v-if", true);
     };
   }
 });
-var ElPopperTrigger = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\popper\\src\\trigger.vue"]]);
+var ElPopperTrigger = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "trigger.vue"]]);
 
 export { ElPopperTrigger as default };
 //# sourceMappingURL=trigger.mjs.map

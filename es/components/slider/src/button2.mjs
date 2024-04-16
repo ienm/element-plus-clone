@@ -92,7 +92,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var SliderButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\slider\\src\\button.vue"]]);
+var SliderButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "button.vue"]]);
 
 export { SliderButton as default };
 //# sourceMappingURL=button2.mjs.map

@@ -9,6 +9,9 @@
   var km = {
     name: "km",
     el: {
+      breadcrumb: {
+        label: "Breadcrumb"
+      },
       colorpicker: {
         confirm: "\u1799\u179B\u17CB\u1796\u17D2\u179A\u1798",
         clear: "\u179B\u17BB\u1794"
@@ -129,6 +132,11 @@
       popconfirm: {
         confirmButtonText: "\u1799\u179B\u17CB\u1796\u17D2\u179A\u1798",
         cancelButtonText: "\u1798\u17B7\u1793\u1796\u17D2\u179A\u1798"
+      },
+      carousel: {
+        leftArrow: "Carousel arrow left",
+        rightArrow: "Carousel arrow right",
+        indicator: "Carousel switch to index {index}"
       }
     }
   };

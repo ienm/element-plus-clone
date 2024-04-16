@@ -34,7 +34,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Divider = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\divider\\src\\divider.vue"]]);
+var Divider = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "divider.vue"]]);
 
 export { Divider as default };
 //# sourceMappingURL=divider2.mjs.map

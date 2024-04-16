@@ -28,7 +28,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Footer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\container\\src\\footer.vue"]]);
+var Footer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "footer.vue"]]);
 
 export { Footer as default };
 //# sourceMappingURL=footer.mjs.map

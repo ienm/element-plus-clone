@@ -1,6 +1,9 @@
 var mn = {
   name: "mn",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "\u0422\u0438\u0439\u043C",
       clear: "\u0426\u044D\u0432\u044D\u0440\u043B\u044D\u0445"
@@ -122,6 +125,11 @@ var mn = {
     popconfirm: {
       confirmButtonText: "Yes",
       cancelButtonText: "No"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

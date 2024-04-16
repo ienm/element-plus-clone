@@ -1,6 +1,9 @@
 declare const _default: {
     name: string;
     el: {
+        breadcrumb: {
+            label: string;
+        };
         colorpicker: {
             confirm: string;
             clear: string;
@@ -125,6 +128,11 @@ declare const _default: {
         };
         empty: {
             description: string;
+        };
+        carousel: {
+            leftArrow: string;
+            rightArrow: string;
+            indicator: string;
         };
     };
 };

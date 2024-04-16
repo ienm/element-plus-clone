@@ -25,6 +25,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       isDisabled,
       checkboxButtonSize,
       model,
+      actualValue,
       handleChange
     } = useCheckbox(props, slots);
     const checkboxGroup = inject(checkboxGroupContextKey, void 0);
@@ -49,10 +50,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       ];
     });
     return (_ctx, _cache) => {
+      var _a, _b;
       return openBlock(), createElementBlock("label", {
         class: normalizeClass(unref(labelKls))
       }, [
-        _ctx.trueLabel || _ctx.falseLabel ? withDirectives((openBlock(), createElementBlock("input", {
+        _ctx.trueValue || _ctx.falseValue || _ctx.trueLabel || _ctx.falseLabel ? withDirectives((openBlock(), createElementBlock("input", {
           key: 0,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(model) ? model.value = $event : null),
           class: normalizeClass(unref(ns).be("button", "original")),
@@ -60,8 +62,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           name: _ctx.name,
           tabindex: _ctx.tabindex,
           disabled: unref(isDisabled),
-          "true-value": _ctx.trueLabel,
-          "false-value": _ctx.falseLabel,
+          "true-value": (_a = _ctx.trueValue) != null ? _a : _ctx.trueLabel,
+          "false-value": (_b = _ctx.falseValue) != null ? _b : _ctx.falseLabel,
           onChange: _cache[1] || (_cache[1] = (...args) => unref(handleChange) && unref(handleChange)(...args)),
           onFocus: _cache[2] || (_cache[2] = ($event) => isFocused.value = true),
           onBlur: _cache[3] || (_cache[3] = ($event) => isFocused.value = false),
@@ -77,7 +79,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           name: _ctx.name,
           tabindex: _ctx.tabindex,
           disabled: unref(isDisabled),
-          value: _ctx.label,
+          value: unref(actualValue),
           onChange: _cache[6] || (_cache[6] = (...args) => unref(handleChange) && unref(handleChange)(...args)),
           onFocus: _cache[7] || (_cache[7] = ($event) => isFocused.value = true),
           onBlur: _cache[8] || (_cache[8] = ($event) => isFocused.value = false),
@@ -99,7 +101,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var CheckboxButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\checkbox\\src\\checkbox-button.vue"]]);
+var CheckboxButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "checkbox-button.vue"]]);
 
 export { CheckboxButton as default };
 //# sourceMappingURL=checkbox-button.mjs.map

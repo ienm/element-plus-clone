@@ -64,6 +64,7 @@ const _sfc_main = defineComponent({
     },
     center: Boolean,
     draggable: Boolean,
+    overflow: Boolean,
     roundButton: {
       default: false,
       type: Boolean
@@ -174,7 +175,8 @@ const _sfc_main = defineComponent({
       }
     });
     const draggable = computed(() => props.draggable);
-    useDraggable(rootRef, headerRef, draggable);
+    const overflow = computed(() => props.overflow);
+    useDraggable(rootRef, headerRef, draggable, overflow);
     onMounted(async () => {
       await nextTick();
       if (props.closeOnHashChange) {
@@ -344,7 +346,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                   _ctx.title !== null && _ctx.title !== void 0 ? (openBlock(), createElementBlock("div", {
                     key: 0,
                     ref: "headerRef",
-                    class: normalizeClass(_ctx.ns.e("header"))
+                    class: normalizeClass([_ctx.ns.e("header"), { "show-close": _ctx.showClose }])
                   }, [
                     createElementVNode("div", {
                       class: normalizeClass(_ctx.ns.e("title"))
@@ -489,7 +491,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   });
 }
-var MessageBoxConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\message-box\\src\\index.vue"]]);
+var MessageBoxConstructor = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "index.vue"]]);
 
 export { MessageBoxConstructor as default };
 //# sourceMappingURL=index.mjs.map

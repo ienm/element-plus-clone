@@ -1,7 +1,7 @@
 import { defineComponent, ref, inject, computed, unref, provide, readonly, toRef, watch, renderSlot } from 'vue';
 import { useEventListener } from '@vueuse/core';
 import '../../../utils/index.mjs';
-import { rovingFocusGroupProps, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group2.mjs';
+import { rovingFocusGroupProps, ROVING_FOCUS_COLLECTION_INJECTION_KEY as COLLECTION_INJECTION_KEY } from './roving-focus-group.mjs';
 import { ROVING_FOCUS_GROUP_INJECTION_KEY } from './tokens.mjs';
 import { focusFirst } from './utils.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
@@ -96,7 +96,7 @@ const _sfc_main = defineComponent({
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return renderSlot(_ctx.$slots, "default");
 }
-var ElRovingFocusGroupImpl = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\roving-focus-group\\src\\roving-focus-group-impl.vue"]]);
+var ElRovingFocusGroupImpl = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "roving-focus-group-impl.vue"]]);
 
 export { ElRovingFocusGroupImpl as default };
 //# sourceMappingURL=roving-focus-group-impl.mjs.map

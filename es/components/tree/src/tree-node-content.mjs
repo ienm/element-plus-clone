@@ -25,7 +25,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var NodeContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tree\\src\\tree-node-content.vue"]]);
+var NodeContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "tree-node-content.vue"]]);
 
 export { NodeContent as default };
 //# sourceMappingURL=tree-node-content.mjs.map

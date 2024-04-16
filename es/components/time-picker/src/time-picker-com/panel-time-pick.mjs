@@ -165,7 +165,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var TimePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\time-picker\\src\\time-picker-com\\panel-time-pick.vue"]]);
+var TimePickPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "panel-time-pick.vue"]]);
 
 export { TimePickPanel as default };
 //# sourceMappingURL=panel-time-pick.mjs.map

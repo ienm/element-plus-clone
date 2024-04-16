@@ -35,7 +35,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 6)
   ], 6));
 }
-var GroupItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\select-v2\\src\\group-item.vue"]]);
+var GroupItem = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "group-item.vue"]]);
 
 export { GroupItem as default };
 //# sourceMappingURL=group-item.mjs.map

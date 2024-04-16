@@ -1,4 +1,4 @@
-import { defineComponent, getCurrentInstance, computed, ref, watch, nextTick, onMounted, openBlock, createElementBlock, normalizeClass, unref, normalizeStyle, withModifiers, createElementVNode, withKeys, createBlock, withCtx, resolveDynamicComponent, createCommentVNode, toDisplayString, createVNode } from 'vue';
+import { defineComponent, computed, ref, watch, nextTick, onMounted, openBlock, createElementBlock, normalizeClass, unref, withModifiers, createElementVNode, withKeys, createBlock, withCtx, resolveDynamicComponent, createCommentVNode, toDisplayString, normalizeStyle, createVNode, renderSlot } from 'vue';
 import { isPromise } from '@vue/shared';
 import '../../../utils/index.mjs';
 import { ElIcon } from '../../icon/index.mjs';
@@ -11,7 +11,6 @@ import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useFormItem, useFormItemInputId } from '../../form/src/hooks/use-form-item.mjs';
 import { useFormSize, useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
-import { useDeprecated } from '../../../hooks/use-deprecated/index.mjs';
 import { addUnit } from '../../../utils/dom/style.mjs';
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '../../../constants/event.mjs';
 import { debugWarn, throwError } from '../../../utils/error.mjs';
@@ -32,31 +31,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   emits: switchEmits,
   setup(__props, { expose, emit }) {
     const props = __props;
-    const vm = getCurrentInstance();
     const { formItem } = useFormItem();
     const switchSize = useFormSize();
     const ns = useNamespace("switch");
-    const useBatchDeprecated = (list) => {
-      list.forEach((param) => {
-        useDeprecated({
-          from: param[0],
-          replacement: param[1],
-          scope: COMPONENT_NAME,
-          version: "2.3.0",
-          ref: "https://element-plus.org/en-US/component/switch.html#attributes",
-          type: "Attribute"
-        }, computed(() => {
-          var _a;
-          return !!((_a = vm.vnode.props) == null ? void 0 : _a[param[2]]);
-        }));
-      });
-    };
-    useBatchDeprecated([
-      ['"value"', '"model-value" or "v-model"', "value"],
-      ['"active-color"', "CSS var `--el-switch-on-color`", "activeColor"],
-      ['"inactive-color"', "CSS var `--el-switch-off-color`", "inactiveColor"],
-      ['"border-color"', "CSS var `--el-switch-border-color`", "borderColor"]
-    ]);
     const { inputId } = useFormItemInputId(props, {
       formItemContext: formItem
     });
@@ -86,11 +63,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     watch(() => props.modelValue, () => {
       isControlled.value = true;
     });
-    watch(() => props.value, () => {
-      isControlled.value = false;
-    });
     const actualValue = computed(() => {
-      return isControlled.value ? props.modelValue : props.value;
+      return isControlled.value ? props.modelValue : false;
     });
     const checked = computed(() => actualValue.value === props.activeValue);
     if (![props.activeValue, props.inactiveValue].includes(actualValue.value)) {
@@ -142,13 +116,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         handleChange();
       }
     };
-    const styles = computed(() => {
-      return ns.cssVarBlock({
-        ...props.activeColor ? { "on-color": props.activeColor } : null,
-        ...props.inactiveColor ? { "off-color": props.inactiveColor } : null,
-        ...props.borderColor ? { "border-color": props.borderColor } : null
-      });
-    });
     const focus = () => {
       var _a, _b;
       (_b = (_a = input.value) == null ? void 0 : _a.focus) == null ? void 0 : _b.call(_a);
@@ -163,7 +130,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
         class: normalizeClass(unref(switchKls)),
-        style: normalizeStyle(unref(styles)),
         onClick: withModifiers(switchValue, ["prevent"])
       }, [
         createElementVNode("input", {
@@ -234,17 +200,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 createVNode(unref(Loading))
               ]),
               _: 1
-            }, 8, ["class"])) : _ctx.activeActionIcon && unref(checked) ? (openBlock(), createBlock(unref(ElIcon), { key: 1 }, {
-              default: withCtx(() => [
-                (openBlock(), createBlock(resolveDynamicComponent(_ctx.activeActionIcon)))
-              ]),
-              _: 1
-            })) : _ctx.inactiveActionIcon && !unref(checked) ? (openBlock(), createBlock(unref(ElIcon), { key: 2 }, {
-              default: withCtx(() => [
-                (openBlock(), createBlock(resolveDynamicComponent(_ctx.inactiveActionIcon)))
-              ]),
-              _: 1
-            })) : createCommentVNode("v-if", true)
+            }, 8, ["class"])) : unref(checked) ? renderSlot(_ctx.$slots, "active-action", { key: 1 }, () => [
+              _ctx.activeActionIcon ? (openBlock(), createBlock(unref(ElIcon), { key: 0 }, {
+                default: withCtx(() => [
+                  (openBlock(), createBlock(resolveDynamicComponent(_ctx.activeActionIcon)))
+                ]),
+                _: 1
+              })) : createCommentVNode("v-if", true)
+            ]) : !unref(checked) ? renderSlot(_ctx.$slots, "inactive-action", { key: 2 }, () => [
+              _ctx.inactiveActionIcon ? (openBlock(), createBlock(unref(ElIcon), { key: 0 }, {
+                default: withCtx(() => [
+                  (openBlock(), createBlock(resolveDynamicComponent(_ctx.inactiveActionIcon)))
+                ]),
+                _: 1
+              })) : createCommentVNode("v-if", true)
+            ]) : createCommentVNode("v-if", true)
           ], 2)
         ], 6),
         !_ctx.inlinePrompt && (_ctx.activeIcon || _ctx.activeText) ? (openBlock(), createElementBlock("span", {
@@ -262,11 +232,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             "aria-hidden": !unref(checked)
           }, toDisplayString(_ctx.activeText), 9, _hoisted_5)) : createCommentVNode("v-if", true)
         ], 2)) : createCommentVNode("v-if", true)
-      ], 14, _hoisted_1);
+      ], 10, _hoisted_1);
     };
   }
 });
-var Switch = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\switch\\src\\switch.vue"]]);
+var Switch = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "switch.vue"]]);
 
 export { Switch as default };
 //# sourceMappingURL=switch2.mjs.map

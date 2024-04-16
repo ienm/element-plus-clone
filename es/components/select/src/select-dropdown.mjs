@@ -17,11 +17,11 @@ const _sfc_main = defineComponent({
     const minWidth = ref("");
     function updateMinWidth() {
       var _a;
-      minWidth.value = `${(_a = select.selectWrapper) == null ? void 0 : _a.offsetWidth}px`;
+      minWidth.value = `${(_a = select.selectRef) == null ? void 0 : _a.offsetWidth}px`;
     }
     onMounted(() => {
       updateMinWidth();
-      useResizeObserver(select.selectWrapper, updateMinWidth);
+      useResizeObserver(select.selectRef, updateMinWidth);
     });
     return {
       ns,
@@ -52,7 +52,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ], 2)) : createCommentVNode("v-if", true)
   ], 6);
 }
-var ElSelectMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\select\\src\\select-dropdown.vue"]]);
+var ElSelectMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "select-dropdown.vue"]]);
 
 export { ElSelectMenu as default };
 //# sourceMappingURL=select-dropdown.mjs.map

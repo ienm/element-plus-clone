@@ -71,7 +71,7 @@ const _sfc_main = defineComponent({
     });
   }
 });
-var TreeSelect = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tree-select\\src\\tree-select.vue"]]);
+var TreeSelect = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "tree-select.vue"]]);
 
 export { TreeSelect as default };
 //# sourceMappingURL=tree-select.mjs.map

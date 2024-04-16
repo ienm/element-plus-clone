@@ -31,12 +31,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       ns.is("fullscreen", props.fullscreen),
       ns.is("draggable", props.draggable),
       ns.is("align-center", props.alignCenter),
-      { [ns.m("center")]: props.center },
-      props.customClass
+      { [ns.m("center")]: props.center }
     ]);
     const composedDialogRef = composeRefs(focusTrapRef, dialogRef);
     const draggable = computed(() => props.draggable);
-    useDraggable(dialogRef, headerRef, draggable);
+    const overflow = computed(() => props.overflow);
+    useDraggable(dialogRef, headerRef, draggable, overflow);
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
         ref: unref(composedDialogRef),
@@ -47,7 +47,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         createElementVNode("header", {
           ref_key: "headerRef",
           ref: headerRef,
-          class: normalizeClass(unref(ns).e("header"))
+          class: normalizeClass([unref(ns).e("header"), { "show-close": _ctx.showClose }])
         }, [
           renderSlot(_ctx.$slots, "header", {}, () => [
             createElementVNode("span", {
@@ -89,7 +89,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var ElDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\dialog\\src\\dialog-content.vue"]]);
+var ElDialogContent = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "dialog-content.vue"]]);
 
 export { ElDialogContent as default };
 //# sourceMappingURL=dialog-content2.mjs.map

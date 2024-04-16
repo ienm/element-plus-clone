@@ -1,4 +1,4 @@
-import { defineComponent, useAttrs as useAttrs$1, ref, computed, onMounted, openBlock, createBlock, unref, withCtx, createElementVNode, normalizeClass, normalizeStyle, createVNode, createElementBlock, Fragment, renderList, renderSlot, createTextVNode, toDisplayString, mergeProps, withKeys, withModifiers, createSlots } from 'vue';
+import { defineComponent, useAttrs as useAttrs$1, ref, computed, onMounted, openBlock, createBlock, unref, withCtx, createElementVNode, normalizeClass, normalizeStyle, createVNode, createElementBlock, renderSlot, Fragment, renderList, createTextVNode, toDisplayString, mergeProps, withKeys, withModifiers, createSlots } from 'vue';
 import { debounce } from 'lodash-unified';
 import { onClickOutside } from '@vueuse/core';
 import { Loading } from '@element-plus/icons-vue';
@@ -15,7 +15,7 @@ import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useAttrs } from '../../../hooks/use-attrs/index.mjs';
 import { useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
-import { generateId } from '../../../utils/rand.mjs';
+import { useId } from '../../../hooks/use-id/index.mjs';
 import { isArray } from '@vue/shared';
 import { throwError } from '../../../utils/error.mjs';
 import { INPUT_EVENT, UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../../constants/event.mjs';
@@ -50,7 +50,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const activated = ref(false);
     const suggestionDisabled = ref(false);
     const loading = ref(false);
-    const listboxId = computed(() => ns.b(String(generateId())));
+    const listboxId = useId();
     const styles = computed(() => rawAttrs.style);
     const suggestionVisible = computed(() => {
       const isValidData = suggestions.value.length > 0;
@@ -269,14 +269,16 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             }, {
               default: withCtx(() => [
                 unref(suggestionLoading) ? (openBlock(), createElementBlock("li", _hoisted_2, [
-                  createVNode(unref(ElIcon), {
-                    class: normalizeClass(unref(ns).is("loading"))
-                  }, {
-                    default: withCtx(() => [
-                      createVNode(unref(Loading))
-                    ]),
-                    _: 1
-                  }, 8, ["class"])
+                  renderSlot(_ctx.$slots, "loading", {}, () => [
+                    createVNode(unref(ElIcon), {
+                      class: normalizeClass(unref(ns).is("loading"))
+                    }, {
+                      default: withCtx(() => [
+                        createVNode(unref(Loading))
+                      ]),
+                      _: 1
+                    }, 8, ["class"])
+                  ])
                 ])) : (openBlock(true), createElementBlock(Fragment, { key: 1 }, renderList(suggestions.value, (item, index) => {
                   return openBlock(), createElementBlock("li", {
                     id: `${unref(listboxId)}-item-${index}`,
@@ -361,7 +363,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Autocomplete = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\autocomplete\\src\\autocomplete.vue"]]);
+var Autocomplete = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "autocomplete.vue"]]);
 
 export { Autocomplete as default };
 //# sourceMappingURL=autocomplete.mjs.map

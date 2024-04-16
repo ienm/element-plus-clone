@@ -11,11 +11,10 @@ import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useLocale } from '../../../hooks/use-locale/index.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { useZIndex } from '../../../hooks/use-z-index/index.mjs';
-import { isNumber } from '../../../utils/types.mjs';
 import { EVENT_CODE } from '../../../constants/aria.mjs';
 import { keysOf } from '../../../utils/objects.mjs';
 
-const _hoisted_1 = ["src"];
+const _hoisted_1 = ["src", "crossorigin"];
 const __default__ = defineComponent({
   name: "ElImageViewer"
 });
@@ -24,6 +23,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   props: imageViewerProps,
   emits: imageViewerEmits,
   setup(__props, { expose, emit }) {
+    var _a;
     const props = __props;
     const modes = {
       CONTAIN: {
@@ -51,6 +51,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       offsetY: 0,
       enableTransition: false
     });
+    const zIndex = ref((_a = props.zIndex) != null ? _a : nextZIndex());
     const isSingle = computed(() => {
       const { urlList } = props;
       return urlList.length <= 1;
@@ -103,9 +104,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         style.maxWidth = style.maxHeight = "100%";
       }
       return style;
-    });
-    const computedZIndex = computed(() => {
-      return isNumber(props.zIndex) ? props.zIndex : nextZIndex();
     });
     function hide() {
       unregisterEventListener();
@@ -255,9 +253,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       emit("switch", val);
     });
     onMounted(() => {
-      var _a, _b;
+      var _a2, _b;
       registerEventListener();
-      (_b = (_a = wrapper.value) == null ? void 0 : _a.focus) == null ? void 0 : _b.call(_a);
+      (_b = (_a2 = wrapper.value) == null ? void 0 : _a2.focus) == null ? void 0 : _b.call(_a2);
     });
     expose({
       setActiveItem
@@ -277,7 +275,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               ref: wrapper,
               tabindex: -1,
               class: normalizeClass(unref(ns).e("wrapper")),
-              style: normalizeStyle({ zIndex: unref(computedZIndex) })
+              style: normalizeStyle({ zIndex: zIndex.value })
             }, [
               createElementVNode("div", {
                 class: normalizeClass(unref(ns).e("mask")),
@@ -385,6 +383,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                     src: url,
                     style: normalizeStyle(unref(imgStyle)),
                     class: normalizeClass(unref(ns).e("img")),
+                    crossorigin: _ctx.crossorigin,
                     onLoad: handleImgLoad,
                     onError: handleImgError,
                     onMousedown: handleMouseDown
@@ -402,7 +401,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var ImageViewer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\image-viewer\\src\\image-viewer.vue"]]);
+var ImageViewer = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "image-viewer.vue"]]);
 
 export { ImageViewer as default };
 //# sourceMappingURL=image-viewer2.mjs.map

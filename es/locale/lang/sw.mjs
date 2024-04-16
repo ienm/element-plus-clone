@@ -1,6 +1,9 @@
 var sw = {
   name: "sw",
   el: {
+    breadcrumb: {
+      label: "Breadcrumb"
+    },
     colorpicker: {
       confirm: "sawa",
       clear: "futa",
@@ -157,6 +160,11 @@ var sw = {
     popconfirm: {
       confirmButtonText: "ndio",
       cancelButtonText: "hapana"
+    },
+    carousel: {
+      leftArrow: "Carousel arrow left",
+      rightArrow: "Carousel arrow right",
+      indicator: "Carousel switch to index {index}"
     }
   }
 };

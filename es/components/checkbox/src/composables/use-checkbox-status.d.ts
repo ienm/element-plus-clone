@@ -7,5 +7,6 @@ export declare const useCheckboxStatus: (props: CheckboxProps, slots: ComponentI
     isFocused: import("vue").Ref<boolean>;
     checkboxSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
     hasOwnLabel: import("vue").ComputedRef<boolean>;
+    actualValue: import("vue").ComputedRef<string | number | boolean | Record<string, any> | undefined>;
 };
 export declare type CheckboxStatus = ReturnType<typeof useCheckboxStatus>;

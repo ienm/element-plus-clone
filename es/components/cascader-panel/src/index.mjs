@@ -174,11 +174,7 @@ const _sfc_main = defineComponent({
         expandingNode.value = null;
       }
       oldNodes.forEach((node) => node.doCheck(false));
-      if (props.props.multiple) {
-        reactive(newNodes).forEach((node) => node.doCheck(true));
-      } else {
-        newNodes.forEach((node) => node.doCheck(true));
-      }
+      reactive(newNodes).forEach((node) => node.doCheck(true));
       checkedNodes.value = newNodes;
       nextTick(scrollToExpandingNode);
     };
@@ -285,7 +281,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }), 128))
   ], 34);
 }
-var CascaderPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\cascader-panel\\src\\index.vue"]]);
+var CascaderPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "index.vue"]]);
 
 export { CascaderPanel as default };
 //# sourceMappingURL=index.mjs.map

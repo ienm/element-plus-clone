@@ -16,6 +16,12 @@ declare const _default: import("vue").DefineComponent<{
     readonly zoomRate: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 1.2, boolean>;
     readonly minScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0.2, boolean>;
     readonly maxScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 7, boolean>;
+    readonly crossorigin: {
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
 }, {
     modes: Record<"CONTAIN" | "ORIGINAL", ImageViewerMode>;
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
@@ -34,6 +40,12 @@ declare const _default: import("vue").DefineComponent<{
         readonly zoomRate: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 1.2, boolean>;
         readonly minScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0.2, boolean>;
         readonly maxScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 7, boolean>;
+        readonly crossorigin: {
+            readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
     }>> & {
         onClose?: (() => any) | undefined;
         onSwitch?: ((index: number) => any) | undefined;
@@ -73,6 +85,7 @@ declare const _default: import("vue").DefineComponent<{
         offsetY: number;
         enableTransition: boolean;
     }>;
+    zIndex: import("vue").Ref<number>;
     isSingle: import("vue").ComputedRef<boolean>;
     isFirst: import("vue").ComputedRef<boolean>;
     isLast: import("vue").ComputedRef<boolean>;
@@ -80,7 +93,6 @@ declare const _default: import("vue").DefineComponent<{
     arrowPrevKls: import("vue").ComputedRef<string[]>;
     arrowNextKls: import("vue").ComputedRef<string[]>;
     imgStyle: import("vue").ComputedRef<CSSProperties>;
-    computedZIndex: import("vue").ComputedRef<number>;
     hide: () => void;
     registerEventListener: () => void;
     unregisterEventListener: () => void;
@@ -183,6 +195,12 @@ declare const _default: import("vue").DefineComponent<{
     readonly zoomRate: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 1.2, boolean>;
     readonly minScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 0.2, boolean>;
     readonly maxScale: import("element-plus/es/utils").EpPropFinalized<NumberConstructor, unknown, unknown, 7, boolean>;
+    readonly crossorigin: {
+        readonly type: import("vue").PropType<import("element-plus/es/utils").EpPropMergeType<(new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials") | ((new (...args: any[]) => ("" | "anonymous" | "use-credentials") & {}) | (() => "" | "anonymous" | "use-credentials"))[], unknown, unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
 }>> & {
     onClose?: (() => any) | undefined;
     onSwitch?: ((index: number) => any) | undefined;

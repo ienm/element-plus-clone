@@ -51,7 +51,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Backtop = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\backtop\\src\\backtop.vue"]]);
+var Backtop = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "backtop.vue"]]);
 
 export { Backtop as default };
 //# sourceMappingURL=backtop2.mjs.map

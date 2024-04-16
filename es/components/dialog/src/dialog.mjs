@@ -31,14 +31,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       version: "3.0.0",
       ref: "https://element-plus.org/en-US/component/dialog.html#slots"
     }, computed(() => !!slots.title));
-    useDeprecated({
-      scope: "el-dialog",
-      from: "custom-class",
-      replacement: "class",
-      version: "2.3.0",
-      ref: "https://element-plus.org/en-US/component/dialog.html#attributes",
-      type: "Attribute"
-    }, computed(() => !!props.customClass));
     const ns = useNamespace("dialog");
     const dialogRef = ref();
     const headerRef = ref();
@@ -122,11 +114,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                         ref_key: "dialogContentRef",
                         ref: dialogContentRef
                       }, _ctx.$attrs, {
-                        "custom-class": _ctx.customClass,
                         center: _ctx.center,
                         "align-center": _ctx.alignCenter,
                         "close-icon": _ctx.closeIcon,
                         draggable: unref(draggable),
+                        overflow: _ctx.overflow,
                         fullscreen: _ctx.fullscreen,
                         "show-close": _ctx.showClose,
                         title: _ctx.title,
@@ -152,7 +144,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                             renderSlot(_ctx.$slots, "footer")
                           ])
                         } : void 0
-                      ]), 1040, ["custom-class", "center", "align-center", "close-icon", "draggable", "fullscreen", "show-close", "title", "aria-level", "onClose"])) : createCommentVNode("v-if", true)
+                      ]), 1040, ["center", "align-center", "close-icon", "draggable", "overflow", "fullscreen", "show-close", "title", "aria-level", "onClose"])) : createCommentVNode("v-if", true)
                     ]),
                     _: 3
                   }, 8, ["trapped", "onFocusAfterTrapped", "onFocusAfterReleased", "onFocusoutPrevented", "onReleaseRequested"])
@@ -169,7 +161,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Dialog = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\dialog\\src\\dialog.vue"]]);
+var Dialog = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "dialog.vue"]]);
 
 export { Dialog as default };
 //# sourceMappingURL=dialog.mjs.map

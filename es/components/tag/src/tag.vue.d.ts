@@ -1,27 +1,37 @@
 declare const _default: import("vue").DefineComponent<{
-    readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+    readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
     readonly closable: BooleanConstructor;
     readonly disableTransitions: BooleanConstructor;
     readonly hit: BooleanConstructor;
-    readonly color: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly size: import("../../../utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+    readonly color: StringConstructor;
+    readonly size: {
+        readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly effect: import("../../../utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
     readonly round: BooleanConstructor;
 }, {
     props: Readonly<import("@vue/shared").LooseRequired<Readonly<import("vue").ExtractPropTypes<{
-        readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+        readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
         readonly closable: BooleanConstructor;
         readonly disableTransitions: BooleanConstructor;
         readonly hit: BooleanConstructor;
-        readonly color: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-        readonly size: import("../../../utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+        readonly color: StringConstructor;
+        readonly size: {
+            readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+            readonly required: false;
+            readonly validator: ((val: unknown) => boolean) | undefined;
+            __epPropKey: true;
+        };
         readonly effect: import("../../../utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
         readonly round: BooleanConstructor;
     }>> & {
         onClose?: ((evt: MouseEvent) => any) | undefined;
         onClick?: ((evt: MouseEvent) => any) | undefined;
     }>>;
-    emit: ((event: "close", evt: MouseEvent) => void) & ((event: "click", evt: MouseEvent) => void);
+    emit: ((event: "click", evt: MouseEvent) => void) & ((event: "close", evt: MouseEvent) => void);
     tagSize: import("vue").ComputedRef<"" | "default" | "small" | "large">;
     ns: {
         namespace: import("vue").ComputedRef<string>;
@@ -112,23 +122,26 @@ declare const _default: import("vue").DefineComponent<{
     close: (evt: MouseEvent) => boolean;
     click: (evt: MouseEvent) => boolean;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown, "", boolean>;
+    readonly type: import("../../../utils").EpPropFinalized<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown, "primary", boolean>;
     readonly closable: BooleanConstructor;
     readonly disableTransitions: BooleanConstructor;
     readonly hit: BooleanConstructor;
-    readonly color: import("../../../utils").EpPropFinalized<StringConstructor, unknown, unknown, "", boolean>;
-    readonly size: import("../../../utils").EpPropFinalized<StringConstructor, "" | "default" | "small" | "large", unknown, "", boolean>;
+    readonly color: StringConstructor;
+    readonly size: {
+        readonly type: import("vue").PropType<import("../../../utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>>;
+        readonly required: false;
+        readonly validator: ((val: unknown) => boolean) | undefined;
+        __epPropKey: true;
+    };
     readonly effect: import("../../../utils").EpPropFinalized<StringConstructor, "light" | "dark" | "plain", unknown, "light", boolean>;
     readonly round: BooleanConstructor;
 }>> & {
     onClose?: ((evt: MouseEvent) => any) | undefined;
     onClick?: ((evt: MouseEvent) => any) | undefined;
 }, {
-    readonly type: import("../../../utils").EpPropMergeType<StringConstructor, "" | "success" | "warning" | "info" | "danger", unknown>;
+    readonly type: import("../../../utils").EpPropMergeType<StringConstructor, "success" | "warning" | "info" | "primary" | "danger", unknown>;
     readonly closable: boolean;
     readonly effect: import("../../../utils").EpPropMergeType<StringConstructor, "light" | "dark" | "plain", unknown>;
-    readonly size: import("../../../utils").EpPropMergeType<StringConstructor, "" | "default" | "small" | "large", unknown>;
-    readonly color: string;
     readonly round: boolean;
     readonly disableTransitions: boolean;
     readonly hit: boolean;

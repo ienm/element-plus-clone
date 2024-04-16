@@ -24,7 +24,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return [
         ns.b(),
         ns.is("closable", closable),
-        ns.m(type),
+        ns.m(type || "primary"),
         ns.m(tagSize.value),
         ns.m(effect),
         ns.is("hit", hit),
@@ -92,7 +92,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Tag = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\tag\\src\\tag.vue"]]);
+var Tag = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "tag.vue"]]);
 
 export { Tag as default };
 //# sourceMappingURL=tag.mjs.map

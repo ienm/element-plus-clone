@@ -13,7 +13,9 @@ declare const _default: import("vue").DefineComponent<{
     };
     width: (NumberConstructor | StringConstructor)[];
     height: (NumberConstructor | StringConstructor)[];
-    maxHeight: (NumberConstructor | StringConstructor)[];
+    maxHeight: (NumberConstructor | StringConstructor)[]; /**
+     * @description used in expandable Table or tree Table, toggle if a certain row is expanded. With the second parameter, you can directly set if this row is expanded or collapsed
+     */
     fit: {
         type: BooleanConstructor;
         default: boolean;
@@ -43,7 +45,7 @@ declare const _default: import("vue").DefineComponent<{
     defaultExpandAll: BooleanConstructor;
     defaultSort: import("vue").PropType<import("./table/defaults").Sort | undefined>;
     tooltipEffect: StringConstructor;
-    tooltipOptions: import("vue").PropType<Partial<Pick<import("../..").ElTooltipProps, "effect" | "offset" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "showArrow">> | undefined>;
+    tooltipOptions: import("vue").PropType<Partial<Pick<import("../..").ElTooltipProps, "offset" | "effect" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "appendTo" | "transition" | "showArrow">> | undefined>;
     spanMethod: import("vue").PropType<((data: {
         row: any;
         rowIndex: number;
@@ -82,15 +84,12 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     tableLayout: {
-        type: import("vue").PropType<"fixed" | "auto">;
+        type: import("vue").PropType<"auto" | "fixed">;
         default: string;
     };
-    scrollbarAlwaysOn: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
+    scrollbarAlwaysOn: BooleanConstructor;
     flexible: BooleanConstructor;
-    showOverflowTooltip: import("vue").PropType<boolean | Partial<Pick<import("../..").ElTooltipProps, "effect" | "offset" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "showArrow">> | undefined>;
+    showOverflowTooltip: import("vue").PropType<boolean | Partial<Pick<import("../..").ElTooltipProps, "offset" | "effect" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "appendTo" | "transition" | "showArrow">> | undefined>;
 }, {
     ns: {
         namespace: import("vue").ComputedRef<string>;
@@ -136,22 +135,52 @@ declare const _default: import("vue").DefineComponent<{
     } | null>;
     debouncedUpdateLayout: import("lodash").DebouncedFunc<() => void>;
     handleFixedMousewheel: (event: any, data: any) => void;
+    /**
+     * @description used in single selection Table, set a certain row selected. If called without any parameter, it will clear selection
+     */
     setCurrentRow: (row: any) => void;
+    /**
+     * @description returns the currently selected rows
+     */
     getSelectionRows: () => any;
+    /**
+     * @description used in multiple selection Table, toggle if a certain row is selected. With the second parameter, you can directly set if this row is selected
+     */
     toggleRowSelection: (row: any, selected: boolean) => void;
+    /**
+     * @description used in multiple selection Table, clear user selection
+     */
     clearSelection: () => void;
+    /**
+     * @description clear filters of the columns whose `columnKey` are passed in. If no params, clear all filters
+     */
     clearFilter: (columnKeys?: string[] | undefined) => void;
+    /**
+     * @description used in multiple selection Table, toggle select all and deselect all
+     */
     toggleAllSelection: () => void;
+    /**
+     * @description used in expandable Table or tree Table, toggle if a certain row is expanded. With the second parameter, you can directly set if this row is expanded or collapsed
+     */
     toggleRowExpansion: (row: any, expanded?: boolean | undefined) => void;
+    /**
+     * @description clear sorting, restore data to the original order
+     */
     clearSort: () => void;
+    /**
+     * @description refresh the layout of Table. When the visibility of Table changes, you may need to call this method to get a correct layout
+     */
     doLayout: () => void;
+    /**
+     * @description sort Table manually. Property `prop` is used to set sort column, property `order` is used to set sort order
+     */
     sort: (prop: string, order: string) => void;
     t: import("element-plus/es/hooks").Translator;
     setDragVisible: (visible: boolean) => void;
     context: Table<any>;
     computedSumText: import("vue").ComputedRef<string>;
     computedEmptyText: import("vue").ComputedRef<string>;
-    tableLayout: import("vue").ComputedRef<("fixed" | "auto") | undefined>;
+    tableLayout: import("vue").ComputedRef<("auto" | "fixed") | undefined>;
     scrollbarViewStyle: {
         display: string;
         verticalAlign: string;
@@ -177,10 +206,19 @@ declare const _default: import("vue").DefineComponent<{
         maxHeight?: undefined;
     }>;
     scrollBarRef: import("vue").Ref<any>;
+    /**
+     * @description scrolls to a particular set of coordinates
+     */
     scrollTo: (options: number | ScrollToOptions, yCoord?: number | undefined) => void;
+    /**
+     * @description set horizontal scroll position
+     */
     setScrollLeft: (left?: number | undefined) => void;
+    /**
+     * @description set vertical scroll position
+     */
     setScrollTop: (top?: number | undefined) => void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("select-all" | "expand-change" | "current-change" | "select" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "header-dragend")[], "select" | "select-all" | "expand-change" | "current-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "header-dragend", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("select" | "select-all" | "expand-change" | "current-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "header-dragend")[], "select" | "select-all" | "expand-change" | "current-change" | "selection-change" | "cell-mouse-enter" | "cell-mouse-leave" | "cell-contextmenu" | "cell-click" | "cell-dblclick" | "row-click" | "row-contextmenu" | "row-dblclick" | "header-click" | "header-contextmenu" | "sort-change" | "filter-change" | "header-dragend", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     data: {
         type: import("vue").PropType<any[]>;
         default: () => never[];
@@ -193,7 +231,9 @@ declare const _default: import("vue").DefineComponent<{
     };
     width: (NumberConstructor | StringConstructor)[];
     height: (NumberConstructor | StringConstructor)[];
-    maxHeight: (NumberConstructor | StringConstructor)[];
+    maxHeight: (NumberConstructor | StringConstructor)[]; /**
+     * @description used in expandable Table or tree Table, toggle if a certain row is expanded. With the second parameter, you can directly set if this row is expanded or collapsed
+     */
     fit: {
         type: BooleanConstructor;
         default: boolean;
@@ -223,7 +263,7 @@ declare const _default: import("vue").DefineComponent<{
     defaultExpandAll: BooleanConstructor;
     defaultSort: import("vue").PropType<import("./table/defaults").Sort | undefined>;
     tooltipEffect: StringConstructor;
-    tooltipOptions: import("vue").PropType<Partial<Pick<import("../..").ElTooltipProps, "effect" | "offset" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "showArrow">> | undefined>;
+    tooltipOptions: import("vue").PropType<Partial<Pick<import("../..").ElTooltipProps, "offset" | "effect" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "appendTo" | "transition" | "showArrow">> | undefined>;
     spanMethod: import("vue").PropType<((data: {
         row: any;
         rowIndex: number;
@@ -262,15 +302,12 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     tableLayout: {
-        type: import("vue").PropType<"fixed" | "auto">;
+        type: import("vue").PropType<"auto" | "fixed">;
         default: string;
     };
-    scrollbarAlwaysOn: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
+    scrollbarAlwaysOn: BooleanConstructor;
     flexible: BooleanConstructor;
-    showOverflowTooltip: import("vue").PropType<boolean | Partial<Pick<import("../..").ElTooltipProps, "effect" | "offset" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "showArrow">> | undefined>;
+    showOverflowTooltip: import("vue").PropType<boolean | Partial<Pick<import("../..").ElTooltipProps, "offset" | "effect" | "placement" | "popperClass" | "showAfter" | "hideAfter" | "popperOptions" | "enterable" | "appendTo" | "transition" | "showArrow">> | undefined>;
 }>> & {
     onSelect?: ((...args: any[]) => any) | undefined;
     "onExpand-change"?: ((...args: any[]) => any) | undefined;
@@ -293,8 +330,8 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     style: import("vue").CSSProperties;
     className: string;
+    tableLayout: "auto" | "fixed";
     border: boolean;
-    tableLayout: "fixed" | "auto";
     data: any[];
     fit: boolean;
     lazy: boolean;

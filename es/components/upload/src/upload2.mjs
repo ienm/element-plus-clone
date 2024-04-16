@@ -1,7 +1,7 @@
 import { defineComponent, shallowRef, computed, onBeforeUnmount, provide, toRef, openBlock, createElementBlock, unref, createBlock, createSlots, withCtx, createVNode, mergeProps, renderSlot, createCommentVNode } from 'vue';
 import '../../form/index.mjs';
 import { uploadContextKey } from './constants.mjs';
-import UploadList from './upload-list.mjs';
+import UploadList from './upload-list2.mjs';
 import UploadContent from './upload-content2.mjs';
 import { useHandlers } from './use-handlers.mjs';
 import { uploadProps } from './upload.mjs';
@@ -60,6 +60,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           disabled: unref(disabled),
           "list-type": _ctx.listType,
           files: unref(uploadFiles),
+          crossorigin: _ctx.crossorigin,
           "handle-preview": _ctx.onPreview,
           onRemove: unref(handleRemove)
         }, createSlots({
@@ -83,7 +84,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               renderSlot(_ctx.$slots, "file", { file })
             ])
           } : void 0
-        ]), 1032, ["disabled", "list-type", "files", "handle-preview", "onRemove"])) : createCommentVNode("v-if", true),
+        ]), 1032, ["disabled", "list-type", "files", "crossorigin", "handle-preview", "onRemove"])) : createCommentVNode("v-if", true),
         !unref(isPictureCard) || unref(isPictureCard) && !_ctx.showFileList ? (openBlock(), createBlock(UploadContent, mergeProps({
           key: 1,
           ref_key: "uploadRef",
@@ -102,6 +103,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           disabled: unref(disabled),
           "list-type": _ctx.listType,
           files: unref(uploadFiles),
+          crossorigin: _ctx.crossorigin,
           "handle-preview": _ctx.onPreview,
           onRemove: unref(handleRemove)
         }, createSlots({ _: 2 }, [
@@ -111,12 +113,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               renderSlot(_ctx.$slots, "file", { file })
             ])
           } : void 0
-        ]), 1032, ["disabled", "list-type", "files", "handle-preview", "onRemove"])) : createCommentVNode("v-if", true)
+        ]), 1032, ["disabled", "list-type", "files", "crossorigin", "handle-preview", "onRemove"])) : createCommentVNode("v-if", true)
       ]);
     };
   }
 });
-var Upload = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\upload\\src\\upload.vue"]]);
+var Upload = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "upload.vue"]]);
 
 export { Upload as default };
 //# sourceMappingURL=upload2.mjs.map

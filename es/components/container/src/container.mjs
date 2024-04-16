@@ -42,7 +42,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Container = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\container\\src\\container.vue"]]);
+var Container = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "container.vue"]]);
 
 export { Container as default };
 //# sourceMappingURL=container.mjs.map

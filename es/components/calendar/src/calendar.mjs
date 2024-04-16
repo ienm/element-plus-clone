@@ -1,7 +1,7 @@
-import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, unref, createElementVNode, renderSlot, toDisplayString, createVNode, withCtx, createTextVNode, createCommentVNode, createSlots, normalizeProps, mergeProps, Fragment, renderList, createBlock } from 'vue';
+import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, unref, createElementVNode, renderSlot, toDisplayString, createVNode, withCtx, createTextVNode, createCommentVNode, createSlots, normalizeProps, guardReactiveProps, Fragment, renderList, createBlock } from 'vue';
 import { ElButtonGroup, ElButton } from '../../button/index.mjs';
 import '../../../hooks/index.mjs';
-import DateTable from './date-table2.mjs';
+import DateTable from './date-table.mjs';
 import { useCalendar } from './use-calendar.mjs';
 import { calendarProps, calendarEmits } from './calendar2.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
@@ -97,10 +97,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             "selected-day": unref(realSelectedDay),
             onPick: unref(pickDay)
           }, createSlots({ _: 2 }, [
-            _ctx.$slots["date-cell"] || _ctx.$slots.dateCell ? {
+            _ctx.$slots["date-cell"] ? {
               name: "date-cell",
               fn: withCtx((data) => [
-                _ctx.$slots["date-cell"] ? renderSlot(_ctx.$slots, "date-cell", normalizeProps(mergeProps({ key: 0 }, data))) : renderSlot(_ctx.$slots, "dateCell", normalizeProps(mergeProps({ key: 1 }, data)))
+                renderSlot(_ctx.$slots, "date-cell", normalizeProps(guardReactiveProps(data)))
               ])
             } : void 0
           ]), 1032, ["date", "selected-day", "onPick"])
@@ -117,10 +117,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               "hide-header": index !== 0,
               onPick: unref(pickDay)
             }, createSlots({ _: 2 }, [
-              _ctx.$slots["date-cell"] || _ctx.$slots.dateCell ? {
+              _ctx.$slots["date-cell"] ? {
                 name: "date-cell",
                 fn: withCtx((data) => [
-                  _ctx.$slots["date-cell"] ? renderSlot(_ctx.$slots, "date-cell", normalizeProps(mergeProps({ key: 0 }, data))) : renderSlot(_ctx.$slots, "dateCell", normalizeProps(mergeProps({ key: 1 }, data)))
+                  renderSlot(_ctx.$slots, "date-cell", normalizeProps(guardReactiveProps(data)))
                 ])
               } : void 0
             ]), 1032, ["date", "selected-day", "range", "hide-header", "onPick"]);
@@ -130,7 +130,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Calendar = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\calendar\\src\\calendar.vue"]]);
+var Calendar = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "calendar.vue"]]);
 
 export { Calendar as default };
 //# sourceMappingURL=calendar.mjs.map

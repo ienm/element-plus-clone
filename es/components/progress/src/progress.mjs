@@ -205,7 +205,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Progress = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\progress\\src\\progress.vue"]]);
+var Progress = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "progress.vue"]]);
 
 export { Progress as default };
 //# sourceMappingURL=progress.mjs.map

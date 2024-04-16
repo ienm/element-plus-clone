@@ -91,7 +91,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 return openBlock(), createBlock(unref(ElCheckbox), {
                   key: item[unref(propsAlias).key],
                   class: normalizeClass(unref(ns).be("panel", "item")),
-                  label: item[unref(propsAlias).key],
+                  value: item[unref(propsAlias).key],
                   disabled: item[unref(propsAlias).disabled],
                   "validate-event": false
                 }, {
@@ -104,7 +104,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                     ];
                   }),
                   _: 2
-                }, 1032, ["class", "label", "disabled"]);
+                }, 1032, ["class", "value", "disabled"]);
               }), 128))
             ]),
             _: 1
@@ -127,7 +127,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var TransferPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:\\Users\\mio\\Documents\\code_space\\components_source_code\\element-plus\\packages\\components\\transfer\\src\\transfer-panel.vue"]]);
+var TransferPanel = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "transfer-panel.vue"]]);
 
 export { TransferPanel as default };
 //# sourceMappingURL=transfer-panel2.mjs.map
