@@ -1,6 +1,4 @@
 import { defineComponent, getCurrentInstance, inject, watch, onUnmounted, h } from 'vue';
-import '../../../../utils/index.mjs';
-import '../../../../hooks/index.mjs';
 import useLayoutObserver from '../layout-observer.mjs';
 import { removePopper } from '../util.mjs';
 import { TABLE_INJECTION_KEY } from '../tokens.mjs';
@@ -42,6 +40,7 @@ var TableBody = defineComponent({
         }, []);
         indexes.forEach((rowIndex) => {
           var _a2;
+          rowNum = newVal;
           while (rowNum > 0) {
             const preChildNodes = (_a2 = rows[rowNum - 1]) == null ? void 0 : _a2.childNodes;
             if (preChildNodes[rowIndex] && preChildNodes[rowIndex].nodeName === "TD" && preChildNodes[rowIndex].rowSpan > 1) {

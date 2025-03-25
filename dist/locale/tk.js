@@ -75,6 +75,9 @@
         noData: "Hi\xE7zat \xFDok",
         placeholder: "Sa\xFDla"
       },
+      mention: {
+        loading: "Indiril\xFD\xE4r"
+      },
       cascader: {
         noMatch: "Hi\xE7zat tapylmady",
         loading: "Indiril\xFD\xE4r",

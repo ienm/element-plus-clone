@@ -69,6 +69,9 @@ var lt = {
       noData: "N\u0117ra duomen\u0173",
       placeholder: "Pasirink"
     },
+    mention: {
+      loading: "Kraunasi"
+    },
     cascader: {
       noMatch: "Duomen\u0173 nerasta",
       loading: "Kraunasi",

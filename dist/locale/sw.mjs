@@ -89,6 +89,9 @@ var sw = {
       noData: "hakuna data",
       placeholder: "chagua"
     },
+    mention: {
+      loading: "inapakia"
+    },
     dropdown: {
       toggleDropdown: "geuza kunyuzi"
     },

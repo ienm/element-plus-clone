@@ -1,23 +1,19 @@
 import { inject, computed, getCurrentInstance, toRaw, watch } from 'vue';
-import { get, isEqual } from 'lodash-unified';
-import '../../../utils/index.mjs';
+import { castArray, get, isEqual } from 'lodash-unified';
 import { selectKey, selectGroupKey } from './token.mjs';
-import { isObject } from '@vue/shared';
 import { escapeStringRegexp } from '../../../utils/strings.mjs';
+import { isObject } from '@vue/shared';
 
 function useOption(props, states) {
   const select = inject(selectKey);
   const selectGroup = inject(selectGroupKey, { disabled: false });
   const itemSelected = computed(() => {
-    if (select.props.multiple) {
-      return contains(select.props.modelValue, props.value);
-    } else {
-      return contains([select.props.modelValue], props.value);
-    }
+    return contains(castArray(select.props.modelValue), props.value);
   });
   const limitReached = computed(() => {
+    var _a;
     if (select.props.multiple) {
-      const modelValue = select.props.modelValue || [];
+      const modelValue = castArray((_a = select.props.modelValue) != null ? _a : []);
       return !itemSelected.value && modelValue.length >= select.props.multipleLimit && select.props.multipleLimit > 0;
     } else {
       return false;
@@ -58,7 +54,8 @@ function useOption(props, states) {
   });
   watch(() => props.value, (val, oldVal) => {
     const { remote, valueKey } = select.props;
-    if (!isEqual(val, oldVal)) {
+    const shouldUpdate = remote ? val !== oldVal : !isEqual(val, oldVal);
+    if (shouldUpdate) {
       select.onOptionDestroy(oldVal, instance.proxy);
       select.onOptionCreate(instance.proxy);
     }

@@ -1,6 +1,5 @@
 import { getCurrentInstance, shallowRef, ref, computed, unref } from 'vue';
 import { debounce } from 'lodash-unified';
-import '../../../../utils/index.mjs';
 import { FixedDir } from '../constants.mjs';
 import { isNumber } from '../../../../utils/types.mjs';
 
@@ -36,7 +35,7 @@ const useRow = (props, {
       return;
     }
     const tableRoot = tableInstance.vnode.el;
-    const rows = tableRoot.querySelectorAll(`[rowkey=${rowKey}]`);
+    const rows = tableRoot.querySelectorAll(`[rowkey="${String(rowKey)}"]`);
     rows.forEach((row) => {
       if (hovered) {
         row.classList.add(ns.is("hovered"));

@@ -1,6 +1,6 @@
-export declare type Option = {
+export type Option = {
     label: string;
     value: string | number | boolean;
     disabled?: boolean;
     [key: string]: any;
-} | string | number | boolean | undefined;
+} | string | number | boolean;

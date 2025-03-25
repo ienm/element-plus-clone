@@ -1,5 +1,4 @@
 import { onMounted, watchEffect, onBeforeUnmount } from 'vue';
-import '../../utils/index.mjs';
 import { addUnit } from '../../utils/dom/style.mjs';
 
 const useDraggable = (targetRef, dragRef, draggable, overflow) => {
@@ -54,6 +53,15 @@ const useDraggable = (targetRef, dragRef, draggable, overflow) => {
       dragRef.value.removeEventListener("mousedown", onMousedown);
     }
   };
+  const resetPosition = () => {
+    transform = {
+      offsetX: 0,
+      offsetY: 0
+    };
+    if (targetRef.value) {
+      targetRef.value.style.transform = "none";
+    }
+  };
   onMounted(() => {
     watchEffect(() => {
       if (draggable.value) {
@@ -66,6 +74,9 @@ const useDraggable = (targetRef, dragRef, draggable, overflow) => {
   onBeforeUnmount(() => {
     offDraggable();
   });
+  return {
+    resetPosition
+  };
 };
 
 export { useDraggable };

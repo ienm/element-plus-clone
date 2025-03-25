@@ -1,10 +1,12 @@
 import { inject, ref, h } from 'vue';
 import { debounce } from 'lodash-unified';
-import '../../../../utils/index.mjs';
-import { getCell, getColumnByCell, createTablePopper } from '../util.mjs';
+import { getCell, getColumnByCell, createTablePopper, removePopper } from '../util.mjs';
 import { TABLE_INJECTION_KEY } from '../tokens.mjs';
-import { addClass, hasClass, removeClass } from '../../../../utils/dom/style.mjs';
+import { hasClass, addClass, removeClass } from '../../../../utils/dom/style.mjs';
 
+function isGreaterThan(a, b, epsilon = 0.03) {
+  return a - b > epsilon;
+}
 function useEvents(props) {
   const parent = inject(TABLE_INJECTION_KEY);
   const tooltipContent = ref("");
@@ -65,12 +67,13 @@ function useEvents(props) {
     }
   };
   const handleCellMouseEnter = (event, row, tooltipOptions) => {
-    var _a;
+    var _a, _b, _c;
     const table = parent;
     const cell = getCell(event);
     const namespace = (_a = table == null ? void 0 : table.vnode.el) == null ? void 0 : _a.dataset.prefix;
+    let column;
     if (cell) {
-      const column = getColumnByCell({
+      column = getColumnByCell({
         columns: props.store.states.columns.value
       }, cell, namespace);
       if (cell.rowSpan > 1) {
@@ -89,21 +92,15 @@ function useEvents(props) {
     const range = document.createRange();
     range.setStart(cellChild, 0);
     range.setEnd(cellChild, cellChild.childNodes.length);
-    let rangeWidth = range.getBoundingClientRect().width;
-    let rangeHeight = range.getBoundingClientRect().height;
-    const offsetWidth = rangeWidth - Math.floor(rangeWidth);
-    if (offsetWidth < 1e-3) {
-      rangeWidth = Math.floor(rangeWidth);
-    }
-    const offsetHeight = rangeHeight - Math.floor(rangeHeight);
-    if (offsetHeight < 1e-3) {
-      rangeHeight = Math.floor(rangeHeight);
-    }
+    const { width: rangeWidth, height: rangeHeight } = range.getBoundingClientRect();
+    const { width: cellChildWidth, height: cellChildHeight } = cellChild.getBoundingClientRect();
     const { top, left, right, bottom } = getPadding(cellChild);
     const horizontalPadding = left + right;
     const verticalPadding = top + bottom;
-    if (rangeWidth + horizontalPadding > cellChild.offsetWidth || rangeHeight + verticalPadding > cellChild.offsetHeight || cellChild.scrollWidth > cellChild.offsetWidth) {
-      createTablePopper(tooltipOptions, cell.innerText || cell.textContent, cell, table);
+    if (isGreaterThan(rangeWidth + horizontalPadding, cellChildWidth) || isGreaterThan(rangeHeight + verticalPadding, cellChildHeight) || isGreaterThan(cellChild.scrollWidth, cellChildWidth)) {
+      createTablePopper(tooltipOptions, cell.innerText || cell.textContent, row, column, cell, table);
+    } else if (((_b = removePopper) == null ? void 0 : _b.trigger) === cell) {
+      (_c = removePopper) == null ? void 0 : _c();
     }
   };
   const handleCellMouseLeave = (event) => {

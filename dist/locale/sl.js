@@ -76,6 +76,9 @@
         noData: "Ni podatkov",
         placeholder: "Izberi"
       },
+      mention: {
+        loading: "Nalaganje"
+      },
       cascader: {
         noMatch: "Ni ustreznih podatkov",
         loading: "Nalaganje",

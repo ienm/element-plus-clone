@@ -69,6 +69,9 @@ var it = {
       noData: "Nessun dato",
       placeholder: "Seleziona"
     },
+    mention: {
+      loading: "Caricamento"
+    },
     cascader: {
       noMatch: "Nessuna corrispondenza",
       loading: "Caricamento",

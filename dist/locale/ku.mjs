@@ -69,6 +69,9 @@ var ku = {
       noData: "Agah\xEE tune",
       placeholder: "Bibij\xEAre"
     },
+    mention: {
+      loading: "Bardibe"
+    },
     cascader: {
       noMatch: "Li hembere ve agah\xEE tune",
       loading: "Bardibe",

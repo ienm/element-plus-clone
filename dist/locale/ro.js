@@ -75,6 +75,9 @@
         noData: "Nu exist\u0103 date",
         placeholder: "Selecteaz\u0103"
       },
+      mention: {
+        loading: "Se \xEEncarc\u0103"
+      },
       cascader: {
         noMatch: "Nu exist\u0103 date potrivite",
         loading: "Se \xEEncarc\u0103",

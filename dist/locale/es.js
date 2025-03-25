@@ -75,6 +75,9 @@
         noData: "Sin datos",
         placeholder: "Seleccionar"
       },
+      mention: {
+        loading: "Cargando"
+      },
       cascader: {
         noMatch: "No hay datos que coincidan",
         loading: "Cargando",

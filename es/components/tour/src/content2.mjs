@@ -1,11 +1,9 @@
 import { defineComponent, ref, watch, toRef, computed, inject, openBlock, createElementBlock, normalizeStyle, unref, normalizeClass, createVNode, withCtx, renderSlot, createCommentVNode } from 'vue';
-import '../../focus-trap/index.mjs';
+import ElFocusTrap from '../../focus-trap/src/focus-trap.mjs';
 import { tourContentProps, tourContentEmits } from './content.mjs';
 import { useFloating, tourKey } from './helper.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
-import ElFocusTrap from '../../focus-trap/src/focus-trap.mjs';
 
-const _hoisted_1 = ["data-side"];
 const __default__ = defineComponent({
   name: "ElTourContent"
 });
@@ -64,7 +62,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           style: normalizeStyle(unref(arrowStyle)),
           class: normalizeClass(unref(ns).e("arrow"))
         }, null, 6)) : createCommentVNode("v-if", true)
-      ], 14, _hoisted_1);
+      ], 14, ["data-side"]);
     };
   }
 });

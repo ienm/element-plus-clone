@@ -78,6 +78,9 @@
         noData: "\u017Diadne d\xE1ta",
         placeholder: "Vybra\u0165"
       },
+      mention: {
+        loading: "Na\u010D\xEDtavanie"
+      },
       cascader: {
         noMatch: "\u017Diadna zhoda",
         loading: "Na\u010D\xEDtavanie",

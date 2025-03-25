@@ -75,6 +75,9 @@
         noData: "Nav datu",
         placeholder: "Izv\u0113l\u0113ties"
       },
+      mention: {
+        loading: "Iel\u0101d\u0113"
+      },
       cascader: {
         noMatch: "Nav atbilsto\u0161u datu",
         loading: "Iel\u0101d\u0113",

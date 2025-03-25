@@ -1,27 +1,21 @@
-import { defineComponent, ref, reactive, computed, watch, onMounted, onUpdated, openBlock, createElementBlock, normalizeClass, unref, withModifiers, withDirectives, withKeys, renderSlot, createVNode, withCtx, createBlock, createCommentVNode } from 'vue';
+import { defineComponent, ref, reactive, computed, watch, onMounted, onUpdated, openBlock, createElementBlock, normalizeClass, unref, withModifiers, withDirectives, withKeys, renderSlot, createVNode, withCtx, createBlock, createCommentVNode, createSlots } from 'vue';
 import { isNil } from 'lodash-unified';
 import { ElInput } from '../../input/index.mjs';
 import { ElIcon } from '../../icon/index.mjs';
-import '../../form/index.mjs';
-import '../../../directives/index.mjs';
-import '../../../hooks/index.mjs';
-import '../../../utils/index.mjs';
 import { ArrowDown, Minus, ArrowUp, Plus } from '@element-plus/icons-vue';
-import '../../../constants/index.mjs';
 import { inputNumberProps, inputNumberEmits } from './input-number2.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
+import { vRepeatClick } from '../../../directives/repeat-click/index.mjs';
 import { useLocale } from '../../../hooks/use-locale/index.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { useFormItem } from '../../form/src/hooks/use-form-item.mjs';
 import { isNumber, isUndefined } from '../../../utils/types.mjs';
 import { debugWarn, throwError } from '../../../utils/error.mjs';
 import { useFormSize, useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';
-import { INPUT_EVENT, UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../../constants/event.mjs';
+import { UPDATE_MODEL_EVENT, INPUT_EVENT, CHANGE_EVENT } from '../../../constants/event.mjs';
 import { isString } from '@vue/shared';
-import { vRepeatClick } from '../../../directives/repeat-click/index.mjs';
+import { isFirefox } from '../../../utils/browser.mjs';
 
-const _hoisted_1 = ["aria-label", "onKeydown"];
-const _hoisted_2 = ["aria-label", "onKeydown"];
 const __default__ = defineComponent({
   name: "ElInputNumber"
 });
@@ -143,6 +137,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       }
       if (stepStrictly) {
         newVal = toPrecision(Math.round(newVal / step) * step, precision);
+        if (newVal !== value) {
+          update && emit(UPDATE_MODEL_EVENT, newVal);
+        }
       }
       if (!isUndefined(precision)) {
         newVal = toPrecision(newVal, precision);
@@ -199,11 +196,14 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       emit("focus", event);
     };
     const handleBlur = (event) => {
-      var _a;
+      var _a, _b;
       data.userInput = null;
+      if (isFirefox() && data.currentValue === null && ((_a = input.value) == null ? void 0 : _a.input)) {
+        input.value.input.value = "";
+      }
       emit("blur", event);
       if (props.validateEvent) {
-        (_a = formItem == null ? void 0 : formItem.validate) == null ? void 0 : _a.call(formItem, "blur").catch((err) => debugWarn(err));
+        (_b = formItem == null ? void 0 : formItem.validate) == null ? void 0 : _b.call(formItem, "blur").catch((err) => debugWarn(err));
       }
     };
     const setCurrentValueToModelValue = () => {
@@ -245,6 +245,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }
         emit(UPDATE_MODEL_EVENT, val);
       }
+      innerInput.addEventListener("wheel", handleWheel, { passive: false });
     });
     onUpdated(() => {
       var _a, _b;
@@ -264,8 +265,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           unref(ns).is("without-controls", !_ctx.controls),
           unref(ns).is("controls-right", unref(controlsAtRight))
         ]),
-        onDragstart: _cache[0] || (_cache[0] = withModifiers(() => {
-        }, ["prevent"]))
+        onDragstart: withModifiers(() => {
+        }, ["prevent"])
       }, [
         _ctx.controls ? withDirectives((openBlock(), createElementBlock("span", {
           key: 0,
@@ -282,7 +283,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               _: 1
             })
           ])
-        ], 42, _hoisted_1)), [
+        ], 42, ["aria-label", "onKeydown"])), [
           [unref(vRepeatClick), decrease]
         ]) : createCommentVNode("v-if", true),
         _ctx.controls ? withDirectives((openBlock(), createElementBlock("span", {
@@ -300,7 +301,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               _: 1
             })
           ])
-        ], 42, _hoisted_2)), [
+        ], 42, ["aria-label", "onKeydown"])), [
           [unref(vRepeatClick), increase]
         ]) : createCommentVNode("v-if", true),
         createVNode(unref(ElInput), {
@@ -317,9 +318,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           max: _ctx.max,
           min: _ctx.min,
           name: _ctx.name,
-          label: _ctx.label,
+          "aria-label": _ctx.ariaLabel,
           "validate-event": false,
-          onWheel: handleWheel,
           onKeydown: [
             withKeys(withModifiers(increase, ["prevent"]), ["up"]),
             withKeys(withModifiers(decrease, ["prevent"]), ["down"])
@@ -328,8 +328,23 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           onFocus: handleFocus,
           onInput: handleInput,
           onChange: handleInputChange
-        }, null, 8, ["id", "step", "model-value", "placeholder", "readonly", "disabled", "size", "max", "min", "name", "label", "onKeydown"])
-      ], 34);
+        }, createSlots({
+          _: 2
+        }, [
+          _ctx.$slots.prefix ? {
+            name: "prefix",
+            fn: withCtx(() => [
+              renderSlot(_ctx.$slots, "prefix")
+            ])
+          } : void 0,
+          _ctx.$slots.suffix ? {
+            name: "suffix",
+            fn: withCtx(() => [
+              renderSlot(_ctx.$slots, "suffix")
+            ])
+          } : void 0
+        ]), 1032, ["id", "step", "model-value", "placeholder", "readonly", "disabled", "size", "max", "min", "name", "aria-label", "onKeydown"])
+      ], 42, ["onDragstart"]);
     };
   }
 });

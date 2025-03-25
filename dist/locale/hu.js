@@ -75,6 +75,9 @@
         noData: "Nincs adat",
         placeholder: "V\xE1lassz"
       },
+      mention: {
+        loading: "Bet\xF6lt\xE9s"
+      },
       cascader: {
         noMatch: "Nincs tal\xE1lat",
         loading: "Bet\xF6lt\xE9s",

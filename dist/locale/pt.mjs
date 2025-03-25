@@ -69,6 +69,9 @@ var pt = {
       noData: "Sem dados",
       placeholder: "Selecione"
     },
+    mention: {
+      loading: "A carregar"
+    },
     cascader: {
       noMatch: "Sem correspond\xEAncia",
       loading: "A carregar",

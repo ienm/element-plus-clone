@@ -1,9 +1,6 @@
-import './dom/index.mjs';
-import './vue/index.mjs';
 export { castArray, unique } from './arrays.mjs';
 export { isFirefox } from './browser.mjs';
 export { debugWarn, throwError } from './error.mjs';
-import './functions.mjs';
 export { isKorean } from './i18n.mjs';
 export { entriesOf, getProp, keysOf } from './objects.mjs';
 export { cAF, rAF } from './raf.mjs';
@@ -29,6 +26,5 @@ export { isValidComponentSize, isValidDatePickType } from './vue/validator.mjs';
 export { PatchFlags, ensureOnlyChild, flattedChildren, getFirstValidNode, getNormalizedProps, isComment, isFragment, isTemplate, isText, isValidElementNode, renderBlock, renderIf } from './vue/vnode.mjs';
 export { castArray as ensureArray } from 'lodash-unified';
 export { isClient, isIOS } from '@vueuse/core';
-export { NOOP, camelize, hasOwn, hyphenate, isArray, isDate, isFunction, isObject, isPromise, isString, isSymbol, hyphenate as kebabCase } from '@vue/shared';
-export { isVNode } from 'vue';
+export { NOOP, camelize, hasOwn, hyphenate, isArray, isDate, isFunction, isObject, isPlainObject, isPromise, isString, isSymbol, hyphenate as kebabCase, toRawType } from '@vue/shared';
 //# sourceMappingURL=index.mjs.map

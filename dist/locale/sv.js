@@ -75,6 +75,9 @@
         noData: "Ingen data",
         placeholder: "V\xE4lj"
       },
+      mention: {
+        loading: "Laddar"
+      },
       cascader: {
         noMatch: "Hittade inget",
         loading: "Laddar",

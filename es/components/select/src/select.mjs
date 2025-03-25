@@ -1,15 +1,12 @@
 import { placements } from '@popperjs/core';
-import '../../../hooks/index.mjs';
-import '../../../utils/index.mjs';
-import '../../tooltip/index.mjs';
 import { CircleClose, ArrowDown } from '@element-plus/icons-vue';
-import '../../tag/index.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 import { useSizeProp } from '../../../hooks/use-size/index.mjs';
 import { useTooltipContentProps } from '../../tooltip/src/content.mjs';
 import { iconPropType } from '../../../utils/vue/icon.mjs';
-import { tagProps } from '../../tag/src/tag.mjs';
+import { tagProps } from '../../tag/src/tag2.mjs';
 import { useEmptyValuesProps } from '../../../hooks/use-empty-values/index.mjs';
+import { useAriaProps } from '../../../hooks/use-aria/index.mjs';
 
 const SelectProps = buildProps({
   name: String,
@@ -21,6 +18,10 @@ const SelectProps = buildProps({
   autocomplete: {
     type: String,
     default: "off"
+  },
+  virtualTriggering: {
+    type: Boolean,
+    default: false
   },
   automaticDropdown: Boolean,
   size: useSizeProp,
@@ -85,11 +86,20 @@ const SelectProps = buildProps({
     default: ArrowDown
   },
   tagType: { ...tagProps.type, default: "info" },
+  tagEffect: { ...tagProps.effect, default: "light" },
   validateEvent: {
     type: Boolean,
     default: true
   },
   remoteShowSuffix: Boolean,
+  showArrow: {
+    type: Boolean,
+    default: true
+  },
+  offset: {
+    type: Number,
+    default: 12
+  },
   placement: {
     type: definePropType(String),
     values: placements,
@@ -99,15 +109,13 @@ const SelectProps = buildProps({
     type: definePropType(Array),
     default: ["bottom-start", "top-start", "right", "left"]
   },
-  ariaLabel: {
-    type: String,
-    default: void 0
+  tabindex: {
+    type: [String, Number],
+    default: 0
   },
-  virtualTriggering: {
-    type: Boolean,
-    default: false
-  },
-  ...useEmptyValuesProps
+  appendTo: String,
+  ...useEmptyValuesProps,
+  ...useAriaProps(["ariaLabel"])
 });
 
 export { SelectProps };
